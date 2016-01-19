@@ -1,23 +1,44 @@
 import {Entity} from './Entity';
-import config from './../res/config.json';
+import {Input} from './Input';
+import {log} from './Log';
+// NOTE: This compiles cfg file into the compiled main.js file at compile time.
+import cfg from './../res/config/config.json';
 
-function mainfn () {
-    console.log(config);
-    
-    let hero = new Entity(config.hero.first, config.hero.last);
-    console.log(hero);
+// Time
+const loopInterval = 1000 / cfg.fps;
+let lastFrame = 0;
 
-    let compliment = config.compliment;
-    let message = `Hello ${hero.fullName}! You are ${compliment}!`;
-    console.log(message);
+function main () {
+    log.test();
 
-    showoff();
+    console.log(`Target loop interval: ${loopInterval}`);
+    requestAnimationFrame(loop);
 }
 
-function showoff (){
-    let nums = Array.from(new Array(5), (x,i) => i);
-    let sqr = nums.map(v => v * v);
-    console.log(`squares: ${sqr}`);
+function loop (ctime) {
+    const delta = ctime - lastFrame;
+
+    if(ctime - lastFrame > loopInterval) {
+        lastFrame = ctime;
+        update();
+        draw();
+        Input.update();
+    }
+    requestAnimationFrame(loop);
 }
 
-mainfn();
+function update () {
+    inputDemo();
+}
+
+function inputDemo() {
+    if(Input.keyPressed.down){ console.log("Down just pressed!"); }
+    if(Input.keyReleased.up){ console.log("Up just released!"); }
+    if(Input.keyDown.right){ console.log("Right is down!"); }
+}
+
+function draw () {
+
+}
+
+main(); // Main entry

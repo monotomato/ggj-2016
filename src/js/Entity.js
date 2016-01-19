@@ -1,12 +1,14 @@
 class Entity extends PIXI.Container {
-    constructor(firstName, lastName) {
+    constructor(data) {
         super();
-        this.firstName = firstName;
-        this.lastName = lastName;
+        Object.assign(this, data); // NOTE: Could be super useful...
     }
 
     get fullName() {
         return `${this.firstName} ${this.lastName}`;
+    }
+    static staticFunction(){
+        return "This is a static function";
     }
 }
 export {Entity};
