@@ -1,0 +1,22 @@
+{
+  "name": "ggj2016",
+  "description": "Game!",
+  "main": "index.js",
+  "authors": [
+    "Toni Pesola <pesola.toni@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pixi.js": "~3.0.9"
+  }
+}
