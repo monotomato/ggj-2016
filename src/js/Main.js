@@ -1,11 +1,16 @@
 import {Entity} from './Entity';
+import config from './../res/config.json';
 
 function mainfn () {
-    let hero = new Entity("Super", "Hero");
-    let compliment = "awesome";
+    console.log(config);
+    
+    let hero = new Entity(config.hero.first, config.hero.last);
+    console.log(hero);
+
+    let compliment = config.compliment;
     let message = `Hello ${hero.fullName}! You are ${compliment}!`;
     console.log(message);
-    console.log(hero);
+
     showoff();
 }
 
