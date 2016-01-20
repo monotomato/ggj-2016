@@ -1,4 +1,4 @@
-import cfg from './../res/config/config.json';
+import cfg from 'res/config/config.json';
 
 const levels = new Map([
     [1, 'DEBUG'],

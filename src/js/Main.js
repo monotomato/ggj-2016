@@ -1,8 +1,8 @@
-import {Entity} from './Entity';
-import {Input} from './Input';
-import {log} from './Log';
+import {Entity} from 'Entity';
+import {Input} from 'Input';
+import {log} from 'Log';
 // NOTE: This compiles cfg file into the compiled main.js file at compile time.
-import cfg from './../res/config/config.json';
+import cfg from 'res/config/config.json';
 
 // Time
 const loopInterval = 1000 / cfg.fps;

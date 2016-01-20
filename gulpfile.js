@@ -19,6 +19,7 @@ var config = {
   outputDir: './build/',
   outputFile: 'main.js'
 };
+var jsPaths = ['./src/','./src/js'];
 
 var genNote = {
     js: '// NOTE: This file has been generated automatically\n',
@@ -41,7 +42,9 @@ gulp.task('clean', function(cb){
 var bundler;
 function getBundler() {
   if (!bundler) {
-    bundler = watchify(browserify(config.entryFile, _.extend({ debug: true }, watchify.args)));
+    bundler = watchify(browserify(config.entryFile, _.extend(
+        { debug: true, paths: jsPaths }, watchify.args
+    )));
   }
   return bundler;
 }
