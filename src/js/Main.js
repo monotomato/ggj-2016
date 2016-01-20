@@ -11,7 +11,7 @@ let lastFrame = 0;
 function main () {
     log.test();
 
-    console.log(`Target loop interval: ${loopInterval}`);
+    log.debug(`Target loop interval: ${loopInterval}`);
     requestAnimationFrame(loop);
 }
 
@@ -31,14 +31,13 @@ function update () {
     inputDemo();
 }
 
-function inputDemo() {
-    if(Input.keyPressed.down){ console.log("Down just pressed!"); }
-    if(Input.keyReleased.up){ console.log("Up just released!"); }
-    if(Input.keyDown.right){ console.log("Right is down!"); }
-}
-
 function draw () {
 
 }
 
+function inputDemo() {
+    if(Input.keyPressed.down){ log.debug("Down just pressed!"); }
+    if(Input.keyReleased.up){ log.debug("Up just released!"); }
+    if(Input.keyDown.right){ log.debug("Right is down!"); }
+}
 main(); // Main entry
