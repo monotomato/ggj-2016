@@ -1,4 +1,5 @@
 {
   "fps": 30,
-  "logLevel":0
+  "logLevel": 0,
+  "resBaseUrl": "src/"
 }

@@ -59,7 +59,7 @@ function bundle() {
     .pipe(reload({ stream: true }));
 }
 
-gulp.task('build-persistent', ['clean'], function() {
+gulp.task('build-persistent', function() { //['clean']
   return bundle();
 });
 

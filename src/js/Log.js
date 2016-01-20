@@ -1,26 +1,27 @@
 import cfg from 'res/config/config.json';
 
 const levels = new Map([
-    [1, 'DEBUG'],
-    [2, 'INFO '],
-    [3, 'WARN '],
-    [4, 'ERROR'],
-    [5, 'FATAL']
+    [1, ['DEBUG', 'color: #22AA22;']],
+    [2, ['INFO ', 'color: #2222AA;']],
+    [3, ['WARN ', 'color: #CC8822;']],
+    [4, ['ERROR', 'color: #DD4422;']],
+    [5, ['FATAL', 'color: #FF0000;']]
 ]);
 
-function print(msg='', level=1, csstag="color: #22AA22;"){
+function print(msg='', level=1){
+    level = Math.max(1, Math.min(5, level));
     if(level >= cfg.logLevel){
-        const tag = levels.get(level);
-        console.log(`%c[${tag}]:`, csstag, msg);
+        const prop = levels.get(level);
+        console.log(`%c[${prop[0]}]:`, prop[1], msg);
     }
 }
 
 const log = {
-    debug: (msg) => { print(msg, 1, "color: #22AA22;"); },
-    info:  (msg) => { print(msg, 2, "color: #2222AA;"); },
-    warn:  (msg) => { print(msg, 3, "color: #CC8822;"); },
-    error: (msg) => { print(msg, 4, "color: #DD4422;"); },
-    fatal: (msg) => { print(msg, 5, "color: #FF0000;"); },
+    debug: (msg) => { print(msg, 1); },
+    info:  (msg) => { print(msg, 2); },
+    warn:  (msg) => { print(msg, 3); },
+    error: (msg) => { print(msg, 4); },
+    fatal: (msg) => { print(msg, 5); },
     print: print,
     test: test
 };

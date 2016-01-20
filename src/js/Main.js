@@ -1,6 +1,8 @@
 import {Entity} from 'Entity';
 import {Input} from 'Input';
 import {log} from 'Log';
+import {loadResources} from 'Loader';
+
 // NOTE: This compiles cfg file into the compiled main.js file at compile time.
 import cfg from 'res/config/config.json';
 
@@ -10,8 +12,12 @@ let lastFrame = 0;
 
 function main () {
     log.test();
+    log.info(`Target loop interval: ${loopInterval}`);
+    loadResources().then(initReady);
+}
 
-    log.debug(`Target loop interval: ${loopInterval}`);
+function initReady(){
+    log.info("Initialization ready!");
     requestAnimationFrame(loop);
 }
 
