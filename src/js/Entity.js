@@ -7,6 +7,7 @@ class Entity extends PIXI.Container {
     get fullName() {
         return `${this.firstName} ${this.lastName}`;
     }
+
     static staticFunction(){
         return "This is a static function";
     }

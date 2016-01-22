@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "pixi.js": "~3.0.9"
+    "pixi.js": "~3.0.9",
+    "PhysicsJS": "physicsjs#~0.7.0"
   }
 }

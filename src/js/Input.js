@@ -8,7 +8,7 @@ var Input = {
     keyDown: {},        // Is key down
     keyPressed: {},     // Is key just pressed. True for one frame.
     keyReleased: {},    // Is key just released. True for one frame.
-    update: function () {
+    update: function () { // Resets keyPressed and keyReleased values.
         this.keyPressed = {};
         this.keyReleased = {};
     }
