@@ -3,5 +3,8 @@
   "logLevel": 0,
   "resourceLists":[
     "res/filelist.json"
+  ],
+  "staticResources":[
+    "res/sprite/sprite.json"
   ]
 }

@@ -30,7 +30,7 @@ var config = {
   outputFile: 'main.js'
 };
 
-var resPath = ['./res/**/*.*', '!**/sprites/**/*'];
+var resPath = ['./res/**/*.*', '!**/sprite/**/*.png'];
 
 var jsPaths = ['./src/','./src/js'];
 
@@ -55,7 +55,7 @@ gulp.task('sprite', function(){
     padding: 0
   };
 
-  var spriteData = gulp.src( 'res/sprites/**/*.png' )
+  var spriteData = gulp.src( 'res/sprite/**/*.png' )
     .pipe(spritesmith(spriteOptions));
   spriteData.css
     .pipe(gulp.dest( 'build/res/sprite/' ));

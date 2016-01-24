@@ -24,8 +24,15 @@ function loadRes(ldr, res){
   log.info('Filelists loaded');
   log.info("Loading resources");
   log.debug(res);
+
   Object.keys(res).forEach(key => {
-      loader.add(res[key].data);
+    res[key].data.forEach(path => {
+      loader.add(getName(path), path);
+    });
+  });
+
+  cfg.staticResources.forEach( path => {
+    loader.add(getName(path), path);
   });
 
   loader.on('progress', loadProgress);
@@ -39,6 +46,10 @@ function loadProgress(ldr,res){
     let i = '='.repeat(ready) + ' '.repeat(loadBarLen - ready);
     let str = `Progress [${i}] ${p}%`;
     log.info(str);
+}
+
+function getName(path){
+  return path.split('\\').pop().split('/').pop().split('.')[0];
 }
 
 function loaded(ldr, res) {
