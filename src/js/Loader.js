@@ -39,9 +39,9 @@ function loadRes(ldr, res){
 
 function loadProgress(ldr, res, header){
     let p = ldr.progress;
-    let ready = Math.floor(loadBarLen * (p / 100));
+    let ready = Math.floor(loadBarLen * (Math.floor(p) / 100));
     let i = '='.repeat(ready) + ' '.repeat(loadBarLen - ready);
-    let str = `${header} progress [${i}] ${p}%`;
+    let str = `${header} progress [${i}] ${Math.floor(p)}%`;
     log.info(str);
 }
 
