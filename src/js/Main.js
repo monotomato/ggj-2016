@@ -18,7 +18,7 @@ function main () {
 
 function initReady(){
     log.info("Initialization ready!");
-    log.fatal(resources);
+    log.debug(resources);
     requestAnimationFrame(loop);
 }
 
