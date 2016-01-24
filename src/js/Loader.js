@@ -1,45 +1,49 @@
 import {log} from 'Log';
-import rescfg from 'res/config/resources.json';
-import cfg from 'res/config/config.json';
-
-const resourcesMap = new Map( Object.keys(rescfg).map(key => {
-        return [key, rescfg[key]];
-    }));
+import cfg from 'config.json';
 
 const loader = PIXI.loader;
 const resources = loader.resources;
 const loadBarLen = 20;
+let callback;
 
-function load() {
-    log.info('Loading resources');
-    loader.baseUrl = cfg.resBaseUrl;
+function load(_callback) {
+  callback = _callback;
+  log.info("Loading filelists");
+  let filelistLoader = new PIXI.loaders.Loader(); // you can also create your own if you want
 
-    resourcesMap.forEach((value, key) => {
-        loader.add(key, value);
-    });
+  Object.keys(cfg.resourceLists).forEach(key => {
+    filelistLoader.add(cfg.resourceLists[key]);
+  });
 
-    loader.on('progress', loadProgress);
-
-    const promise = new Promise((resolve, reject) =>{
-        loader.once('complete',() =>{resolve("asd");});
-        loader.load();
-    });
-
-    return promise;
-    // loader.load();
+  filelistLoader.on('progress', loadProgress);
+  filelistLoader.once('complete',loadRes);
+  filelistLoader.load();
 }
 
-function loadProgress(loader,res){
-    let p = loader.progress;
+function loadRes(ldr, res){
+  log.info('Filelists loaded');
+  log.info("Loading resources");
+  log.debug(res);
+  Object.keys(res).forEach(key => {
+      loader.add(res[key].data);
+  });
+
+  loader.on('progress', loadProgress);
+  loader.once('complete', loaded);
+  loader.load();
+}
+
+function loadProgress(ldr,res){
+    let p = ldr.progress;
     let ready = Math.floor(loadBarLen * (p / 100));
     let i = '='.repeat(ready) + ' '.repeat(loadBarLen - ready);
     let str = `Progress [${i}] ${p}%`;
     log.info(str);
 }
 
-function loaded() {
+function loaded(ldr, res) {
     log.info('Loading done!');
-    log.info(resources);
+    callback();
 }
 
 export {load as loadResources, resources};

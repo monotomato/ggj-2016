@@ -1,0 +1,7 @@
+{
+  "fps": 30,
+  "logLevel": 0,
+  "resourceLists":[
+    "res/filelist.json"
+  ]
+}

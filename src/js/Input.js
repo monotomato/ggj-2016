@@ -1,4 +1,4 @@
-import keycfg from 'res/config/keys.json';
+import keycfg from 'keys.json';
 
 var keys = new Map( Object.keys(keycfg).map(key => {
         return [keycfg[key], key];

@@ -1,4 +1,4 @@
-import cfg from 'res/config/config.json';
+import cfg from 'config.json';
 
 const levels = new Map([
     [1, ['DEBUG', 'color: #22AA22;']],
