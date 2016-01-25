@@ -1,0 +1,12 @@
+{
+  "component_configuration":{
+    "animation": "anim_player_idle"
+  },
+  "component_data":{
+    "thisgoesstraighttoentity": "asdasd",
+    "position":{
+      "x":50,
+      "y":50
+    }
+  }
+}

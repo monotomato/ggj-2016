@@ -1,6 +1,16 @@
 {
   "fps": 30,
   "logLevel": 0,
+  "renderer":{
+    "options": {
+      "antialias": true,
+      "transparent": false
+    },
+    "size":{
+      "x":256,
+      "y":256
+    }
+  },
   "resourceLists":[
     "res/filelist.json"
   ],

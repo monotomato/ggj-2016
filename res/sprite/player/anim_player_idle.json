@@ -1,0 +1,9 @@
+{
+  "anim":[
+    {"frame":"debug_1", "duration":100},
+    {"frame":"debug_2", "duration":100},
+    {"frame":"debug_3", "duration":100},
+    {"frame":"debug_2", "duration":100}
+  ],
+  "speed":1
+}

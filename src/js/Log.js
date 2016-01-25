@@ -32,6 +32,5 @@ function test(){
     log.warn("warn msg");
     log.error("error msg");
     log.fatal("fatal msg");
-    log.print(log);
 }
 export {log};
