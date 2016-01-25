@@ -6,10 +6,12 @@
 After [forking](https://guides.github.com/activities/forking/) the project, use the following commands to get started:
 
 ``` Bash
-$ npm init   # Initialize project:
+$ npm init   # Initialize project
 $ gulp       # Cleans and builds app
 $ gulp watch # Starts test server and watches for changes
 ```
+
+Your browser should then direct you to the correct address.
 
 ### Gulp ###
 ```
