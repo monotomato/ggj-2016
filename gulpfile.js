@@ -69,12 +69,14 @@ var genNote = {
 };
 
 gulp.task('html', function() {
-  gulp.src(config.htmlTemplate)
-   .pipe(concat(config.outputHtml))
-   .pipe(gulp.dest('./'))
-   .pipe(wiredep())
-   .pipe(insert.prepend(genNote.html))
-   .pipe(gulp.dest('./'));
+  gulp.src('./index.tpl.html')
+    .pipe(concat('./build/index.html'))
+    .pipe(gulp.dest('./'))
+    .pipe(wiredep())
+    .pipe(insert.prepend(genNote.html))
+    .pipe(gulp.dest('./'));
+  gulp.src('./style.css')
+    .pipe(gulp.dest('./build/'));
 });
 
 gulp.task('clean', function(cb){
