@@ -1,9 +1,9 @@
 import {log} from 'Log';
 
 class Scene extends PIXI.Container {
-  
+
   constructor(data) {
-      super();
+    super();
   }
 
   update(delta, input){

@@ -38,11 +38,11 @@ function loadRes(ldr, res){
 }
 
 function loadProgress(ldr, res, header){
-    let p = ldr.progress;
-    let ready = Math.floor(loadBarLen * (Math.floor(p) / 100));
-    let i = '='.repeat(ready) + ' '.repeat(loadBarLen - ready);
-    let str = `${header} progress [${i}] ${Math.floor(p)}%`;
-    log.info(str);
+  let p = ldr.progress;
+  let ready = Math.floor(loadBarLen * (Math.floor(p) / 100));
+  let i = '='.repeat(ready) + ' '.repeat(loadBarLen - ready);
+  let str = `${header} progress [${i}] ${Math.floor(p)}%`;
+  log.info(str);
 }
 
 function getName(path){
@@ -50,7 +50,7 @@ function getName(path){
 }
 
 function loaded(ldr, res) {
-    callback();
+  callback();
 }
 
 export {load as loadResources, resources};

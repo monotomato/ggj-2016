@@ -19,34 +19,37 @@ const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.
 // Stage
 const stage = new Scene();
 let testEntity;
+
 // Times
 const loopInterval = 1000 / cfg.fps;
 let lastFrame = 0;
 
+// Main entry
 function main () {
-    log.test();
-    log.info(`Target loop interval: ${loopInterval}`);
-    document.body.appendChild(renderer.view);
-    loadResources(initReady);
+  log.test();
+  log.info(`Target loop interval: ${loopInterval}`);
+  document.body.appendChild(renderer.view);
+  // renderer.view.webkitRequestFullscreen();
+  loadResources(initReady);
 }
 
 function initReady(){
-    log.info("Initialization ready!");
-    log.debug(resources);
-    debugInit();
-    requestAnimationFrame(loop);
+  log.info("Initialization ready!");
+  log.debug(resources);
+  debugInit();
+  requestAnimationFrame(loop);
 }
 
 function loop (ctime) {
-    const delta = ctime - lastFrame;
+  const delta = ctime - lastFrame;
 
-    if(ctime - lastFrame > loopInterval) {
-        lastFrame = ctime;
-        update(delta, Input);
-        draw();
-        Input.update();
-    }
-    requestAnimationFrame(loop);
+  if(ctime - lastFrame > loopInterval) {
+    lastFrame = ctime;
+    update(delta, Input);
+    draw();
+    Input.update();
+  }
+  requestAnimationFrame(loop);
 }
 
 function update (delta, input) {
@@ -59,8 +62,8 @@ function draw () {
 }
 
 function debugUpdate(){
-if(Input.keyReleased.up){ testEntity.setSprite('debug_3');}
-if(Input.keyReleased.down){ testEntity.setSprite('debug_1');}
+  if(Input.keyReleased.up){ testEntity.setSprite('debug_3');}
+  if(Input.keyReleased.down){ testEntity.setSprite('debug_1');}
 }
 
 function debugInit() {
@@ -72,8 +75,8 @@ function debugInit() {
 }
 
 function inputDemo() {
-    if(Input.keyPressed.down){ log.debug("Down just pressed!"); }
-    if(Input.keyReleased.up){ log.debug("Up just released!"); }
-    if(Input.keyDown.right){ log.debug("Right is down!"); }
+  if(Input.keyPressed.down){ log.debug("Down just pressed!"); }
+  if(Input.keyReleased.up){ log.debug("Up just released!"); }
+  if(Input.keyDown.right){ log.debug("Right is down!"); }
 }
 main(); // Main entry
