@@ -1,0 +1,20 @@
+{
+  "fps": 30,
+  "logLevel": 0,
+  "renderer":{
+    "options": {
+      "antialias": true,
+      "transparent": false
+    },
+    "size":{
+      "x":384,
+      "y":216
+    }
+  },
+  "resourceLists":[
+    "res/filelist.json"
+  ],
+  "staticResources":[
+    "res/sprite/sprite.json"
+  ]
+}
