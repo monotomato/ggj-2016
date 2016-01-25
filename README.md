@@ -14,11 +14,11 @@ $ gulp watch # Starts test server and watches for changes
 Your browser should then direct you to the correct address.
 
 ### Gulp ###
-```
-gulp         # Cleans and builds app
-gulp html    # Updates index.html
-gulp watch   # Watches for changes and starts server
-gulp res     # Creates spritesheet and resource filelist. Copies all res to build.
+``` Bash
+$ gulp         # Cleans and builds app
+$ gulp html    # Updates index.html
+$ gulp watch   # Watches for changes and starts server
+$ gulp res     # Creates spritesheet and resource filelist. Copies all res to build.
 ```
 
 ### Recommended Tools ###
@@ -65,7 +65,6 @@ gulp res     # Creates spritesheet and resource filelist. Copies all res to buil
       }
     }
   }
->>>>>>> c8a77a8c4b649ea418b199b95bc5e366b5493bb5
 ```
 
 ## Libraries ##
