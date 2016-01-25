@@ -36,8 +36,8 @@ $ gulp res     # Creates spritesheet and resource filelist. Copies all res to bu
 
 ## Fileformats ##
 * Animation
-``` JSON
-  # anim_player_idle.json
+``` javascript
+  // anim_player_idle.json
   {
     "anim":[
       {"frame":"debug_4", "duration":50},
@@ -49,16 +49,16 @@ $ gulp res     # Creates spritesheet and resource filelist. Copies all res to bu
   }
 ```
 * Entity configuration
-``` JSON
-  # entity_player.json
+``` javascript
+  // entity_player.json
   {
     "component_configuration":{
-      # Here is all configuration handles.
-      # Data will be loaded from other file (eg. anim_player_idle)
+      // Here is all configuration handles.
+      // Data will be loaded from other file (eg. anim_player_idle)
       "animation": "anim_player_idle"
     },
     "component_data":{
-      # Here is all configuration data that don't need its own file.
+      // Here is all configuration data that don't need its own file.
       "position":{
         "x":50,
         "y":50
