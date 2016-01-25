@@ -28,15 +28,15 @@ $ gulp res     # Creates spritesheet and resource filelist. Copies all res to bu
 
 ### Notes ###
 * All loaded resources are referenced by their filename, no extension.
-  * For example, the animation `"res/sprite/enemy/anim_enemy_id.json"` would be loaded and used as `"anim_enemy_id"`
-  * Because of this, it is important that there are no two resources with same filename (even with different extensions).
+    * For example, the animation `"res/sprite/enemy/anim_enemy_id.json"` would be loaded and used as `"anim_enemy_id"`
+    * Because of this, it is important that there are no two resources with same filename (even with different extensions).
 * Spritesheet `res/sprite.json` is manually defined in `src/config.json` file.
 * Json files in `/src` folder are injected into compiled code. Useful for stuff needed before init.
 * Json files in `/res` folder are copied to `/build/res` and loaded with `Loader.js` at init.
 
 ## Fileformats ##
 * Animation
-```
+``` JSON
   # anim_player_idle.json
   {
     "anim":[
@@ -49,7 +49,7 @@ $ gulp res     # Creates spritesheet and resource filelist. Copies all res to bu
   }
 ```
 * Entity configuration
-```
+``` JSON
   # entity_player.json
   {
     "component_configuration":{
