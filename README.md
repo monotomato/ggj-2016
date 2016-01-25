@@ -10,7 +10,6 @@ gulp res      # Creates spritesheet and resource filelist. Copies all res to bui
 ## Notes ##
 * All resources are now loaded in a way that allows referencing them only by their filename.
     * Because of that, it is really important that there are no 2 resources with same filename (even with different extensions).
-
 * All files should be referenced by their filename (without extension).
 * Spritesheet `res/sprite.json` is manually defined in `src/config.json` file.
 * Json files in `/src` folder are injected into compiled code. Useful for stuff needed before init.
