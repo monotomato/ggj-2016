@@ -1,7 +1,12 @@
 import {log} from "Log";
 
-function handleInput(parameters, parent, entities, delta) {
-  log.debug("bar");
-}
+var InputScript = {
+  update: (parameters, parent, entities, delta) => {
+    log.debug("bar");
+  },
+  handleEvent: (parent, evt) => {},
+  eventTypes: ["collision_player"]
+};
 
-export {handleInput as InputScript};
+
+export {InputScript as InputScript};

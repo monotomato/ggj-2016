@@ -1,9 +1,9 @@
 import {Entity} from 'Entity';
 import {Input} from 'Input';
 import {log} from 'Log';
-import {Scene} from 'Scene';
 import {loadResources, resources} from 'Loader';
 import {ScriptObject} from 'ScriptObject';
+import {EventManager} from 'EventManager';
 // import {Scripts} from 'Scripts/Scripts';
 
 // NOTE: This compiles cfg file into the compiled main.js file at compile time.
@@ -19,7 +19,7 @@ redOpt.resolution = window.devicePixelRatio || 1;
 const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.y, redOpt);
 
 // Stage
-const stage = new Scene();
+const stage = new Entity();
 let testEntity;
 
 // Times
@@ -50,13 +50,13 @@ function loop (ctime) {
     update(delta, Input);
     draw();
     Input.update();
+    EventManager.delegateEvents();
   }
   requestAnimationFrame(loop);
 }
 
 function update (delta, input) {
   debugUpdate();
-  stage.update(delta, input);
 }
 
 function draw () {
@@ -73,6 +73,15 @@ function debugInit() {
   testEntity.setSprite('debug_2');
   log.debug("TestEntity: ");
   log.debug(testEntity);
+  testEntity.eventTypes.push('foo_bar_baz', 'plaa');
+  EventManager.registerListener(testEntity);
+  EventManager.publish({
+    eventType: 'foo_bar_baz',
+    parameters: {
+      hello: "world"
+    }
+  });
+  log.debug(EventManager);
   let testScriptObj = new ScriptObject({a: 'b', c: 'd'}, "inputScript");
   log.debug(testScriptObj);
   stage.addChild(testEntity);

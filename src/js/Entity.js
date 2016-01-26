@@ -4,7 +4,22 @@ import {log} from 'Log';
 class Entity extends PIXI.Container {
 
   constructor(data) {
-      super();
+    super();
+    this.eventTypes = [];
+    this.events = [];
+    this.isActive = true;
+  }
+
+  handleEvents() {
+    this.events.forEach((event) => {
+      // Do stuff
+    });
+    this.events.clear();
+  }
+
+  addEvent(event) {
+    log.debug(event);
+    this.events.push(event);
   }
 
   setSprite(spriteName){
@@ -29,7 +44,7 @@ class Entity extends PIXI.Container {
   static fromConfig(configName){
     const config = resources[configName].data;
     const ent = new Entity();
-    
+
     // Assign component_data to entity
     Object.assign(ent, config.component_data);
 
