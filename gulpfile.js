@@ -133,4 +133,4 @@ gulp.task('serve', function () {
   });
 });
 
-gulp.task('default', ['clean', 'html', 'build']);
+gulp.task('default', ['clean', 'html', 'build', 'res']);

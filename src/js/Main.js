@@ -3,6 +3,8 @@ import {Input} from 'Input';
 import {log} from 'Log';
 import {Scene} from 'Scene';
 import {loadResources, resources} from 'Loader';
+import {ScriptObject} from 'ScriptObject';
+// import {Scripts} from 'Scripts/Scripts';
 
 // NOTE: This compiles cfg file into the compiled main.js file at compile time.
 import cfg from 'config.json';
@@ -71,6 +73,8 @@ function debugInit() {
   testEntity.setSprite('debug_2');
   log.debug("TestEntity: ");
   log.debug(testEntity);
+  let testScriptObj = new ScriptObject({a: 'b', c: 'd'}, "inputScript");
+  log.debug(testScriptObj);
   stage.addChild(testEntity);
 }
 

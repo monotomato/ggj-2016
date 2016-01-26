@@ -34,7 +34,16 @@ $ gulp res     # Creates spritesheet and resource filelist. Copies all res to bu
 * Json files in `/src` folder are injected into compiled code. Useful for stuff needed before init.
 * Json files in `/res` folder are copied to `/build/res` and loaded with `Loader.js` at init.
 
-## Fileformats ##
+## Naming Conventions ##
+
+| Resource  | Convention    | Notes            |
+|-----------|---------------|------------------|
+| Animation | anim_*.json   | See file formats |
+| Entity    | entity_*.json | See file formats |
+| Audio     | audio_\*.wav  | Most audio extensions supported |
+| Sprite    | sprite_*.png  | -                |
+
+## File formats ##
 * Animation
 ``` javascript
   // anim_player_idle.json
