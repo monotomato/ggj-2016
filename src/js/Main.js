@@ -2,9 +2,9 @@ import {Entity} from 'Entity';
 import {Input} from 'Input';
 import {log} from 'Log';
 import {loadResources, resources} from 'Loader';
-import {ScriptObject} from 'ScriptObject';
+// import {InputScript} from 'Scripts/InputScript';
 import {EventManager} from 'EventManager';
-// import {Scripts} from 'Scripts/Scripts';
+import {Scripts} from 'Scripts/Scripts';
 
 // NOTE: This compiles cfg file into the compiled main.js file at compile time.
 import cfg from 'config.json';
@@ -19,7 +19,7 @@ redOpt.resolution = window.devicePixelRatio || 1;
 const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.y, redOpt);
 
 // Stage
-const stage = new Entity();
+let stage = new Entity();
 let testEntity;
 
 // Times
@@ -38,6 +38,7 @@ function main () {
 function initReady(){
   log.info("Initialization ready!");
   log.debug(resources);
+
   debugInit();
   requestAnimationFrame(loop);
 }
@@ -82,8 +83,8 @@ function debugInit() {
     }
   });
   log.debug(EventManager);
-  let testScriptObj = new ScriptObject({a: 'b', c: 'd'}, "inputScript");
-  log.debug(testScriptObj);
+  let testScript = new Scripts["inputScript"]({a: 'b', c: 'd'});
+  log.debug(testScript);
   stage.addChild(testEntity);
 }
 

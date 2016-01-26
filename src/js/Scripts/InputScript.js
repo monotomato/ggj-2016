@@ -1,12 +1,13 @@
 import {log} from "Log";
+import {Script} from "Script";
 
-var InputScript = {
-  update: (parameters, parent, entities, delta) => {
+class InputScript extends Script {
+  update(parent, rootEntity, delta) {
     log.debug("bar");
-  },
-  handleEvent: (parent, evt) => {},
-  eventTypes: ["collision_player"]
-};
+  }
+  handleGameEvent(parent, evt) {
+    log.debug("mmm");
+  }
+}
 
-
-export {InputScript as InputScript};
+export {InputScript};

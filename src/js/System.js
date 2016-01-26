@@ -6,14 +6,17 @@ class System {
       throw new TypeError("Cannot construct System instance directly");
     }
   }
-  update(entities, delta) {
-    entities.forEach((entity) => {
+  update(rootEntity, delta) {
+    rootEntity.children.forEach((entity) => {
       this.update(entity.children);
-      applySystem(entity, delta);
+      applySystem(entity, rootEntity, delta);
     });
   }
 
-  applySystem(entity, delta) {
+  applySystem(entity, rootEntity, delta) {
     log.warn("System apply not defined");
   }
 }
+
+
+export {System};
