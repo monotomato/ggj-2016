@@ -5,6 +5,7 @@ import {loadResources, resources} from 'Loader';
 // import {InputScript} from 'Scripts/InputScript';
 import {EventManager} from 'EventManager';
 import {Scripts} from 'Scripts/Scripts';
+import {Game} from 'Game';
 
 // NOTE: This compiles cfg file into the compiled main.js file at compile time.
 import cfg from 'config.json';
@@ -19,7 +20,7 @@ redOpt.resolution = window.devicePixelRatio || 1;
 const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.y, redOpt);
 
 // Stage
-let stage = new Entity();
+let game;
 let testEntity;
 
 // Times
@@ -27,7 +28,7 @@ const loopInterval = 1000 / cfg.fps;
 let lastFrame = 0;
 
 // Main entry
-function main () {
+function main() {
   log.test();
   log.info(`Target loop interval: ${loopInterval}`);
   document.body.appendChild(renderer.view);
@@ -35,20 +36,21 @@ function main () {
   loadResources(initReady);
 }
 
-function initReady(){
+function initReady() {
   log.info("Initialization ready!");
   log.debug(resources);
 
+  game = new Game();
   debugInit();
   requestAnimationFrame(loop);
 }
 
-function loop (ctime) {
+function loop(ctime) {
   const delta = ctime - lastFrame;
 
   if(ctime - lastFrame > loopInterval) {
     lastFrame = ctime;
-    update(delta, Input);
+    update(delta);
     draw();
     Input.update();
     EventManager.delegateEvents();
@@ -56,17 +58,18 @@ function loop (ctime) {
   requestAnimationFrame(loop);
 }
 
-function update (delta, input) {
+function update(delta) {
+  game.update(delta);
   debugUpdate();
 }
 
-function draw () {
-  renderer.render(stage);
+function draw() {
+  game.render(renderer);
 }
 
-function debugUpdate(){
-  if(Input.keyReleased.up){ testEntity.setSprite('debug_3');}
-  if(Input.keyReleased.down){ testEntity.setSprite('debug_1');}
+function debugUpdate() {
+  if (Input.keyReleased.up){ testEntity.setSprite('debug_3');}
+  if (Input.keyReleased.down){ testEntity.setSprite('debug_1');}
 }
 
 function debugInit() {
@@ -85,7 +88,7 @@ function debugInit() {
   log.debug(EventManager);
   let testScript = new Scripts["inputScript"]({a: 'b', c: 'd'});
   log.debug(testScript);
-  stage.addChild(testEntity);
+  // stage.addChild(testEntity);
 }
 
 function inputDemo() {

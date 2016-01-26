@@ -1,10 +1,13 @@
-import System from "System";
+import {System} from "System";
+import {log} from "Log";
 
 class ScriptSystem extends System {
   applySystem(entity, rootEntity, delta) {
-    entity.scripts.forEach((scriptObj) => {
-      scriptObj.run(entity, rootEntity, delta);
-    });
+    if (entity.scripts) {
+      entity.scripts.forEach((scriptObj) => {
+        scriptObj.update(entity, rootEntity, delta);
+      });
+    }
   }
 }
 

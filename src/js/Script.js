@@ -6,7 +6,7 @@ class Script {
     this.eventTypes =[];
   }
 
-  init() {}
+  init(rootEntity) {}
 
   update(parameters, parent, rootEntity, delta) {}
 

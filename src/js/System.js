@@ -1,16 +1,13 @@
 import {log} from "Log";
 
 class System {
-  constructor() {
-    if (new.target === System) {
-      throw new TypeError("Cannot construct System instance directly");
-    }
-  }
-  update(rootEntity, delta) {
-    rootEntity.children.forEach((entity) => {
-      this.update(entity.children);
-      applySystem(entity, rootEntity, delta);
+  constructor() {}
+
+  update(entity, rootEntity, delta) {
+    entity.children.forEach((child) => {
+      this.update(child, rootEntity, delta);
     });
+    this.applySystem(entity, rootEntity, delta);
   }
 
   applySystem(entity, rootEntity, delta) {

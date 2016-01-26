@@ -1,6 +1,7 @@
 {
   "fps": 30,
   "logLevel": 0,
+  "debugMode":true,
   "renderer":{
     "options": {
       "antialias": true,

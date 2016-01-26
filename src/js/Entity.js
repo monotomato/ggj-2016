@@ -8,6 +8,7 @@ class Entity extends PIXI.Container {
     this.eventTypes = [];
     this.events = [];
     this.isActive = true;
+    this.scripts = [];
   }
 
   handleEvents() {

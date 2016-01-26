@@ -1,10 +1,13 @@
 import keycfg from 'keys.json';
 
-var keys = new Map( Object.keys(keycfg).map(key => {
+// TODO: Ensure input stays constant throughout game update. Keydown and keyup
+// events will trigger even when game is updating.
+
+const keys = new Map( Object.keys(keycfg).map(key => {
     return [keycfg[key], key];
   }));
 
-var Input = {
+const Input = {
   keyDown: {},        // Is key down
   keyPressed: {},     // Is key just pressed. True for one frame.
   keyReleased: {},    // Is key just released. True for one frame.
