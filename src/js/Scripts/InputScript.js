@@ -1,13 +1,13 @@
-import {log} from "Log";
-import {Script} from "Script";
-import {InputMan as Input} from "Managers/InputManager";
-import {EventMan} from "Managers/EventManager";
+import {log} from 'Log';
+import {Script} from 'Script';
+import {InputMan as Input} from 'Managers/InputManager';
+import {EventMan} from 'Managers/EventManager';
 
 class InputScript extends Script {
   constructor(parameters) {
     super(parameters);
     this.eventTypes.push(
-      "input_test"
+      'input_test'
     );
   }
   update(parent, rootEntity, delta) {
@@ -24,7 +24,7 @@ class InputScript extends Script {
       parent.position.x += 1;
     }
     if(Input.keyPressed.right) {
-      EventMan.publish({ eventType: "audio", parameters: { audio:"audio_hit_noise"}});
+      EventMan.publish({ eventType: 'audio', parameters: { audio:'audio_hit_noise'}});
     }
   }
 

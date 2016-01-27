@@ -1,16 +1,16 @@
-import {log} from "Log";
-import {ScriptSystem} from "Systems/ScriptSystem";
-import {EventSystem} from "Systems/EventSystem";
-import {Entity} from "Entity";
-import {Scripts} from "Scripts/Scripts";
-import {EventMan} from "Managers/EventManager";
-import {resources} from "Managers/ResourceManager";
+import {log} from 'Log';
+import {ScriptSystem} from 'Systems/ScriptSystem';
+import {EventSystem} from 'Systems/EventSystem';
+import {Entity} from 'Entity';
+import {Scripts} from 'Scripts/Scripts';
+import {EventMan} from 'Managers/EventManager';
+import {resources} from 'Managers/ResourceManager';
 import cfg from 'config.json';
 
 class Game {
   constructor() {
     this.stage = new Entity();
-    this.ui = new Entity(); //new Entity("entity_ui");
+    this.ui = new Entity(); //new Entity('entity_ui');
     this.stage.addChild(this.ui);
     this.world = new Entity();
     this.stage.addChild(this.world);

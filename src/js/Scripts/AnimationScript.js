@@ -1,20 +1,20 @@
-import {log} from "Log";
-import {Script} from "Script";
-import {InputMan as Input} from "Managers/InputManager";
-import {EventMan} from "Managers/EventManager";
+import {log} from 'Log';
+import {Script} from 'Script';
+import {InputMan as Input} from 'Managers/InputManager';
+import {EventMan} from 'Managers/EventManager';
 
 class AnimationScript extends Script {
   constructor(parameters) {
     super(parameters);
     this.eventTypes.push(
-      "animation_test"
+      'animation_test'
     );
     this.timeAtCurrentFrame = -1;
     this.currentFrame = 0;
   }
 
   init(rootEntity) {
-    log.debug("anim script init");
+    log.debug('anim script init');
   }
 
   update(parent, rootEntity, delta) {
@@ -33,12 +33,12 @@ class AnimationScript extends Script {
         this.timeAtCurrentFrame += delta;
       }
     } else{
-      log.warn("Animation script needs animation component to work");
+      log.warn('Animation script needs animation component to work');
     }
   }
 
   handleGameEvent(parent, evt) {
-    log.debug("Anim script: " + evt.parameters.message);
+    log.debug('Anim script: ' + evt.parameters.message);
   }
 }
 

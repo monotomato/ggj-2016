@@ -1,4 +1,7 @@
 {
-  "esnext": true,
-  "moz": true
+  "esnext"        : true,
+  "moz"           : true,
+  "latedef"       : false,
+  "quotmark"      : "single",
+  "browserify"    : true
 }

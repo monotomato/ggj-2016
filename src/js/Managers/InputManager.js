@@ -1,5 +1,5 @@
 import keycfg from 'keys.json';
-import {Manager} from "Manager";
+import {Manager} from 'Manager';
 
 class InputManager extends Manager {
   constructor(){
@@ -16,10 +16,10 @@ class InputManager extends Manager {
           return [keycfg[key], key];
         }));
 
-      window.addEventListener("keydown", (e) => this.setKeyState(e, true), false);
-      window.addEventListener("keyup", (e) => this.setKeyState(e, false), false);
+      window.addEventListener('keydown', (e) => this.setKeyState(e, true), false);
+      window.addEventListener('keyup', (e) => this.setKeyState(e, false), false);
 
-      resolve("Input manager init done!");
+      resolve('Input manager init done!');
 
     });
 
@@ -29,6 +29,7 @@ class InputManager extends Manager {
   setKeyState(ev, state) {
     const code = ev.which;
     const key = this.keys.get(code);
+    if(key) ev.preventDefault();
     if( this.keyDown[key] != state ) {
       this.keyDown[key] = state;
       if(state){
@@ -40,8 +41,8 @@ class InputManager extends Manager {
   }
 
   update(){
-    // TODO: Ensure input stays constant throughout game update. Keydown and keyup
-    // events will trigger even when game is updating.
+    /*TODO: Ensure input stays constant throughout game update.
+    Keydown and keyup events will trigger even when game is updating.*/
     this.keyPressed = {};
     this.keyReleased = {};
   }

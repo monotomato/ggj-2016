@@ -22,7 +22,7 @@ class Entity extends PIXI.Container {
     this.events = [];
   }
 
-  // TODO: remove duplicate event types (keep only topmost)
+  // TODO: Remove duplicate event types (keep only topmost)
   addScript(scriptName, parameters) {
     let script = new Scripts[scriptName](parameters);
     this.scripts.push(script);

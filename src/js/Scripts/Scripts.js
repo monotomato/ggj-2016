@@ -1,5 +1,5 @@
-import {InputScript} from "./InputScript";
-import {AnimationScript} from "./AnimationScript";
+import {InputScript} from './InputScript';
+import {AnimationScript} from './AnimationScript';
 
 const scripts = {
   inputScript: InputScript,

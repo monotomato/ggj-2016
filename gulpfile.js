@@ -1,4 +1,4 @@
-"use_strict";
+'use_strict';
 
 var gulp = require('gulp');
 var rename = require('gulp-rename');
@@ -42,7 +42,7 @@ var resPath = ['./res/**/*.*', '!**/sprite/**/*.png', '!**/sounds/**/*.*',];
 
 var jsPaths = ['./src/','./src/js'];
 
-gulp.task('res', ['sprite', 'res-copy', 'res-list']);
+gulp.task('res', ['sprite', 'res-copy', 'res-list', 'audiosprite']);
 
 gulp.task('res-list', function(){
   gulp.src(resPath)
@@ -77,7 +77,7 @@ gulp.task('audiosprite', function() {
       format: 'howler',
       output: 'sounds',
       channels: 2,
-      export:	"ogg",
+      export:	'ogg',
       gap: 0.1 // seconds
     }))
     .pipe(gulp.dest('build/res/sounds'));

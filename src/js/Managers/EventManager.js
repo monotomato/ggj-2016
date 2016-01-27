@@ -1,5 +1,5 @@
-import {log} from "Log";
-import {Manager} from "Manager";
+import {log} from 'Log';
+import {Manager} from 'Manager';
 
 class EventManager extends Manager{
   constructor() {
@@ -11,7 +11,7 @@ class EventManager extends Manager{
     this.events = [];
   }
 
-  // TODO: Untested
+  // TODO: Test optimizeEventTypes method
   optimizeEventTypes(eventTypes) {
     let results = [];
     if (eventTypes.length > 0) {

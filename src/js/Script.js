@@ -1,4 +1,4 @@
-import {log} from "Log";
+import {log} from 'Log';
 
 class Script {
   constructor(parameters) {
@@ -11,7 +11,7 @@ class Script {
   update(parameters, parent, rootEntity, delta) {}
 
   handleGameEvent(parent, evt) {
-    log.debug("This shouldn't print");
+    log.debug('This shouldn\'t print');
   }
 }
 

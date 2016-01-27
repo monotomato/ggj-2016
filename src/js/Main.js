@@ -22,8 +22,7 @@ redOpt.resolution = window.devicePixelRatio || 1;
 const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.y, redOpt);
 
 // Managers
-// TODO: Figure out way to prioritize manager init. Now resman init is called before
-// anything else manually. Luckily, resman does not need to update itself.
+/* TODO: Figure out way to prioritize manager init. Now resman init is called before anything else manually. Luckily, resman does not need to update itself. */
 const managers = [
   InputMan,
   EventMan,
@@ -59,7 +58,7 @@ function main() {
 }
 
 function initReady() {
-  log.info("Initialization ready!");
+  log.info('Initialization ready!');
   log.debug(ResourceMan);
   game = new Game();
 

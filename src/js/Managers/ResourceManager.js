@@ -1,6 +1,6 @@
 import {log} from 'Log';
 import cfg from 'config.json';
-import {Manager} from "Manager";
+import {Manager} from 'Manager';
 
 class ResourceManager extends Manager {
 
@@ -12,15 +12,13 @@ class ResourceManager extends Manager {
   }
 
   init(){
-    // TODO: Load resources
-
     const promise = new Promise((resolve, reject) => {
       const ready = () => {
-        resolve("Resource manager init done!");
+        resolve('Resource manager init done!');
       };
 
       const error = () => {
-        reject("Resource manager init ERROR!");
+        reject('Resource manager init ERROR!');
       };
       const filelistLoader = new PIXI.loaders.Loader();
 
