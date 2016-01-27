@@ -8,7 +8,7 @@ class ResourceManager extends Manager {
     super();
     this.loadBarLen = 10;
     this.loader = PIXI.loader;
-    this.resources = loader.resources;
+    this.resources = this.loader.resources;
   }
 
   init(){
@@ -61,57 +61,13 @@ class ResourceManager extends Manager {
 
   loadProgress(ldr, res, header){
     let p = ldr.progress;
-    let ready = Math.floor(loadBarLen * (Math.floor(p) / 100));
-    let i = '='.repeat(ready) + ' '.repeat(loadBarLen - ready);
+    let ready = Math.floor(this.loadBarLen * (Math.floor(p) / 100));
+    let i = '='.repeat(ready) + ' '.repeat(this.loadBarLen - ready);
     let str = `${header} progress [${i}] ${Math.floor(p)}%`;
     log.info(str);
   }
 
 }
-
-const loader = PIXI.loader;
-const resources = loader.resources;
-const loadBarLen = 10;
-let callback;
-//
-// function load(_callback) {
-//   callback = _callback;
-//   let filelistLoader = new PIXI.loaders.Loader(); // you can also create your own if you want
-//
-//   Object.keys(cfg.resourceLists).forEach(key => {
-//     filelistLoader.add(cfg.resourceLists[key]);
-//   });
-//
-//   filelistLoader.on('progress', (a,b) => loadProgress(a,b,'Filelist'));
-//   filelistLoader.once('complete',loadRes);
-//   filelistLoader.load();
-// }
-//
-// function loadRes(ldr, res){
-//   log.debug(res);
-//
-//   Object.keys(res).forEach(key => {
-//     res[key].data.forEach(path => {
-//       loader.add(getName(path), path);
-//     });
-//   });
-//
-//   cfg.staticResources.forEach( path => {
-//     loader.add(getName(path), path);
-//   });
-//
-//   loader.on('progress', (a,b) => loadProgress(a,b,'Resource'));
-//   loader.once('complete', loaded);
-//   loader.load();
-// }
-//
-// function loadProgress(ldr, res, header){
-//   let p = ldr.progress;
-//   let ready = Math.floor(loadBarLen * (Math.floor(p) / 100));
-//   let i = '='.repeat(ready) + ' '.repeat(loadBarLen - ready);
-//   let str = `${header} progress [${i}] ${Math.floor(p)}%`;
-//   log.info(str);
-// }
 
 const ResourceMan = new ResourceManager();
 const res = ResourceMan.resources;
