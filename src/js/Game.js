@@ -27,10 +27,6 @@ class Game {
 
   debugConstructor() {
     let testEntity = Entity.fromConfig('entity_player');
-    testEntity.setSprite('debug_2');
-    testEntity.addScript("inputScript", {a: 'b', c: 'd'});
-    testEntity.eventTypes.push("foo_bar_baz");
-    log.debug(testEntity);
     this.addEntityToWorld(testEntity);
   }
 

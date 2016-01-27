@@ -69,6 +69,13 @@ class Entity extends PIXI.Container {
       ent[key] = resources[compConf[key]].data;
     });
 
+    const scriptConf = config.scripts;
+    scriptConf.forEach(conf => {
+      const name = conf.name;
+      const params = conf.parameters || {};
+      ent.addScript(name, params);
+    });
+
     return ent;
   }
 }

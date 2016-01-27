@@ -13,12 +13,6 @@ class InputScript extends Script {
   update(parent, rootEntity, delta) {
     if (Input.keyDown.up) {
       parent.position.y -= 1;
-      EventMan.publish({
-        eventType: "input_test",
-        parameters: {
-          message:"MOVING UP!"
-        }
-      });
     }
     if (Input.keyDown.down) {
       parent.position.y += 1;

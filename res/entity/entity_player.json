@@ -8,5 +8,19 @@
       "x":50,
       "y":50
     }
-  }
+  },
+  "scripts":[
+    {
+      "name" : "inputScript",
+      "parameters":{
+        "inputTestParam":100
+      }
+    },
+    {
+      "name" : "animationScript",
+      "parameters":{
+        "animTestParam": 100
+      }
+    }
+  ]
 }

@@ -1,10 +1,9 @@
 import {InputScript} from "./InputScript";
+import {AnimationScript} from "./AnimationScript";
 
 const scripts = {
-  hello: "world",
-  inputScript: InputScript
-  // input: InputScript,
-  // Here is all scripts!
+  inputScript: InputScript,
+  animationScript: AnimationScript
 };
 
 export {scripts as Scripts};
