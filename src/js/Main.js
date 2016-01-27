@@ -41,7 +41,7 @@ function initReady() {
   log.debug(resources);
 
   game = new Game();
-  debugInit();
+  // debugInit();
   requestAnimationFrame(loop);
 }
 
@@ -60,7 +60,7 @@ function loop(ctime) {
 
 function update(delta) {
   game.update(delta);
-  debugUpdate();
+  // debugUpdate();
 }
 
 function draw() {

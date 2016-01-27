@@ -1,5 +1,7 @@
 import {resources} from 'Loader';
 import {log} from 'Log';
+import {Input} from 'Input';
+import {Scripts} from 'Scripts/Scripts';
 
 class Entity extends PIXI.Container {
 
@@ -12,15 +14,44 @@ class Entity extends PIXI.Container {
   }
 
   handleEvents() {
-    this.events.forEach((event) => {
-      // Do stuff
+    this.events.forEach((evt) => {
+      this.scripts.forEach((script) => {
+        script.handleGameEvent(this, evt);
+      });
     });
-    this.events.clear();
+    this.events = [];
   }
 
-  addEvent(event) {
-    log.debug(event);
-    this.events.push(event);
+  // optimizeEventTypes() {
+  //   let results = [];
+  //   if (this.eventTypes.length > 0) {
+  //     let sorted = this.eventTypes.sort();
+  //     let check = sorted[0];
+  //     for (let i = 1; i < sorted.length; i++) {
+  //       let other = sorted[i];
+  //       if ()
+  //     }
+  //   }
+  //   return results;
+  // }
+
+  // TODO: remove duplicate event types (keep only topmost)
+  addScript(scriptName, parameters) {
+    let script = new Scripts[scriptName](parameters);
+    this.scripts.push(script);
+    let eventTypes = script.eventTypes;
+    eventTypes.forEach((eventType) => {
+      if (this.eventTypes.find(t => eventType === t)) {
+        this.eventTypes.push(eventType);
+      } else {
+        this.eventTypes.push(eventType);
+      }
+    });
+  }
+
+  addEvent(evt) {
+    this.events.push(evt);
+    // if (this.gameEvents.length > 0) log.debug(this.gameEvents);
   }
 
   setSprite(spriteName){

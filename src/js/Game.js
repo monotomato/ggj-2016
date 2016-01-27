@@ -1,7 +1,9 @@
 import {log} from "Log";
 import {ScriptSystem} from "Systems/ScriptSystem";
+import {EventSystem} from "Systems/EventSystem";
 import {Entity} from "Entity";
 import {Scripts} from "Scripts/Scripts";
+import {EventManager} from "EventManager";
 import cfg from 'config.json';
 
 class Game {
@@ -16,15 +18,24 @@ class Game {
     let scriptSystem = new ScriptSystem();
     this.systems.push(scriptSystem);
 
+    let eventSystem = new EventSystem();
+    this.systems.push(eventSystem);
+
     if (cfg.debugMode) this.debugConstructor();
   }
 
   debugConstructor() {
     let testEntity = Entity.fromConfig('entity_player');
     testEntity.setSprite('debug_2');
-    let testScript = new Scripts["inputScript"]({a: 'b', c: 'd'});
-    testEntity.scripts.push(testScript);
-    this.world.addChild(testEntity);
+    testEntity.addScript("inputScript", {a: 'b', c: 'd'});
+    testEntity.eventTypes.push("foo_bar_baz");
+    log.debug(testEntity);
+    this.addEntityToWorld(testEntity);
+  }
+
+  addEntityToWorld(entity) {
+    EventManager.registerListener(entity);
+    this.world.addChild(entity);
   }
 
   update(delta) {

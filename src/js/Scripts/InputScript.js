@@ -4,20 +4,34 @@ import {Input} from "Input";
 import {EventManager} from "EventManager";
 
 class InputScript extends Script {
+  constructor(parameters) {
+    super(parameters);
+    this.eventTypes.push(
+      "input_test"
+    );
+  }
   update(parent, rootEntity, delta) {
-    if (Input.keyPressed.up) {
-      log.debug("up");
+    if (Input.keyDown.up) {
+      parent.position.y -= 1;
       EventManager.publish({
-        eventType: "foo_bar_baz",
+        eventType: "input_test",
         parameters: {
-          "junk":100
+          message:"MOVING UP!"
         }
       });
     }
+    if (Input.keyDown.down) {
+      parent.position.y += 1;
+    }
+    if (Input.keyDown.left) {
+      parent.position.x -= 1;
+    }
+    if (Input.keyDown.right) {
+      parent.position.x += 1;
+    }
   }
   handleGameEvent(parent, evt) {
-    log.debug("mmm");
-    log.debug(evt);
+    log.debug(evt.parameters.message);
   }
 }
 
