@@ -17,5 +17,8 @@
   ],
   "staticResources":[
     "res/sprite/sprite.json"
+  ],
+  "audioResources":[
+    "res/sounds/sounds.json"
   ]
 }

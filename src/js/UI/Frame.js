@@ -1,4 +1,4 @@
-import {resources} from 'Loader';
+import {resources} from 'Managers/ResourceManager';
 
 class UIFrame extends Container {
   constructor(

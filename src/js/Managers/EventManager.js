@@ -1,7 +1,10 @@
 import {log} from "Log";
+import {Manager} from "Manager";
 
-class EventManagerClass {
+class EventManager extends Manager{
   constructor() {
+    super();
+
     this.listeners = {
       listeners: []
     };
@@ -29,6 +32,10 @@ class EventManagerClass {
     this.events.push(event);
   }
 
+  update(){
+    this.delegateEvents();
+  }
+
   delegateEvents() {
     this.events.forEach((event) => {
       let eventType = event.eventType;
@@ -53,6 +60,6 @@ class EventManagerClass {
   }
 }
 
-const EventManager = new EventManagerClass();
+const EventMan = new EventManager();
 
-export {EventManager};
+export {EventMan};

@@ -17,6 +17,7 @@ var browserSync = require('browser-sync');
 var spritesmith = require('gulp.spritesmith');
 var sprite_texturepacker = require('./gulp/spritejsonformat.js');
 var filelist = require('gulp-filelist');
+var audiosprite = require('gulp-audiosprite');
 
 var reload = browserSync.reload;
 
@@ -30,7 +31,14 @@ var config = {
   outputFile: 'main.js'
 };
 
-var resPath = ['./res/**/*.*', '!**/sprite/**/*.png'];
+var genNote = {
+    js: '// NOTE: This file has been generated automatically\n',
+    html: '<!-- NOTE: This file has been generated automatically -->\n'
+};
+
+// Paths to all resources that are copied and loaded with resman
+// No sprites or audio. They are loaded differently.
+var resPath = ['./res/**/*.*', '!**/sprite/**/*.png', '!**/sounds/**/*.*',];
 
 var jsPaths = ['./src/','./src/js'];
 
@@ -63,10 +71,17 @@ gulp.task('sprite', function(){
     .pipe(gulp.dest( 'build/res/sprite/' ));
 });
 
-var genNote = {
-    js: '// NOTE: This file has been generated automatically\n',
-    html: '<!-- NOTE: This file has been generated automatically -->\n'
-};
+gulp.task('audiosprite', function() {
+  gulp.src('res/sounds/*.wav')
+    .pipe(audiosprite({
+      format: 'howler',
+      output: 'sounds',
+      channels: 2,
+      export:	"ogg",
+      gap: 0.1 // seconds
+    }))
+    .pipe(gulp.dest('build/res/sounds'));
+});
 
 gulp.task('html', function() {
   gulp.src('./index.tpl.html')

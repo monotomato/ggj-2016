@@ -1,6 +1,6 @@
-import {resources} from 'Loader';
+import {resources} from 'Managers/ResourceManager';
 import {log} from 'Log';
-import {Input} from 'Input';
+import {InputMan} from 'Managers/InputManager';
 import {Scripts} from 'Scripts/Scripts';
 
 class Entity extends PIXI.Container {

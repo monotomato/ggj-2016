@@ -3,7 +3,8 @@ import {ScriptSystem} from "Systems/ScriptSystem";
 import {EventSystem} from "Systems/EventSystem";
 import {Entity} from "Entity";
 import {Scripts} from "Scripts/Scripts";
-import {EventManager} from "EventManager";
+import {EventMan} from "Managers/EventManager";
+import {resources} from "Managers/ResourceManager";
 import cfg from 'config.json';
 
 class Game {
@@ -34,7 +35,7 @@ class Game {
   }
 
   addEntityToWorld(entity) {
-    EventManager.registerListener(entity);
+    EventMan.registerListener(entity);
     this.world.addChild(entity);
   }
 

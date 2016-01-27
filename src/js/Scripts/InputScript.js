@@ -1,7 +1,7 @@
 import {log} from "Log";
 import {Script} from "Script";
-import {Input} from "Input";
-import {EventManager} from "EventManager";
+import {InputMan as Input} from "Managers/InputManager";
+import {EventMan} from "Managers/EventManager";
 
 class InputScript extends Script {
   constructor(parameters) {
@@ -13,7 +13,7 @@ class InputScript extends Script {
   update(parent, rootEntity, delta) {
     if (Input.keyDown.up) {
       parent.position.y -= 1;
-      EventManager.publish({
+      EventMan.publish({
         eventType: "input_test",
         parameters: {
           message:"MOVING UP!"
