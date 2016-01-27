@@ -22,30 +22,13 @@ class Entity extends PIXI.Container {
     this.events = [];
   }
 
-  // optimizeEventTypes() {
-  //   let results = [];
-  //   if (this.eventTypes.length > 0) {
-  //     let sorted = this.eventTypes.sort();
-  //     let check = sorted[0];
-  //     for (let i = 1; i < sorted.length; i++) {
-  //       let other = sorted[i];
-  //       if ()
-  //     }
-  //   }
-  //   return results;
-  // }
-
   // TODO: remove duplicate event types (keep only topmost)
   addScript(scriptName, parameters) {
     let script = new Scripts[scriptName](parameters);
     this.scripts.push(script);
     let eventTypes = script.eventTypes;
     eventTypes.forEach((eventType) => {
-      if (this.eventTypes.find(t => eventType === t)) {
-        this.eventTypes.push(eventType);
-      } else {
-        this.eventTypes.push(eventType);
-      }
+      this.eventTypes.push(eventType);
     });
   }
 
