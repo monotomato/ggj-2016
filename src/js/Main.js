@@ -38,15 +38,13 @@ let lastFrame = 0;
 
 // Main entry
 function main() {
-  log.test();
-  log.info(`Target loop interval: ${loopInterval}`);
+  log.info(`Target fps: ${cfg.fps}`);
   document.body.appendChild(renderer.view);
 
   ResourceMan.init().then(() => {
     const manPromises = managers.map(man => man.init());
-    log.debug(manPromises);
-    Promise.all(manPromises).then(function(values) {
 
+    Promise.all(manPromises).then(function(values) {
       managers.forEach(man =>{
         EventMan.registerListener(man);
       });
@@ -59,9 +57,7 @@ function main() {
 
 function initReady() {
   log.info('Initialization ready!');
-  log.debug(ResourceMan);
   game = new Game();
-
   requestAnimationFrame(loop);
 }
 

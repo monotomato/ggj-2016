@@ -13,6 +13,7 @@ class Entity extends PIXI.Container {
     this.scripts = [];
   }
 
+  // TODO: Check if event is relevant to the script.
   handleEvents() {
     this.events.forEach((evt) => {
       this.scripts.forEach((script) => {
@@ -34,7 +35,6 @@ class Entity extends PIXI.Container {
 
   addEvent(evt) {
     this.events.push(evt);
-    // if (this.gameEvents.length > 0) log.debug(this.gameEvents);
   }
 
   setSprite(spriteName){

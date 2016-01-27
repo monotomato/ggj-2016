@@ -77,7 +77,7 @@ gulp.task('audiosprite', function() {
       format: 'howler',
       output: 'sounds',
       channels: 2,
-      export:	'ogg',
+      export:	'ogg,mp3',
       gap: 0.1 // seconds
     }))
     .pipe(gulp.dest('build/res/sounds'));

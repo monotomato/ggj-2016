@@ -62,13 +62,15 @@ class EventManager extends Manager{
       let s = eventType.split('_');
       let root = this.listeners;
       root.listeners.forEach((listener) => listener.addEvent(event));
+
+      const addEvent = (listener) => listener.addEvent(event);
       for (let i = 0; i < s.length; i++) {
         let key = s[i];
         if (!root[key]) {
           break;
         }
         root = root[key];
-        root.listeners.forEach((listener) => listener.addEvent(event));
+        root.listeners.forEach(addEvent);
       }
     });
     this.events = [];

@@ -28,8 +28,8 @@ class ResourceManager extends Manager {
 
       filelistLoader.on('progress', (a,b) => this.loadProgress(a,b,'Filelist'));
       filelistLoader.on('error', error);
+      
       filelistLoader.once('complete', (ldr, res) => {
-        log.debug(res);
 
         Object.keys(res).forEach(key => {
           res[key].data.forEach(path => {

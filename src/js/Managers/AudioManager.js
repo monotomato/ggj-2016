@@ -18,8 +18,6 @@ class AudioManager extends Manager {
       };
       // Paths are just filenames. This adds rest of the path
       let fixedUrls = soundConfig.urls.map((e) => 'res/sounds/' + e);
-      log.debug(soundConfig);
-
       this.howl = new Howl({
         src: fixedUrls,
         sprite: soundConfig.sprite,
@@ -34,6 +32,7 @@ class AudioManager extends Manager {
 
   handleSingleEvent(evt) {
     let spriteName = evt.parameters.audio;
+
     this.howl.play(spriteName);
   }
 
