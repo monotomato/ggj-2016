@@ -45,16 +45,26 @@ function initReady() {
   requestAnimationFrame(loop);
 }
 
+let delta = 0;
 function loop(ctime) {
-  const delta = ctime - lastFrame;
+  delta += ctime - lastFrame;
 
-  if(ctime - lastFrame > loopInterval) {
-    lastFrame = ctime;
-    update(delta);
+  while (delta > loopInterval) {
+    update(loopInterval);
+    delta -= loopInterval;
     draw();
     Input.update();
     EventManager.delegateEvents();
   }
+  lastFrame = ctime;
+
+  // if(ctime - lastFrame > loopInterval) {
+  //   lastFrame = ctime;
+  //   update(delta);
+  //   draw();
+  //   Input.update();
+  //   EventManager.delegateEvents();
+  // }
   requestAnimationFrame(loop);
 }
 

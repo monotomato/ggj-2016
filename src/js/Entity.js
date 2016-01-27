@@ -34,15 +34,26 @@ class Entity extends PIXI.Container {
 
   addEvent(evt) {
     this.events.push(evt);
-    // if (this.gameEvents.length > 0) log.debug(this.gameEvents);
   }
 
   setSprite(spriteName){
     if(!this.sprite){
       this.sprite = new PIXI.Sprite();
+      this.sprite.anchor = {
+        x: 0.5,
+        y: 0.5
+      };
       this.addChild(this.sprite);
     }
     this.sprite.texture = resources.sprite.textures[spriteName];
+  }
+
+  // https://github.com/wellcaffeinated/PhysicsJS/wiki/Fundamentals#the-factory-pattern
+  addPhysics(bodyType, options = {}) {
+    this.physics = {
+      inWorld: false,
+      body: Physics.body(bodyType, options)
+    };
   }
 
   /*

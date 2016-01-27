@@ -1,5 +1,5 @@
 {
-  "fps": 30,
+  "fps": 60,
   "logLevel": 0,
   "debugMode":true,
   "renderer":{
@@ -8,8 +8,8 @@
       "transparent": false
     },
     "size":{
-      "x":384,
-      "y":216
+      "x":640,
+      "y":480
     }
   },
   "resourceLists":[

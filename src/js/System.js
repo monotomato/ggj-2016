@@ -3,9 +3,9 @@ import {log} from "Log";
 class System {
   constructor() {}
 
-  update(entity, rootEntity, delta) {
+  updateEntities(entity, rootEntity, delta) {
     entity.children.forEach((child) => {
-      this.update(child, rootEntity, delta);
+      this.updateEntities(child, rootEntity, delta);
     });
     this.applySystem(entity, rootEntity, delta);
   }
@@ -13,6 +13,14 @@ class System {
   applySystem(entity, rootEntity, delta) {
     log.warn("System apply not defined");
   }
+
+  updateSystem(rootEntity, delta) {}
+
+  update(rootEntity, delta) {
+    this.updateSystem(rootEntity, delta);
+    this.updateEntities(rootEntity, rootEntity, delta);
+  }
+
 }
 
 

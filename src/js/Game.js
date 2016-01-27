@@ -1,6 +1,7 @@
 import {log} from "Log";
 import {ScriptSystem} from "Systems/ScriptSystem";
 import {EventSystem} from "Systems/EventSystem";
+import {PhysicsSystem} from "Systems/PhysicsSystem";
 import {Entity} from "Entity";
 import {Scripts} from "Scripts/Scripts";
 import {EventManager} from "EventManager";
@@ -21,6 +22,9 @@ class Game {
     let eventSystem = new EventSystem();
     this.systems.push(eventSystem);
 
+    let physicsSystem = new PhysicsSystem();
+    this.systems.push(physicsSystem);
+
     if (cfg.debugMode) this.debugConstructor();
   }
 
@@ -28,7 +32,13 @@ class Game {
     let testEntity = Entity.fromConfig('entity_player');
     testEntity.setSprite('debug_2');
     testEntity.addScript("inputScript", {a: 'b', c: 'd'});
-    testEntity.eventTypes.push("foo_bar_baz");
+    testEntity.addPhysics('rectangle', {
+      x: 0,
+      y: 0,
+      vx: 0.01,
+      width: 64,
+      height: 64
+    });
     log.debug(testEntity);
     this.addEntityToWorld(testEntity);
   }
@@ -40,7 +50,7 @@ class Game {
 
   update(delta) {
     this.systems.forEach((system) => {
-      system.update(this.world, this.world, delta);
+      system.update(this.world, delta);
     });
   }
 
