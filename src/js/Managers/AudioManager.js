@@ -10,26 +10,32 @@ class AudioManager extends Manager {
   }
 
   init() {
-    //TODO: Load audio files
-
+    //TODO: Support multiple audio configs if needed. Now supports only one
     const promise = new Promise((resolve, reject) => {
-      // this.howl = new Howl();
-      resolve("Audio manager init done!");
+      let soundConfig = resources.sounds.data;
+
+      let ready = function(){
+        resolve("Audio manager init done!");
+      };
+      // Paths are just filenames. This adds rest of the path
+      let fixedUrls = soundConfig.urls.map((e) => 'res/sounds/' + e);
+      log.debug(soundConfig);
+
+      this.howl = new Howl({
+        src: fixedUrls,
+        sprite: soundConfig.sprite,
+        // html5: true, // NOTE: Might be unsupported. Causes ghost sounds :S
+        preload: true,
+        onload: ready // NOTE: If multiple audio files, this needs to be changed.
+      });
     });
 
     return promise;
   }
 
-  update() {
-    //TODO: Do audio stuff
-  }
-
-  handleEvents() {
-
-  }
-
-  addEvents() {
-
+  handleSingleEvent(evt) {
+    let spriteName = evt.parameters.audio;
+    this.howl.play(spriteName);
   }
 
 }

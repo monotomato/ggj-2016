@@ -22,8 +22,9 @@ redOpt.resolution = window.devicePixelRatio || 1;
 const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.y, redOpt);
 
 // Managers
+// TODO: Figure out way to prioritize manager init. Now resman init is called before
+// anything else manually. Luckily, resman does not need to update itself.
 const managers = [
-  ResourceMan,
   InputMan,
   EventMan,
   AudioMan
@@ -42,13 +43,19 @@ function main() {
   log.info(`Target loop interval: ${loopInterval}`);
   document.body.appendChild(renderer.view);
 
-  const manPromises = managers.map(man => man.init());
-  log.debug(manPromises);
+  ResourceMan.init().then(() => {
+    const manPromises = managers.map(man => man.init());
+    log.debug(manPromises);
+    Promise.all(manPromises).then(function(values) {
 
-  Promise.all(manPromises).then(function(values) {
-    // All manger inits are done, start the game!
-    initReady();
+      managers.forEach(man =>{
+        EventMan.registerListener(man);
+      });
+      // All manger inits are done, start the game!
+      initReady();
+    });
   });
+
 }
 
 function initReady() {

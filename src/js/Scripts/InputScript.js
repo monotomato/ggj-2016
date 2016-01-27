@@ -29,7 +29,11 @@ class InputScript extends Script {
     if (Input.keyDown.right) {
       parent.position.x += 1;
     }
+    if(Input.keyPressed.right) {
+      EventMan.publish({ eventType: "audio", parameters: { audio:"audio_hit_noise"}});
+    }
   }
+
   handleGameEvent(parent, evt) {
     log.debug(evt.parameters.message);
   }
