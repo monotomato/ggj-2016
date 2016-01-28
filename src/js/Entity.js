@@ -4,6 +4,12 @@ import {InputMan} from 'Managers/InputManager';
 import {Scripts} from 'Scripts/Scripts';
 
 class Entity extends PIXI.Container {
+  /* TODO: How (and when) initialize scripts? Need planning.
+  It cant be done at construction time, as script might need to find other entities.
+  How to control sctipt init and update order.
+  Could `components` be entirely scraped? Like unity, component data could be in scripts.
+  Would this be useful/easy/more convenient?
+  */
 
   constructor(data) {
     super();
