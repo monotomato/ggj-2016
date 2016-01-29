@@ -62,7 +62,15 @@ class Entity extends PIXI.Container {
       body: Physics.body(bodyType, options)
     };
   }
-
+  
+  addDebugGraphics(){
+    let body = this.physics.boby;
+    let graphics = new PIXI.Graphics();
+    graphics.beginFill('0xFF0000');
+    graphics.lineStyle(1, '0x00FF00');
+    graphics.drawRect(0, 0, body.width, body.height);
+    this.addChild(graphics);
+  }
   /*
     Unpacks entity from configuration file. Loads config
     Config format:
