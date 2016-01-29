@@ -31,11 +31,13 @@ class Game {
 
   debugConstructor() {
     let testEntity = Entity.fromConfig('entity_player');
-    this.loadMap('testmap');
+
     let testChest = Entity.fromConfig('entity_item_chest');
-    log.debug(testEntity);
-    this.addEntityToWorld(testEntity);
-    this.addEntityToWorld(testChest);
+    // log.debug(testEntity);
+    // this.addEntityToWorld(testEntity);
+    // this.addEntityToWorld(testChest);
+    this.addEntityToWorld(this.loadMap('testmap'));
+
   }
 
   addEntityToWorld(entity) {
@@ -58,13 +60,13 @@ class Game {
     resources[mapname].data.layers.forEach(layer => {
       let eLayer = new Entity();
       layer.objects.forEach(obj => {
-        let props = obj.properties;
-        let eObj = Entity.fromConfig(props.config);
+        let eObj = Entity.fromTiledObject(obj);
         eLayer.addChild(eObj);
       });
       eMap.addChild(eLayer);
     });
     log.debug(eMap);
+    return eMap;
   }
 
 }
