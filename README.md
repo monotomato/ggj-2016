@@ -3,12 +3,30 @@
 
 ## Usage ##
 
+### FFmpeg ###
+
+*Building the game sound files requires [FFmpeg](https://www.ffmpeg.org). Make sure it is installed before proceeding.*
+
+#### OS X ####
+
+`FFmpeg` and the `ogg` codecs can be installed using [`brew`](http://brew.sh):
+```unix
+$ brew install ffmpeg --with-theora --with-libogg --with-libvorbis
+```
+
+
+#### Windows ####
+
+> TODO
+
+### Building and running
+
 After [forking](https://guides.github.com/activities/forking/) the project, use the following commands to get started:
 
 ``` Bash
-$ npm init   # Initialize project
-$ gulp       # Cleans and builds app
-$ gulp watch # Starts test server and watches for changes
+$ npm install   # Initialize project
+$ gulp          # Cleans and builds app
+$ gulp watch    # Starts test server and watches for changes
 ```
 
 Your browser should then direct you to the correct address.
