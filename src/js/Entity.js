@@ -87,6 +87,9 @@ class Entity extends PIXI.Container {
       ent[key] = resources[compConf[key]].data;
     });
 
+    const physics = config.physics;
+    ent.addPhysics(physics.bodyType, physics.options);
+
     const scriptConf = config.scripts;
     scriptConf.forEach(conf => {
       const name = conf.name;
