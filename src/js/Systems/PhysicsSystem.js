@@ -12,7 +12,9 @@ class PhysicsSystem extends System {
       // maximum number of iterations per step
       maxIPF: maxIPF,
       // set the integrator (may also be set with world.add())
-      integrator: integrator
+      integrator: integrator,
+      //Nothing sleeps
+      sleepDisabled: true
     });
     if (cfg.debugMode) this.debug();
   }
@@ -25,8 +27,8 @@ class PhysicsSystem extends System {
 
     let edgeBounce = Physics.behavior('edge-collision-detection', {
         aabb: viewportBounds,
-        restitution: 0.2,
-        cof: 0.8
+        restitution: 0.0,
+        cof: 0.0
     });
 
     this.world.add(edgeBounce);
@@ -41,7 +43,7 @@ class PhysicsSystem extends System {
     if (entity.physics) {
       // Add the entity if it isn't in the world yet
       if (!entity.physics.inWorld) {
-        log.debug("Adding to world");
+        log.debug('Adding to world');
         this.world.add(entity.physics.body);
         entity.physics.inWorld = true;
         log.debug(entity.physics.body.state);

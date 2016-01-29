@@ -1,8 +1,8 @@
-import {InputScript} from './InputScript';
+import {MovementInputScript} from './MovementInputScript';
 import {AnimationScript} from './AnimationScript';
 
 const scripts = {
-  inputScript: InputScript,
+  movementInputScript: MovementInputScript,
   animationScript: AnimationScript
 };
 

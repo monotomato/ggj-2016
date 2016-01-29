@@ -32,17 +32,10 @@ class Game {
   debugConstructor() {
     let testEntity = Entity.fromConfig('entity_player');
     this.loadMap('testmap');
-    testEntity.addPhysics('rectangle', {
-      x: 0,
-      y: 0,
-      vx: 0.01,
-      width: 64,
-      height: 64
-    });
-
-
+    let testChest = Entity.fromConfig('entity_item_chest');
     log.debug(testEntity);
     this.addEntityToWorld(testEntity);
+    this.addEntityToWorld(testChest);
   }
 
   addEntityToWorld(entity) {
