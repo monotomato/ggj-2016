@@ -1,14 +1,17 @@
-import {log} from "Log";
+import {log} from 'Log';
+import {Manager} from 'Manager';
 
-class EventManagerClass {
+class EventManager extends Manager{
   constructor() {
+    super();
+
     this.listeners = {
       listeners: []
     };
     this.events = [];
   }
 
-  // TODO: Untested
+  // TODO: Test optimizeEventTypes method
   optimizeEventTypes(eventTypes) {
     let results = [];
     if (eventTypes.length > 0) {
@@ -49,19 +52,25 @@ class EventManagerClass {
     this.events.push(event);
   }
 
+  update(){
+    this.delegateEvents();
+  }
+
   delegateEvents() {
     this.events.forEach((event) => {
       let eventType = event.eventType;
       let s = eventType.split('_');
       let root = this.listeners;
       root.listeners.forEach((listener) => listener.addEvent(event));
+
+      const addEvent = (listener) => listener.addEvent(event);
       for (let i = 0; i < s.length; i++) {
         let key = s[i];
         if (!root[key]) {
           break;
         }
         root = root[key];
-        root.listeners.forEach((listener) => listener.addEvent(event));
+        root.listeners.forEach(addEvent);
       }
     });
     this.events = [];
@@ -73,6 +82,6 @@ class EventManagerClass {
   }
 }
 
-const EventManager = new EventManagerClass();
+const EventMan = new EventManager();
 
-export {EventManager};
+export {EventMan};

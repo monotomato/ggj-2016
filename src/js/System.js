@@ -1,4 +1,4 @@
-import {log} from "Log";
+import {log} from 'Log';
 
 class System {
   constructor() {}
@@ -11,7 +11,7 @@ class System {
   }
 
   applySystem(entity, rootEntity, delta) {
-    log.warn("System apply not defined");
+    log.warn('System apply not defined');
   }
 
   updateSystem(rootEntity, delta) {}

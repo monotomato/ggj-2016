@@ -33,7 +33,8 @@ $ gulp res     # Creates spritesheet and resource filelist. Copies all res to bu
 * Spritesheet `res/sprite.json` is manually defined in `src/config.json` file.
 * Json files in `/src` folder are injected into compiled code. Useful for stuff needed before init.
 * Json files in `/res` folder are copied to `/build/res` and loaded with `Loader.js` at init.
-
+#### New managers ####
+* All managers now extend common parent class.
 ## Naming Conventions ##
 
 | Resource  | Convention    | Notes            |

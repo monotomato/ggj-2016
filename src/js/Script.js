@@ -1,4 +1,4 @@
-import {log} from "Log";
+import {log} from 'Log';
 
 class Script {
   constructor(parameters) {
@@ -6,13 +6,12 @@ class Script {
     this.eventTypes = [];
   }
 
+  // TODO: Script initialization.
   init(rootEntity) {}
 
   update(parameters, parent, rootEntity, delta) {}
 
-  handleGameEvent(parent, evt) {
-    log.debug("This shouldn't print");
-  }
+  handleGameEvent(parent, evt) {}
 }
 
 export {Script};

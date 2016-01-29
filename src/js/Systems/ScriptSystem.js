@@ -1,5 +1,5 @@
-import {System} from "System";
-import {log} from "Log";
+import {System} from 'System';
+import {log} from 'Log';
 
 class ScriptSystem extends System {
   applySystem(entity, rootEntity, delta) {

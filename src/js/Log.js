@@ -27,10 +27,10 @@ const log = {
 };
 
 function test(){
-  log.debug("debug msg");
-  log.info("info msg");
-  log.warn("warn msg");
-  log.error("error msg");
-  log.fatal("fatal msg");
+  log.debug('debug msg');
+  log.info('info msg');
+  log.warn('warn msg');
+  log.error('error msg');
+  log.fatal('fatal msg');
 }
 export {log};

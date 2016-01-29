@@ -1,14 +1,16 @@
-import {Entity} from 'Entity';
-import {Input} from 'Input';
-import {log} from 'Log';
-import {loadResources, resources} from 'Loader';
-// import {InputScript} from 'Scripts/InputScript';
-import {EventManager} from 'EventManager';
-import {Scripts} from 'Scripts/Scripts';
-import {Game} from 'Game';
+import {InputMan} from 'Managers/InputManager';
+import {EventMan} from 'Managers/EventManager';
+import {AudioMan} from 'Managers/AudioManager';
+import {ResourceMan} from 'Managers/ResourceManager';
 
-// NOTE: This compiles cfg file into the compiled main.js file at compile time.
+import {resources} from 'Managers/ResourceManager';
+import {Scripts} from 'Scripts/Scripts';
+import {Entity} from 'Entity';
+import {Game} from 'Game';
+import {log} from 'Log';
+
 import cfg from 'config.json';
+
 
 // Pixi setup
 PIXI.utils._saidHello = true; // Keep console clean
@@ -19,9 +21,16 @@ const redOpt = cfg.renderer.options;
 redOpt.resolution = window.devicePixelRatio || 1;
 const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.y, redOpt);
 
+// Managers
+/* TODO: Figure out way to prioritize manager init. Now resman init is called before anything else manually. Luckily, resman does not need to update itself. */
+const managers = [
+  InputMan,
+  EventMan,
+  AudioMan
+];
+
 // Stage
 let game;
-let testEntity;
 
 // Times
 const loopInterval = 1000 / cfg.fps;
@@ -29,19 +38,26 @@ let lastFrame = 0;
 
 // Main entry
 function main() {
-  log.test();
-  log.info(`Target loop interval: ${loopInterval}`);
+  log.info(`Target fps: ${cfg.fps}`);
   document.body.appendChild(renderer.view);
-  // renderer.view.webkitRequestFullscreen();
-  loadResources(initReady);
+
+  ResourceMan.init().then(() => {
+    const manPromises = managers.map(man => man.init());
+
+    Promise.all(manPromises).then(function(values) {
+      managers.forEach(man =>{
+        EventMan.registerListener(man);
+      });
+      // All manger inits are done, start the game!
+      initReady();
+    });
+  });
+
 }
 
 function initReady() {
-  log.info("Initialization ready!");
-  log.debug(resources);
-
+  log.info('Initialization ready!');
   game = new Game();
-  // debugInit();
   requestAnimationFrame(loop);
 }
 
@@ -53,8 +69,9 @@ function loop(ctime) {
     update(loopInterval);
     delta -= loopInterval;
     draw();
-    Input.update();
-    EventManager.delegateEvents();
+    managers.forEach((man) => {
+      man.update();
+    });
   }
   lastFrame = ctime;
 
@@ -70,40 +87,10 @@ function loop(ctime) {
 
 function update(delta) {
   game.update(delta);
-  // debugUpdate();
 }
 
 function draw() {
   game.render(renderer);
 }
 
-function debugUpdate() {
-  if (Input.keyReleased.up){ testEntity.setSprite('debug_3');}
-  if (Input.keyReleased.down){ testEntity.setSprite('debug_1');}
-}
-
-function debugInit() {
-  testEntity = Entity.fromConfig('entity_player');
-  testEntity.setSprite('debug_2');
-  log.debug("TestEntity: ");
-  log.debug(testEntity);
-  testEntity.eventTypes.push('foo_bar_baz', 'plaa');
-  EventManager.registerListener(testEntity);
-  EventManager.publish({
-    eventType: 'foo_bar_baz',
-    parameters: {
-      hello: "world"
-    }
-  });
-  log.debug(EventManager);
-  let testScript = new Scripts["inputScript"]({a: 'b', c: 'd'});
-  log.debug(testScript);
-  // stage.addChild(testEntity);
-}
-
-function inputDemo() {
-  if(Input.keyPressed.down){ log.debug("Down just pressed!"); }
-  if(Input.keyReleased.up){ log.debug("Up just released!"); }
-  if(Input.keyDown.right){ log.debug("Right is down!"); }
-}
 main(); // Main entry

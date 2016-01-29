@@ -1,6 +1,6 @@
-import {resources} from 'Loader';
+import {resources} from 'Managers/ResourceManager';
 import {log} from 'Log';
-import {Input} from 'Input';
+import {InputMan} from 'Managers/InputManager';
 import {Scripts} from 'Scripts/Scripts';
 
 class Entity extends PIXI.Container {
@@ -13,6 +13,7 @@ class Entity extends PIXI.Container {
     this.scripts = [];
   }
 
+  // TODO: Check if event is relevant to the script.
   handleEvents() {
     this.events.forEach((evt) => {
       this.scripts.forEach((script) => {
@@ -22,7 +23,7 @@ class Entity extends PIXI.Container {
     this.events = [];
   }
 
-  // TODO: remove duplicate event types (keep only topmost)
+  // TODO: Remove duplicate event types (keep only topmost)
   addScript(scriptName, parameters) {
     let script = new Scripts[scriptName](parameters);
     this.scripts.push(script);
@@ -78,6 +79,13 @@ class Entity extends PIXI.Container {
     const compConf = config.component_configuration;
     Object.keys(compConf).forEach(key => {
       ent[key] = resources[compConf[key]].data;
+    });
+
+    const scriptConf = config.scripts;
+    scriptConf.forEach(conf => {
+      const name = conf.name;
+      const params = conf.parameters || {};
+      ent.addScript(name, params);
     });
 
     return ent;

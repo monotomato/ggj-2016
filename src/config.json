@@ -16,6 +16,10 @@
     "res/filelist.json"
   ],
   "staticResources":[
-    "res/sprite/sprite.json"
+    "res/sprite/sprite.json",
+    "res/sounds/sounds.json"
+  ],
+  "audioResources":[
+    "res/sounds/sounds.json"
   ]
 }

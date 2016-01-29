@@ -1,5 +1,5 @@
-import {System} from "System";
-import {log} from "Log";
+import {System} from 'System';
+import {log} from 'Log';
 
 class EventSystem extends System {
   applySystem(entity, rootEntity, delta) {
