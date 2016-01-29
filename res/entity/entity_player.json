@@ -3,17 +3,21 @@
     "animation": "anim_player_idle"
   },
   "component_data":{
-    "thisgoesstraighttoentity": "asdasd",
-    "position":{
-      "x":50,
-      "y":50
+    "tags": [
+      "player",
+      "villager"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
     }
   },
   "scripts":[
     {
-      "name" : "inputScript",
+      "name" : "movementInputScript",
       "parameters":{
-        "inputTestParam":100
+        "movementSpeed":0.5
       }
     },
     {

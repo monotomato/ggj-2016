@@ -3,7 +3,7 @@ import {Script} from 'Script';
 import {InputMan as Input} from 'Managers/InputManager';
 import {EventMan} from 'Managers/EventManager';
 
-class InputScript extends Script {
+class MovementInputScript extends Script {
   constructor(parameters) {
     super(parameters);
     this.eventTypes.push(
@@ -11,21 +11,14 @@ class InputScript extends Script {
     );
   }
   update(parent, rootEntity, delta) {
-    if (Input.keyDown.up) {
-      parent.position.y -= 1;
-    }
-    if (Input.keyDown.down) {
-      parent.position.y += 1;
-    }
+    let movement = 0;
     if (Input.keyDown.left) {
-      parent.position.x -= 1;
+      movement -= this.movementSpeed;
     }
     if (Input.keyDown.right) {
-      parent.position.x += 1;
+      movement += this.movementSpeed;
     }
-    if(Input.keyPressed.right) {
-      EventMan.publish({ eventType: 'audio', parameters: { audio:'audio_hit_noise'}});
-    }
+    parent.physics.body.state.vel.x = movement;
   }
 
   handleGameEvent(parent, evt) {
@@ -33,4 +26,4 @@ class InputScript extends Script {
   }
 }
 
-export {InputScript};
+export {MovementInputScript};

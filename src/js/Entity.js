@@ -2,6 +2,7 @@ import {resources} from 'Managers/ResourceManager';
 import {log} from 'Log';
 import {InputMan} from 'Managers/InputManager';
 import {Scripts} from 'Scripts/Scripts';
+import cfg from 'config.json';
 
 class Entity extends PIXI.Container {
   /* TODO: How (and when) initialize scripts? Need planning.
@@ -63,6 +64,23 @@ class Entity extends PIXI.Container {
     };
   }
 
+  addDebugGraphics(){
+    let physics = this.physics;
+    if(physics){
+      let body = physics.body;
+      let graphics = new PIXI.Graphics();
+      // log.debug(body);
+      graphics.beginFill('0xFF0000');
+      graphics.lineStyle(1, '0x00FF00');
+      graphics.drawRect(0, 0, body.width, body.height);
+      graphics.pivot = {
+        x: body.width/2,
+        y: body.height/2
+      };
+      this.addChild(graphics);
+    }
+
+  }
   /*
     Unpacks entity from configuration file. Loads config
     Config format:
@@ -75,7 +93,10 @@ class Entity extends PIXI.Container {
     Create entity with this and see its structure for more info.
   */
   static fromConfig(configName){
-    const config = resources[configName].data;
+    return Entity.fromConfigObj(resources[configName].data);
+  }
+
+  static fromConfigObj(config){
     const ent = new Entity();
 
     // Assign component_data to entity
@@ -87,15 +108,35 @@ class Entity extends PIXI.Container {
       ent[key] = resources[compConf[key]].data;
     });
 
+    const physics = config.physics;
+    if(physics){
+      ent.addPhysics(physics.bodyType, physics.options);
+      if(cfg.debugMode) ent.addDebugGraphics();
+    }
+
     const scriptConf = config.scripts;
     scriptConf.forEach(conf => {
       const name = conf.name;
       const params = conf.parameters || {};
       ent.addScript(name, params);
     });
-
     return ent;
   }
+
+  static fromTiledObject(tiledObj){
+    let props = tiledObj.properties;
+    let config = resources[props.config].data;
+
+    config.physics.options.x = tiledObj.x + tiledObj.width/2;
+    config.physics.options.y = tiledObj.y + tiledObj.height/2;
+    config.physics.options.width = tiledObj.width;
+    config.physics.options.height = tiledObj.height;
+
+    let ent = Entity.fromConfigObj(config);
+    // log.debug(ent);
+    return ent;
+  }
+
 }
 
 export {Entity};

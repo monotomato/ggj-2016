@@ -1,0 +1,24 @@
+{
+  "component_configuration":{
+  },
+  "component_data":{
+    "animation":{"anim":[{"frame":"item_chest", "duration":1000}],"speed":0},
+    "test": "this_is_static"
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "restitution":0,
+      "cof":0,
+      "width": 16,
+      "height": 16,
+      "treatment":"static"
+    }
+  },
+  "scripts":[
+    {
+      "name" : "animationScript",
+      "parameters":{}
+    }
+  ]
+}
