@@ -1,0 +1,9 @@
+{
+  "component_configuration":{
+    "animation": "anim_player_idle"
+  },
+  "component_data":{
+    "test": "this_is_static"
+  },
+  "scripts":[]
+}

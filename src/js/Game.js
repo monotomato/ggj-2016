@@ -31,8 +31,7 @@ class Game {
 
   debugConstructor() {
     let testEntity = Entity.fromConfig('entity_player');
-    testEntity.setSprite('debug_2');
-    testEntity.addScript('inputScript', {a: 'b', c: 'd'});
+    this.loadMap('testmap');
     testEntity.addPhysics('rectangle', {
       x: 0,
       y: 0,
@@ -40,6 +39,8 @@ class Game {
       width: 64,
       height: 64
     });
+
+
     log.debug(testEntity);
     this.addEntityToWorld(testEntity);
   }
@@ -58,6 +59,21 @@ class Game {
   render(renderer) {
     renderer.render(this.stage);
   }
+
+  loadMap(mapname) {
+    let eMap = new Entity();
+    resources[mapname].data.layers.forEach(layer => {
+      let eLayer = new Entity();
+      layer.objects.forEach(obj => {
+        let props = obj.properties;
+        let eObj = Entity.fromConfig(props.config);
+        eLayer.addChild(eObj);
+      });
+      eMap.addChild(eLayer);
+    });
+    log.debug(eMap);
+  }
+
 }
 
 export {Game};
