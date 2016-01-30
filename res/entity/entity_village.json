@@ -23,6 +23,11 @@
       "name" : "villagerRankingSystemScript",
       "parameters":{
       }
+    },
+    {
+      "name" : "villagerIdentitySystemScript",
+      "parameters":{
+      }
     }
   ]
 }

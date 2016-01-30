@@ -174,6 +174,7 @@ class Entity extends PIXI.Container {
   }
 
   static fromTiledObject(tiledObj){
+    log.debug(tiledObj);
     let props = tiledObj.properties;
     let config = resources[props.config].data;
 

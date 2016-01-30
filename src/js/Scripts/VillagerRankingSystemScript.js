@@ -7,13 +7,13 @@ class VillagerRankingSystemScript extends Script {
     super(parameters);
     this.eventTypes.push(
       'rank_change',
-      'day_end'
+      'day_end',
+      'villager_ritualized'
     );
     this.rankChanges = [];
   }
 
   init(parent, rootEntity) {
-    // log.debug('"AAAAAAAA"');
   }
 
   update(parent, rootEntity, delta) {
@@ -37,7 +37,6 @@ class VillagerRankingSystemScript extends Script {
   }
 
   findVillager(name) {
-    //TODO fetch villagers by tag, in script init?
     return this.villagers[findVillagerIndex(name)];
   }
 
@@ -55,6 +54,8 @@ class VillagerRankingSystemScript extends Script {
       this.rankChanges.push({villagerName: evt.parameters.villagerName, rankChange: evt.parameters.rankChange});
     } else if (evt.eventType === 'day_end') {
       this.applyRankChanges();
+    } else if (evt.eventType === 'villagers_updated') {
+      this.villagers = parent.villagerIdentitySystemScript.villagers;
     }
   }
 }

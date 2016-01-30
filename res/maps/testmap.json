@@ -1,19 +1,16 @@
 { "height":15,
  "layers":[
         {
-         "draworder":"topdown",
          "height":50,
          "name":"obj_layer_0",
          "objects":[
                 {
                  "height":480,
-                 "id":1,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -22,13 +19,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":2,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":576,
@@ -37,13 +32,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":3,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":576,
@@ -52,13 +45,11 @@
                 }, 
                 {
                  "height":480,
-                 "id":4,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -67,13 +58,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":5,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":192,
@@ -82,13 +71,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":6,
                  "name":"",
                  "properties":
                     {
-                     "config":"entity_static_collider"
+                     "config":"entity_villager"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -97,13 +84,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":7,
                  "name":"",
                  "properties":
                     {
-                     "config":"entity_static_collider"
+                     "config":"entity_villager"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -112,13 +97,24 @@
                 }, 
                 {
                  "height":32,
-                 "id":9,
-                 "name":"Village",
+                 "name":"",
                  "properties":
                     {
                      "config":"entity_village"
                     },
-                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":320,
+                 "y":224
+                }, 
+                {
+                 "height":32,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_item_chest"
+                    },
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -127,13 +123,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":10,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -142,13 +136,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":11,
                  "name":"",
                  "properties":
                     {
-                     "config":"entity_static_collider"
+                     "config":"entity_villager"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -157,13 +149,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":12,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -172,13 +162,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":13,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -187,13 +175,11 @@
                 }, 
                 {
                  "height":32,
-                 "id":14,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_static_collider"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
@@ -202,13 +188,11 @@
                 }, 
                 {
                  "height":64,
-                 "id":15,
                  "name":"",
                  "properties":
                     {
                      "config":"entity_player"
                     },
-                 "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":64,
@@ -222,13 +206,11 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":16,
  "orientation":"orthogonal",
  "properties":
     {
 
     },
- "renderorder":"right-down",
  "tileheight":32,
  "tilesets":[],
  "tilewidth":32,

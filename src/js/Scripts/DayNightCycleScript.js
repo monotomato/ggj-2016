@@ -9,20 +9,18 @@ class DayNightCycleScript extends Script {
   }
 
   init(parent,rootEntity){
-    log.debug('DayNightCycleScript init');
   }
 
   update(parent, rootEntity, delta) {
     let oldTime = this.time;
-    this.time += delta;
+    this.time += delta / 1000;
     if (this.dayTime(oldTime) > 0 && this.dayTime(this.time) === -1) {
       EventMan.publish({eventType: 'day_end', parameters: {cycleNumber: this.cycleNumber(this.time)}});
     }
   }
 
   cycleNumber(ctime) {
-    //TODO round
-    return ctime / (this.dayLength + this.nightLength);
+    return Math.floor(ctime / (this.dayLength + this.nightLength));
   }
 
   dayTime(ctime) {
