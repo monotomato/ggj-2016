@@ -17,7 +17,10 @@ class ResourceManager extends Manager {
         resolve('Resource manager init done!');
       };
 
-      const error = () => {
+      const error = (a,b,c) => {
+        log.error(a);
+        log.error(b);
+        log.error(c);
         reject('Resource manager init ERROR!');
       };
       const filelistLoader = new PIXI.loaders.Loader();
@@ -28,7 +31,7 @@ class ResourceManager extends Manager {
 
       filelistLoader.on('progress', (a,b) => this.loadProgress(a,b,'Filelist'));
       filelistLoader.on('error', error);
-      
+
       filelistLoader.once('complete', (ldr, res) => {
 
         Object.keys(res).forEach(key => {

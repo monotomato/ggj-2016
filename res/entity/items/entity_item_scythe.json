@@ -1,11 +1,11 @@
 {
   "component_configuration":{},
   "component_data":{
-    "animation":{"anim":[{"frame":"sprite_item_chest", "duration":1000}],"speed":0},
+    "animation":{"anim":[{"frame":"sprite_item_scythe", "duration":1000}],"speed":0},
     "tags": [
       "item",
-      "item_container",
-      "item_treasure"
+      "item_tool",
+      "item_weapon"
     ],
     "sprite_options":{
       "scale":0.5,

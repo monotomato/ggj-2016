@@ -1,19 +1,11 @@
 {
   "component_configuration":{},
   "component_data":{
-    "animation":{"anim":[{"frame":"sprite_item_chest", "duration":1000}],"speed":0},
+    "animation":{"anim":[{"frame":"sprite_item_bread", "duration":1000}],"speed":0},
     "tags": [
       "item",
-      "item_container",
-      "item_treasure"
-    ],
-    "sprite_options":{
-      "scale":0.5,
-      "offset":{
-        "x":0,
-        "y":0
-      }
-    }
+      "item_food"
+    ]
   },
   "physics":{
     "bodyType": "rectangle",

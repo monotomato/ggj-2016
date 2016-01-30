@@ -1,7 +1,9 @@
 {
   "item_food": "a food item",
-  "item_fruit": "a fruit",
-  "item_natural": "a natural item",
   "item_container": "a container",
-  "item_furniture": "a furniture"
+  "item_tool": "a useful item",
+  "item_treasure": "a shiny thing",
+  "item_weapon": "a pointy thing",
+  "item_clothing": "a warm thing",
+  "item_education": "a wise thing"
 }
