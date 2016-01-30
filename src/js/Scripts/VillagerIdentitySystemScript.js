@@ -16,6 +16,7 @@ class VillagerIdentitySystemScript extends Script {
   init(parent, rootEntity) {
     this.villagers = [];
     this.village = rootEntity.findEntityWithTag('village');
+    this.village.houses = this.village.houses || rootEntity.findEntitiesWithTag('location_house');
 
     let spawner = rootEntity.findEntityWithTag('spawn_villager');
 
@@ -42,6 +43,9 @@ class VillagerIdentitySystemScript extends Script {
         let role = this.roles.splice(rand(this.roles.length), 1)[0];
         villager.name = name;
         villager.role = role;
+      } else {
+        villager.name = 'sheep';
+        villager.role = 'sheep';
       }
     });
   }

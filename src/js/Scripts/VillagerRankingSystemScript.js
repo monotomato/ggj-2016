@@ -8,7 +8,7 @@ class VillagerRankingSystemScript extends Script {
     super(parameters);
     this.eventTypes.push(
       'rank_change',
-      'cycle_night',
+      'rank_apply',
       'villagers_updated'
     );
     this.rankChanges = [];
@@ -37,7 +37,7 @@ class VillagerRankingSystemScript extends Script {
     });
     //Probably not needed, but I don't understand javascript so
     parent.villagers = this.villagers;
-    EventMan.publish({eventType: 'rank_applied', parameters: {rankChanges: this.rankChanges}});
+    EventMan.publish({eventType: 'rank_apply_end', parameters: {rankChanges: this.rankChanges}});
     this.rankChanges = [];
   }
 
@@ -57,7 +57,7 @@ class VillagerRankingSystemScript extends Script {
   handleGameEvent(parent, evt) {
     if (evt.eventType === 'rank_change') {
       this.rankChanges.push({villagerName: evt.parameters.villagerName, rankChange: evt.parameters.rankChange});
-    } else if (evt.eventType === 'cycle_night') {
+    } else if (evt.eventType === 'rank_apply_start') {
       this.applyRankChanges();
     } else if (evt.eventType === 'villagers_updated') {
       this.villagers = parent.villagers;
