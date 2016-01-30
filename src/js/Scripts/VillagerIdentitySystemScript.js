@@ -14,7 +14,8 @@ class VillagerIdentitySystemScript extends Script {
   }
 
   init(parent, rootEntity) {
-    this.villagers = rootEntity.findEntitiesWithTag('villager');
+    parent.villagers = rootEntity.findEntitiesWithTag('villager');
+    this.villagers = parent.villagers;
 
     this.roles = [];
     this.reservedNames = [];
@@ -37,11 +38,13 @@ class VillagerIdentitySystemScript extends Script {
         villager.role = role;
       }
     });
-    EventMan.publish({eventType: 'villagers_updated', parameters: {updateType: 'identified'}});
   }
 
   update(parent, rootEntity, delta) {
-
+    if (!this.firstUpdate) {
+      EventMan.publish({eventType: 'villagers_updated', parameters: {updateType: 'identified'}});
+      this.firstUpdate = true;
+    }
   }
 
   handleGameEvent(parent, evt) {

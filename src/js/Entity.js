@@ -5,6 +5,7 @@ import {EventMan} from 'Managers/EventManager';
 import {Scripts} from 'Scripts/Scripts';
 import cfg from 'config.json';
 import {Physics} from 'Physics';
+import {EventMan} from 'Managers/EventManager';
 
 class Entity extends PIXI.Container {
   /* TODO: How (and when) initialize scripts? Need planning.
@@ -105,6 +106,17 @@ class Entity extends PIXI.Container {
         y: 0.5
       };
       this.addChild(this.sprite);
+      let opts = this.sprite_options || {
+        scale:1,
+        offset: {
+          x:0,
+          y:0
+        }
+      };
+      this.sprite.scale.x = opts.scale;
+      this.sprite.scale.y = opts.scale;
+      this.sprite.position = opts.offset;
+
       if(this.debugGraphics){
         this.swapChildren(this.debugGraphics, this.sprite);
       }
@@ -185,6 +197,8 @@ class Entity extends PIXI.Container {
   static fromTiledObject(tiledObj){
     let props = tiledObj.properties;
     let config = resources[props.config].data;
+
+    Object.assign(config.component_data, tiledObj.properties);
 
     config.physics.options.x = tiledObj.x + tiledObj.width/2;
     config.physics.options.y = tiledObj.y + tiledObj.height/2;

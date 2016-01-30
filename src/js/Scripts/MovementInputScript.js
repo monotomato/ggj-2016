@@ -24,6 +24,9 @@ class MovementInputScript extends Script {
         parameters: {}
       });
     }
+    if (Input.keyPressed.up) {
+      EventMan.publish({eventType: 'player_interact', parameters: {}});
+    }
     parent.physics.body.vel.x = movement;
   }
 
