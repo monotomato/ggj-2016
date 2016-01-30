@@ -69,6 +69,8 @@ class Game {
         let imagename = layer.image.split('.')[0];
         let sprite = new PIXI.Sprite();
         sprite.texture = resources[imagename].texture;
+        eLayer.position.x = layer.offsetx || 0;
+        eLayer.position.y = layer.offsety || 0;
         eLayer.addChild(sprite);
       }
       else if (layer.type === 'objectgroup'){
