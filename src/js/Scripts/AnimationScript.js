@@ -14,7 +14,7 @@ class AnimationScript extends Script {
   }
 
   init(parent, rootEntity) {
-    log.debug('anim script init');
+    // log.debug('anim script init');
   }
 
   update(parent, rootEntity, delta) {

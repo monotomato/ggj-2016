@@ -12,7 +12,7 @@ class MovementInputScript extends Script {
   }
 
   init(parent, rootEntity) {
-    log.debug('movem script init');
+    // log.debug('movem script init');
     let ent = rootEntity.findEntitiesWithTag('test');
     console.log(ent);
   }

@@ -5,12 +5,23 @@
       "village"
     ]
   },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "treatment":"static"
+    }
+  },
   "scripts":[
     {
       "name" : "dayNightCycleScript",
       "parameters":{
         "dayLength":180,
         "nightLength":60
+      }
+    },
+    {
+      "name" : "villagerRankingSystemScript",
+      "parameters":{
       }
     }
   ]

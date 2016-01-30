@@ -64,7 +64,7 @@ class PhysicsSystem extends System {
   updateSystem(rootEntity, delta) {
     this.time += delta;
     this.world.step(this.time);
-    console.log(this.world.collisionGroups);
+    // console.log(this.world.collisionGroups);
   }
 }
 
