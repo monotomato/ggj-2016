@@ -18,7 +18,7 @@ class MovementInputScript extends Script {
     if (Input.keyDown.right) {
       movement += this.movementSpeed;
     }
-    parent.physics.body.state.vel.x = movement;
+    parent.physics.body.vel.x = movement;
   }
 
   handleGameEvent(parent, evt) {
