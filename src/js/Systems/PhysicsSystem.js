@@ -25,6 +25,8 @@ class PhysicsSystem extends System {
     if (entity.physics && entity.physics.body) {
       if (entity.physics.body.static) {
         this.world.staticBodies.push(entity.physics.body);
+      } else if (entity.physics.body.trigger) {
+         this.world.triggers.push(entity.physics.body);
       } else {
         this.world.dynamicBodies.push(entity.physics.body);
       }
@@ -38,25 +40,9 @@ class PhysicsSystem extends System {
     this.world.addBehavior({
       vel: {
         x: 0,
-        y: 0.0022
+        y: 0.0004
       }
     });
-    // this.world.add(gravity);
-    //
-    // let viewportBounds = Physics.aabb(0, 0, cfg.renderer.size.x, cfg.renderer.size.y);
-    //
-    // // let edgeBounce = Physics.behavior('edge-collision-detection', {
-    // //     aabb: viewportBounds,
-    // //     restitution: 0.0,
-    // //     cof: 0.0
-    // // });
-    //
-    // // this.world.add(edgeBounce);
-    // this.world.add([
-    //   Physics.behavior('sweep-prune'),
-    //   Physics.behavior('body-collision-detection'),
-    //   Physics.behavior('body-impulse-response')
-    // ]);
   }
 
   applySystem(entity, rootEntity, delta) {
