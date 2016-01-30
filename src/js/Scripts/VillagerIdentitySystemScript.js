@@ -14,8 +14,14 @@ class VillagerIdentitySystemScript extends Script {
   }
 
   init(parent, rootEntity) {
-    parent.villagers = rootEntity.findEntitiesWithTag('villager');
-    this.villagers = parent.villagers;
+    this.villagers = [];
+    this.village = rootEntity.findEntityWithTag('village');
+
+    let spawner = rootEntity.findEntityWithTag('spawn_villager');
+
+    // parent.villagers = rootEntity.findEntitiesWithTag('villager');
+    parent.villagers = this.villagers;
+    // log.debug(parent);
 
     this.roles = [];
     this.reservedNames = [];

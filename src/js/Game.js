@@ -26,7 +26,7 @@ class Game {
     log.debug("PHYSICS");
     let physicsSystem = new PhysicsSystem();
     this.systems.push(physicsSystem);
-    
+
     let scriptSystem = new ScriptSystem();
     this.systems.push(scriptSystem);
 
@@ -59,7 +59,7 @@ class Game {
 
   loadMap(mapname) {
     console.log(resources);
-    let eMap = new Entity();
+    let eMap = Entity.fromConfig(resources[mapname].data.properties.config);
     log.debug(mapname);
     resources[mapname].data.layers.forEach(layer => {
       let eLayer = new Entity();

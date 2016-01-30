@@ -2,18 +2,18 @@
   "component_configuration":{
   },
   "component_data":{
-    "collider_color":"0x0000FF",
+    "collider_color":"0xFF00FF",
     "tags": [
-      "villager",
-      "npc"
+      "spawn_villager"
     ]
   },
   "physics":{
     "bodyType": "rectangle",
     "options": {
-      "treatment":"static"
+      "treatment":"trigger"
     }
   },
   "scripts":[
+
   ]
 }
