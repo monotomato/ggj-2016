@@ -102,6 +102,9 @@ class Entity extends PIXI.Container {
         y: 0.5
       };
       this.addChild(this.sprite);
+      if(this.debugGraphics){
+        this.swapChildren(this.debugGraphics, this.sprite);
+      }
     }
     this.sprite.texture = resources.sprite.textures[spriteName];
   }
@@ -118,16 +121,19 @@ class Entity extends PIXI.Container {
     let physics = this.physics;
     if(physics){
       let body = physics.body;
-      let graphics = new PIXI.Graphics();
+      this.debugGraphics = new PIXI.Graphics();
+      let color = this.collider_color || '0xFFFFFF';
+
       // log.debug(body);
-      graphics.beginFill('0xFF0000');
-      graphics.lineStyle(1, '0x00FF00');
-      graphics.drawRect(0, 0, body.width, body.height);
-      graphics.pivot = {
+      this.debugGraphics.beginFill(color);
+      this.debugGraphics.lineStyle(2, '0x000000');
+      this.debugGraphics.alpha = 0.5;
+      this.debugGraphics.drawRect(0, 0, body.width, body.height);
+      this.debugGraphics.pivot = {
         x: body.width/2,
         y: body.height/2
       };
-      this.addChild(graphics);
+      this.addChild(this.debugGraphics);
     }
 
   }

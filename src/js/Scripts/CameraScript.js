@@ -19,6 +19,20 @@ class CameraScript extends Script {
 
   update(parent, rootEntity, delta) {
     // TODO: Camera handling
+    // parent.position.x = -this.player.position.x;
+    // parent.position.y = -this.player.position.y;
+    if (Input.keyDown.left) {
+      parent.position.x += 5.0;
+    }
+    if (Input.keyDown.right) {
+      parent.position.x -= 5.0;
+    }
+    if (Input.keyDown.up) {
+      parent.position.y += 5.0;
+    }
+    if (Input.keyDown.down) {
+      parent.position.y -= 5.0;
+    }
   }
 
   handleGameEvent(parent, evt) {

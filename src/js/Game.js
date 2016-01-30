@@ -51,13 +51,23 @@ class Game {
   }
 
   loadMap(mapname) {
+    console.log(resources);
     let eMap = new Entity();
     resources[mapname].data.layers.forEach(layer => {
       let eLayer = new Entity();
-      layer.objects.forEach(obj => {
-        let eObj = Entity.fromTiledObject(obj);
-        eLayer.addChild(eObj);
-      });
+      // console.log(layer);
+      if (layer.type === 'imagelayer'){
+        let imagename = layer.image.split('.')[0];
+        let sprite = new PIXI.Sprite();
+        sprite.texture = resources[imagename].texture;
+        eLayer.addChild(sprite);
+      }
+      else if (layer.type === 'objectgroup'){
+        layer.objects.forEach(obj => {
+          let eObj = Entity.fromTiledObject(obj);
+          eLayer.addChild(eObj);
+        });
+      }
       eMap.addChild(eLayer);
     });
     log.debug(eMap);

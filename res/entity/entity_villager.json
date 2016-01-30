@@ -3,6 +3,7 @@
     "animation": "anim_player_idle"
   },
   "component_data":{
+    "collider_color":"0x0000FF",
     "tags": [
       "villager",
       "npc"

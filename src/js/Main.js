@@ -18,9 +18,10 @@ PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 
 // Renderer
 const redOpt = cfg.renderer.options;
-redOpt.resolution = window.devicePixelRatio || 1;
+// redOpt.resolution = window.devicePixelRatio || 1;
+redOpt.resolution = 1;
 const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.y, redOpt);
-
+renderer.backgroundColor = 0x5544AA;
 // Managers
 /* TODO: Figure out way to prioritize manager init.
 Now resman init is called before anything else manually.

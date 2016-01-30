@@ -3,6 +3,7 @@
     "animation": "anim_player_idle"
   },
   "component_data":{
+    "collider_color":"0xFF00FF",
     "tags": [
       "player",
       "villager"
@@ -11,6 +12,7 @@
   "physics":{
     "bodyType": "rectangle",
     "options": {
+      "treatment":"static"
     }
   },
   "scripts":[

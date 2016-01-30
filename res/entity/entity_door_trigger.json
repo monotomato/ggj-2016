@@ -1,0 +1,19 @@
+{
+  "component_configuration":{
+  },
+  "component_data":{
+    "collider_color":"0x00FF00",
+    "tags": [
+      "trigger",
+      "door"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "treatment":"static"
+    }
+  },
+  "scripts":[
+  ]
+}
