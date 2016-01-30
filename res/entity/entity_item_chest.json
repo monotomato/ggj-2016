@@ -12,7 +12,9 @@
       "x": 250,
       "y": 250,
       "width": 16,
-      "height": 16
+      "height": 16,
+      "collisionGroup": 2,
+      "collideAgainst": [0]
     }
   },
   "scripts":[
