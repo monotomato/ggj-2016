@@ -2,7 +2,7 @@ import {log} from 'Log';
 import {Script} from 'Script';
 import {EventMan} from 'Managers/EventManager';
 import {resources} from 'Managers/ResourceManager';
-import {rand} from 'Utils/NumUtils';
+import {rand} from 'Utils/NumUtil';
 import {Entity} from 'Entity';
 
 class VillagerIdentitySystemScript extends Script {
