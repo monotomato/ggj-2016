@@ -17,13 +17,12 @@ class HouseControllerScript extends Script {
   init(parent, rootEntity) {
     this.village = rootEntity.findEntityWithTag('village');
     this.village.houses = this.village.houses || rootEntity.findEntitiesWithTag('location_house');
-    parent.houses = this.houses;
-    this.village.houses = this.houses;
+    this.village.items = this.village.items || rootEntity.findEntitiesWithTag('item');
   }
 
   mapItemsToHouses() {
     let map = {};
-    this.houses.forEach(house => {
+    this.village.houses.forEach(house => {
       map[house.name] = [];
       this.village.items.forEach(item => {
         if (Collision.aabbTestFast(house.physics.body, item.physics.body)) {

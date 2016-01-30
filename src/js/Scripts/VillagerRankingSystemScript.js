@@ -32,7 +32,7 @@ class VillagerRankingSystemScript extends Script {
       let rankChange = this.rankChanges[i];
       ranks[rankChange.villagerName] += rankChange.rankChange;
     }
-    this.villagers.sort(l, r => {
+    this.villagers.sort((l, r) => {
         return ranks[l.name] - ranks[r.name];
     });
     //Probably not needed, but I don't understand javascript so

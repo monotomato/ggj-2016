@@ -4,9 +4,7 @@
     "animation":{"anim":[{"frame":"item_chest", "duration":1000}],"speed":0},
     "tags": [
       "item",
-      "item_food",
-      "item_fruit",
-      "item_natural"
+      "item_food"
     ]
   },
   "physics":{

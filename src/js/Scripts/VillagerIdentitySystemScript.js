@@ -27,6 +27,14 @@ class VillagerIdentitySystemScript extends Script {
     this.roles = [];
     this.reservedNames = [];
 
+    let freeHouses = [];
+
+    this.villages.houses.forEach(h => {
+      if (h.name.indexOf('town_hall') === -1) {
+        freeHouses.push(h);
+      }
+    });
+
     resources.identities.data.roles.forEach(e => this.roles.push(e));
 
     let fnames = resources.identities.data.fnames;
