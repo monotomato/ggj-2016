@@ -3,16 +3,13 @@
   "component_data":{
     "animation":{"anim":[{"frame":"item_chest", "duration":1000}],"speed":0},
     "tags": [
-      "item"
+      "item",
+      "test"
     ]
   },
   "physics":{
     "bodyType": "rectangle",
     "options": {
-      "x": 250,
-      "y": 250,
-      "width": 16,
-      "height": 16
     }
   },
   "scripts":[

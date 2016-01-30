@@ -14,6 +14,7 @@ class Game {
     this.ui = new Entity(); //new Entity('entity_ui');
     this.stage.addChild(this.ui);
     this.world = new Entity();
+    this.world.addScript('cameraScript', {});
     this.stage.addChild(this.world);
 
     this.systems = [];
@@ -30,14 +31,8 @@ class Game {
   }
 
   debugConstructor() {
-    let testEntity = Entity.fromConfig('entity_player');
-
-    let testChest = Entity.fromConfig('entity_item_chest');
-    // log.debug(testEntity);
-    // this.addEntityToWorld(testEntity);
-    // this.addEntityToWorld(testChest);
     this.addEntityToWorld(this.loadMap('testmap'));
-
+    this.stage.init(this.stage);
   }
 
   addEntityToWorld(entity) {
@@ -56,13 +51,23 @@ class Game {
   }
 
   loadMap(mapname) {
+    console.log(resources);
     let eMap = new Entity();
     resources[mapname].data.layers.forEach(layer => {
       let eLayer = new Entity();
-      layer.objects.forEach(obj => {
-        let eObj = Entity.fromTiledObject(obj);
-        eLayer.addChild(eObj);
-      });
+      // console.log(layer);
+      if (layer.type === 'imagelayer'){
+        let imagename = layer.image.split('.')[0];
+        let sprite = new PIXI.Sprite();
+        sprite.texture = resources[imagename].texture;
+        eLayer.addChild(sprite);
+      }
+      else if (layer.type === 'objectgroup'){
+        layer.objects.forEach(obj => {
+          let eObj = Entity.fromTiledObject(obj);
+          eLayer.addChild(eObj);
+        });
+      }
       eMap.addChild(eLayer);
     });
     log.debug(eMap);

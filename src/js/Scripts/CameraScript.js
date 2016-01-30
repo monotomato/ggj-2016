@@ -3,27 +3,24 @@ import {Script} from 'Script';
 import {InputMan as Input} from 'Managers/InputManager';
 import {EventMan} from 'Managers/EventManager';
 
-class MovementInputScript extends Script {
+class CameraScript extends Script {
   constructor(parameters) {
     super(parameters);
     this.eventTypes.push(
-      'input_test'
+      'camera'
     );
   }
 
   init(parent, rootEntity) {
-    
+    log.debug('CameraInit');
+    this.player = rootEntity.findEntityWithTag('player');
+    log.debug(this.player);
   }
 
   update(parent, rootEntity, delta) {
-    // let movement = 0;
-    // if (Input.keyDown.left) {
-    //   movement -= this.movementSpeed;
-    // }
-    // if (Input.keyDown.right) {
-    //   movement += this.movementSpeed;
-    // }
-    // parent.physics.body.state.vel.x = movement;
+    // TODO: Camera handling
+    // parent.position.x = -this.player.position.x;
+    // parent.position.y = -this.player.position.y;
     if (Input.keyDown.left) {
       parent.position.x += 5.0;
     }
@@ -39,8 +36,8 @@ class MovementInputScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
-    log.debug(evt.parameters.message);
+    log.debug('camera script: ' + evt.parameters.message);
   }
 }
 
-export {MovementInputScript};
+export {CameraScript};

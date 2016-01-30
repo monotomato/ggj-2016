@@ -1,0 +1,43 @@
+{
+  "component_configuration":{},
+  "component_data":{
+    "tags": [
+      "village"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "treatment":"static"
+    }
+  },
+  "scripts":[
+    {
+      "name" : "dayNightCycleScript",
+      "parameters":{
+        "dayLength":180,
+        "nightLength":60
+      }
+    },
+    {
+      "name" : "villagerRankingSystemScript",
+      "parameters":{
+      }
+    },
+    {
+      "name" : "villagerIdentitySystemScript",
+      "parameters":{
+      }
+    },
+    {
+      "name" : "itemSystemScript",
+      "parameters":{
+      }
+    },
+    {
+      "name" : "crisisScript",
+      "parameters":{
+      }
+    }
+  ]
+}

@@ -13,8 +13,8 @@ class AnimationScript extends Script {
     this.currentFrame = 0;
   }
 
-  init(rootEntity) {
-    log.debug('anim script init');
+  init(parent, rootEntity) {
+    // log.debug('anim script init');
   }
 
   update(parent, rootEntity, delta) {

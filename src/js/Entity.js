@@ -17,7 +17,17 @@ class Entity extends PIXI.Container {
     this.eventTypes = [];
     this.events = [];
     this.isActive = true;
+    this.tags = [];
     this.scripts = [];
+  }
+
+  init(rootEntity){
+    this.children.forEach((child) => {
+      if(child.init) child.init(rootEntity);
+    });
+    this.scripts.forEach((script) => {
+      script.init(this, rootEntity);
+    });
   }
 
   // TODO: Check if event is relevant to the script.
@@ -28,6 +38,46 @@ class Entity extends PIXI.Container {
       });
     });
     this.events = [];
+  }
+
+  // findEntityWithTags(tags){
+  // }
+
+  findEntitiesWithTag(tag){
+
+    if(this.tags.indexOf(tag) >= 0){ return [this]; }
+    else {
+      let ents = [];
+      for(let i = 0; i < this.children.length;i++){
+        let child = this.children[i];
+        let found = [];
+        if(child.findEntitiesWithTag){
+          found = child.findEntitiesWithTag(tag);
+          found.forEach(e => {
+            ents.push(e);
+          });
+          // log.debug(found.forEach);
+        }
+      }
+      return ents;
+    }
+  }
+
+  findEntityWithTag(tag){
+    let indof = this.tags.indexOf(tag);
+    if(indof >= 0){ return this; }
+    else {
+      for(let i = 0; i < this.children.length;i++){
+        let child = this.children[i];
+        let found;
+        if(child.findEntityWithTag){
+          found = child.findEntityWithTag(tag);
+        }
+        if(found){
+          return found;
+        }
+      }
+    }
   }
 
   // TODO: Remove duplicate event types (keep only topmost)
@@ -52,6 +102,9 @@ class Entity extends PIXI.Container {
         y: 0.5
       };
       this.addChild(this.sprite);
+      if(this.debugGraphics){
+        this.swapChildren(this.debugGraphics, this.sprite);
+      }
     }
     this.sprite.texture = resources.sprite.textures[spriteName];
   }
@@ -68,16 +121,19 @@ class Entity extends PIXI.Container {
     let physics = this.physics;
     if(physics){
       let body = physics.body;
-      let graphics = new PIXI.Graphics();
+      this.debugGraphics = new PIXI.Graphics();
+      let color = this.collider_color || '0xFFFFFF';
+
       // log.debug(body);
-      graphics.beginFill('0xFF0000');
-      graphics.lineStyle(1, '0x00FF00');
-      graphics.drawRect(0, 0, body.width, body.height);
-      graphics.pivot = {
+      this.debugGraphics.beginFill(color);
+      this.debugGraphics.lineStyle(2, '0x000000');
+      this.debugGraphics.alpha = 0.5;
+      this.debugGraphics.drawRect(0, 0, body.width, body.height);
+      this.debugGraphics.pivot = {
         x: body.width/2,
         y: body.height/2
       };
-      this.addChild(graphics);
+      this.addChild(this.debugGraphics);
     }
 
   }

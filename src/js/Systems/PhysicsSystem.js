@@ -1,5 +1,5 @@
-import {System} from "System";
-import {log} from "Log";
+import {System} from 'System';
+import {log} from 'Log';
 import cfg from 'config.json';
 
 class PhysicsSystem extends System {
@@ -15,6 +15,9 @@ class PhysicsSystem extends System {
       integrator: integrator,
       //Nothing sleeps
       sleepDisabled: true
+    });
+    this.world.on('collisions:detected', data => {
+
     });
     if (cfg.debugMode) this.debug();
   }
@@ -34,7 +37,7 @@ class PhysicsSystem extends System {
     // this.world.add(edgeBounce);
     this.world.add([
       Physics.behavior('sweep-prune'),
-      Physics.behavior('body-collision-detection'),
+      //Physics.behavior('body-collision-detection'),
       Physics.behavior('body-impulse-response')
     ]);
   }
@@ -43,7 +46,6 @@ class PhysicsSystem extends System {
     if (entity.physics) {
       // Add the entity if it isn't in the world yet
       if (!entity.physics.inWorld) {
-        // log.debug('Adding to world');
         this.world.add(entity.physics.body);
         entity.physics.inWorld = true;
         // log.debug(entity.physics.body.state);
@@ -62,7 +64,7 @@ class PhysicsSystem extends System {
   updateSystem(rootEntity, delta) {
     this.time += delta;
     this.world.step(this.time);
-    // log.debug(this.world);
+    // console.log(this.world.collisionGroups);
   }
 }
 

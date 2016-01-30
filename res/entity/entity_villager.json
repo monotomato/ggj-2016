@@ -3,10 +3,10 @@
     "animation": "anim_player_idle"
   },
   "component_data":{
-    "collider_color":"0xFF00FF",
+    "collider_color":"0x0000FF",
     "tags": [
-      "player",
-      "villager"
+      "villager",
+      "npc"
     ]
   },
   "physics":{
@@ -16,12 +16,6 @@
     }
   },
   "scripts":[
-    {
-      "name" : "movementInputScript",
-      "parameters":{
-        "movementSpeed":0.5
-      }
-    },
     {
       "name" : "animationScript",
       "parameters":{
