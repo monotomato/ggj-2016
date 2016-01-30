@@ -3,6 +3,7 @@ import {Script} from 'Script';
 import {InputMan as Input} from 'Managers/InputManager';
 import {EventMan} from 'Managers/EventManager';
 import {resources} from 'Managers/ResourceManager';
+import {rand} from 'Utils/NumUtil';
 
 class VillagerAnimationScript extends Script {
   constructor(parameters) {
@@ -10,13 +11,22 @@ class VillagerAnimationScript extends Script {
     this.eventTypes.push(
       'animation_test'
     );
+    let allparts = this.getVillagerParts();
+    // console.log(this);
+    let partnames = Object.keys(this.parts);
+    this.parts.body = allparts.body[rand(allparts.body.length)];
+    this.parts.head = allparts.head[rand(allparts.head.length)];
+    this.parts.hair = allparts.hair[rand(allparts.hair.length)];
+    this.parts.limbs = allparts.limbs[rand(allparts.limbs.length)];
+    console.log(allparts.body);
+    // this.parts.
     this.timeAtCurrentFrame = -1;
     this.duration = 60;
     this.currentFrame = 0;
   }
 
   init(parent, rootEntity) {
-    console.log(this.parts);
+    // console.log(this.parts);
     let sprites = {};
     sprites.head = new PIXI.Sprite();
     sprites.body = new PIXI.Sprite();
@@ -55,8 +65,27 @@ class VillagerAnimationScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
-    log.debug('Anim script: ' + evt.parameters.message);
+    // log.debug('Anim script: ' + evt.parameters.message);
+  }
+
+  getVillagerParts(){
+    let parts = {
+      head: [],
+      body: [],
+      hair: [],
+      limbs: []
+    };
+    Object.keys(resources.sprite.textures).forEach( key => {
+      let splitted = key.split('_');
+      if (splitted[0] === 'sprite' && splitted[1] === 'npc') {
+        if(parts[splitted[2]].indexOf(splitted[3]) < 0){
+          parts[splitted[2]].push(splitted[3]);
+        }
+      }
+    });
+    return parts;
   }
 }
+
 
 export {VillagerAnimationScript};

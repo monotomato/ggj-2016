@@ -2,7 +2,15 @@ import {log} from 'Log';
 
 class Script {
   constructor(parameters) {
-    Object.assign(this, parameters);
+    let a = {};
+    jQuery.extend(true, a, parameters);
+    Object.assign(this, a);
+
+    // Object.keys().forEach(key => {
+    //   let a = {};
+    //   jQuery
+    //   this[key] =
+    // });
     this.eventTypes = [];
   }
 

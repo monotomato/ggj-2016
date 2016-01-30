@@ -10,7 +10,7 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "height":35,
          "image":"huutoInteriorBetter.png",
@@ -23,7 +23,7 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "height":35,
          "image":"hornhouseInterior.png",
@@ -36,44 +36,14 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "draworder":"topdown",
          "height":35,
          "name":"obj_layer_0",
          "objects":[
                 {
-                 "height":32,
-                 "id":1,
-                 "name":"Villager",
-                 "properties":
-                    {
-                     "config":"entity_villager"
-                    },
-                 "rotation":0,
-                 "type":"villager",
-                 "visible":true,
-                 "width":32,
-                 "x":1576,
-                 "y":96
-                },
-                {
-                 "height":64,
-                 "id":2,
-                 "name":"player",
-                 "properties":
-                    {
-                     "config":"entity_player"
-                    },
-                 "rotation":0,
-                 "type":"player",
-                 "visible":true,
-                 "width":64,
-                 "x":576,
-                 "y":288
-                },
-                {
-                 "height":32,
+                 "height":192,
                  "id":3,
                  "name":"Villager",
                  "properties":
@@ -83,10 +53,10 @@
                  "rotation":0,
                  "type":"villager",
                  "visible":true,
-                 "width":32,
-                 "x":1640,
-                 "y":96
-                },
+                 "width":96,
+                 "x":800,
+                 "y":608
+                }, 
                 {
                  "height":32,
                  "id":4,
@@ -101,7 +71,7 @@
                  "width":32,
                  "x":1760,
                  "y":40
-                },
+                }, 
                 {
                  "height":48,
                  "id":5,
@@ -116,7 +86,7 @@
                  "width":2368,
                  "x":96,
                  "y":848
-                },
+                }, 
                 {
                  "height":40,
                  "id":6,
@@ -131,7 +101,7 @@
                  "width":456,
                  "x":1464,
                  "y":600
-                },
+                }, 
                 {
                  "height":40,
                  "id":7,
@@ -146,7 +116,7 @@
                  "width":592,
                  "x":1656,
                  "y":368
-                },
+                }, 
                 {
                  "height":40,
                  "id":8,
@@ -161,7 +131,7 @@
                  "width":480,
                  "x":416,
                  "y":464
-                },
+                }, 
                 {
                  "height":32,
                  "id":9,
@@ -176,7 +146,7 @@
                  "width":32,
                  "x":-64,
                  "y":-32
-                },
+                }, 
                 {
                  "height":32,
                  "id":10,
@@ -191,7 +161,7 @@
                  "width":32,
                  "x":0,
                  "y":32
-                },
+                }, 
                 {
                  "height":64,
                  "id":11,
@@ -207,7 +177,7 @@
                  "width":40,
                  "x":1720,
                  "y":304
-                },
+                }, 
                 {
                  "height":64,
                  "id":12,
@@ -223,7 +193,7 @@
                  "width":40,
                  "x":1712,
                  "y":784
-                },
+                }, 
                 {
                  "height":32,
                  "id":13,
@@ -238,7 +208,7 @@
                  "width":32,
                  "x":1421,
                  "y":99
-                },
+                }, 
                 {
                  "height":32,
                  "id":14,
@@ -260,7 +230,7 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "draworder":"topdown",
          "height":35,
@@ -281,7 +251,7 @@
                  "width":40,
                  "x":480,
                  "y":784
-                },
+                }, 
                 {
                  "height":64,
                  "id":16,
@@ -297,7 +267,7 @@
                  "width":40,
                  "x":472,
                  "y":400
-                },
+                }, 
                 {
                  "height":32,
                  "id":17,
@@ -312,7 +282,7 @@
                  "width":32,
                  "x":1440,
                  "y":816
-                },
+                }, 
                 {
                  "height":32,
                  "id":18,
@@ -327,7 +297,7 @@
                  "width":32,
                  "x":1626,
                  "y":814
-                },
+                }, 
                 {
                  "height":32,
                  "id":19,
@@ -342,7 +312,7 @@
                  "width":32,
                  "x":1885,
                  "y":811
-                },
+                }, 
                 {
                  "height":32,
                  "id":20,
@@ -357,7 +327,7 @@
                  "width":32,
                  "x":1886,
                  "y":567
-                },
+                }, 
                 {
                  "height":48,
                  "id":21,
@@ -372,7 +342,7 @@
                  "width":512,
                  "x":152,
                  "y":1504
-                },
+                }, 
                 {
                  "height":288,
                  "id":22,
@@ -387,7 +357,7 @@
                  "width":64,
                  "x":96,
                  "y":1240
-                },
+                }, 
                 {
                  "height":288,
                  "id":23,
@@ -402,7 +372,7 @@
                  "width":64,
                  "x":656,
                  "y":1240
-                },
+                }, 
                 {
                  "height":64,
                  "id":24,
@@ -418,7 +388,7 @@
                  "width":72,
                  "x":248,
                  "y":784
-                },
+                }, 
                 {
                  "height":80,
                  "id":25,
@@ -434,7 +404,7 @@
                  "width":112,
                  "x":224,
                  "y":1424
-                },
+                }, 
                 {
                  "height":80,
                  "id":26,
@@ -450,7 +420,7 @@
                  "width":112,
                  "x":1360,
                  "y":1400
-                },
+                }, 
                 {
                  "height":288,
                  "id":27,
@@ -465,7 +435,7 @@
                  "width":64,
                  "x":992,
                  "y":1224
-                },
+                }, 
                 {
                  "height":48,
                  "id":28,
@@ -480,7 +450,7 @@
                  "width":512,
                  "x":1048,
                  "y":1496
-                },
+                }, 
                 {
                  "height":288,
                  "id":29,
@@ -495,7 +465,7 @@
                  "width":64,
                  "x":1552,
                  "y":1224
-                },
+                }, 
                 {
                  "height":64,
                  "id":30,
@@ -511,7 +481,7 @@
                  "width":48,
                  "x":1144,
                  "y":784
-                },
+                }, 
                 {
                  "height":32,
                  "id":31,
@@ -526,7 +496,7 @@
                  "width":32,
                  "x":1488,
                  "y":1400
-                },
+                }, 
                 {
                  "height":80,
                  "id":32,
@@ -541,7 +511,7 @@
                  "width":96,
                  "x":1504,
                  "y":1440
-                },
+                }, 
                 {
                  "height":80,
                  "id":33,
@@ -556,7 +526,7 @@
                  "width":96,
                  "x":584,
                  "y":1448
-                },
+                }, 
                 {
                  "height":32,
                  "id":34,
@@ -571,6 +541,96 @@
                  "width":32,
                  "x":568,
                  "y":1416
+                }, 
+                {
+                 "height":192,
+                 "id":39,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":672,
+                 "y":608
+                }, 
+                {
+                 "height":192,
+                 "id":40,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":928,
+                 "y":608
+                }, 
+                {
+                 "height":192,
+                 "id":41,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":1056,
+                 "y":608
+                }, 
+                {
+                 "height":192,
+                 "id":42,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":1240,
+                 "y":608
+                }, 
+                {
+                 "height":192,
+                 "id":43,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":1376,
+                 "y":608
+                }, 
+                {
+                 "height":192,
+                 "id":44,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":512,
+                 "y":608
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -578,7 +638,34 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
+        {
+         "draworder":"topdown",
+         "height":35,
+         "name":"player",
+         "objects":[
+                {
+                 "height":64,
+                 "id":2,
+                 "name":"player",
+                 "properties":
+                    {
+                     "config":"entity_player"
+                    },
+                 "rotation":0,
+                 "type":"player",
+                 "visible":true,
+                 "width":64,
+                 "x":576,
+                 "y":288
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":80,
+         "x":0,
+         "y":0
+        }, 
         {
          "height":35,
          "image":"testlevelFG.png",
@@ -590,7 +677,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":35,
+ "nextobjectid":45,
  "orientation":"orthogonal",
  "properties":
     {
