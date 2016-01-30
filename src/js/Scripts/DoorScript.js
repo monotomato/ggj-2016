@@ -16,10 +16,6 @@ class DoorScript extends Script {
     this.target = rootEntity.findEntityWithName(parent.target);
   }
 
-  randomizeIngredients() {
-
-  }
-
   update(parent, rootEntity, delta) {
   }
 
