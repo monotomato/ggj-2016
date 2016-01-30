@@ -103,6 +103,17 @@ class Entity extends PIXI.Container {
         y: 0.5
       };
       this.addChild(this.sprite);
+      let opts = this.sprite_options || {
+        scale:1,
+        offset: {
+          x:0,
+          y:0
+        }
+      };
+      this.sprite.scale.x = opts.scale;
+      this.sprite.scale.y = opts.scale;
+      this.sprite.position = opts.offset;
+
       if(this.debugGraphics){
         this.swapChildren(this.debugGraphics, this.sprite);
       }

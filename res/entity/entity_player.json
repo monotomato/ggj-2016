@@ -3,6 +3,17 @@
     "animation": "anim_player_idle"
   },
   "component_data":{
+    "animation_states":{
+      "walk":"anim_player_walk",
+      "idle":"anim_player_idle"
+    },
+    "sprite_options":{
+      "scale":1,
+      "offset":{
+        "x":0,
+        "y":-10
+      }
+    },
     "collider_color":"0xFF00FF",
     "tags": [
       "player",
