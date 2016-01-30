@@ -17,7 +17,17 @@ class Entity extends PIXI.Container {
     this.eventTypes = [];
     this.events = [];
     this.isActive = true;
+    this.tags = [];
     this.scripts = [];
+  }
+
+  init(rootEntity){
+    this.children.forEach((child) => {
+      if(child.init) child.init(rootEntity);
+    });
+    this.scripts.forEach((script) => {
+      script.init(this, rootEntity);
+    });
   }
 
   // TODO: Check if event is relevant to the script.
@@ -28,6 +38,46 @@ class Entity extends PIXI.Container {
       });
     });
     this.events = [];
+  }
+
+  // findEntityWithTags(tags){
+  // }
+
+  findEntitiesWithTag(tag){
+
+    if(this.tags.indexOf(tag) >= 0){ return [this]; }
+    else {
+      let ents = [];
+      for(let i = 0; i < this.children.length;i++){
+        let child = this.children[i];
+        let found = [];
+        if(child.findEntitiesWithTag){
+          found = child.findEntitiesWithTag(tag);
+          found.forEach(e => {
+            ents.push(e);
+          });
+          // log.debug(found.forEach);
+        }
+      }
+      return ents;
+    }
+  }
+
+  findEntityWithTag(tag){
+    let indof = this.tags.indexOf(tag);
+    if(indof >= 0){ return this; }
+    else {
+      for(let i = 0; i < this.children.length;i++){
+        let child = this.children[i];
+        let found;
+        if(child.findEntityWithTag){
+          found = child.findEntityWithTag(tag);
+        }
+        if(found){
+          return found;
+        }
+      }
+    }
   }
 
   // TODO: Remove duplicate event types (keep only topmost)

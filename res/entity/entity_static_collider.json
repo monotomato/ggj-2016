@@ -3,7 +3,11 @@
   },
   "component_data":{
     "animation":{"anim":[{"frame":"item_chest", "duration":1000}],"speed":0},
-    "test": "this_is_static"
+    "tags": [
+      "static",
+      "wall",
+      "test"
+    ]
   },
   "physics":{
     "bodyType": "rectangle",

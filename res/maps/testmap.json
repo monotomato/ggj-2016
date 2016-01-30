@@ -131,7 +131,7 @@
                  "name":"",
                  "properties":
                     {
-                     "config":"entity_static_collider"
+                     "config":"entity_item_chest"
                     },
                  "rotation":0,
                  "type":"",

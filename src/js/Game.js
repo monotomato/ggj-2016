@@ -30,14 +30,8 @@ class Game {
   }
 
   debugConstructor() {
-    let testEntity = Entity.fromConfig('entity_player');
-
-    let testChest = Entity.fromConfig('entity_item_chest');
-    // log.debug(testEntity);
-    // this.addEntityToWorld(testEntity);
-    // this.addEntityToWorld(testChest);
     this.addEntityToWorld(this.loadMap('testmap'));
-
+    this.stage.init(this.stage);
   }
 
   addEntityToWorld(entity) {
