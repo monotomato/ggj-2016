@@ -40,7 +40,7 @@ class PhysicsSystem extends System {
     this.world.addBehavior({
       vel: {
         x: 0,
-        y: 0.0022
+        y: 0.0012
       }
     });
   }

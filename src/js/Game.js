@@ -12,11 +12,12 @@ class Game {
   constructor() {
     log.debug('CONSTRUCTOR');
     this.stage = new Entity();
-    this.ui = new Entity(); //new Entity('entity_ui');
-    this.stage.addChild(this.ui);
     this.world = new Entity();
     this.world.addScript('cameraScript', {});
     this.stage.addChild(this.world);
+
+    this.ui = new Entity(); //new Entity('entity_ui');
+    this.stage.addChild(this.ui);
 
     this.systems = [];
 
@@ -34,10 +35,21 @@ class Game {
       log.debug('Debug mode is ON');
       this.debugConstructor();
     }
+
+    EventMan.publish({
+      eventType: 'fade_in',
+      parameters: {}
+    });
   }
 
   debugConstructor() {
     this.addEntityToWorld(this.loadMap('testmap'));
+    let fade = new Entity();
+    fade.addBox(0x000000, cfg.renderer.size.x, cfg.renderer.size.y);
+    fade.position.x = cfg.renderer.size.x / 2;
+    fade.position.y = cfg.renderer.size.y / 2;
+    fade.addScript('fadeInScript');
+    this.addEntityToUI(fade);
     this.stage.init(this.stage);
   }
 
@@ -46,9 +58,15 @@ class Game {
     this.world.addChild(entity);
   }
 
+  addEntityToUI(entity) {
+    EventMan.registerListener(entity);
+    this.ui.addChild(entity);
+  }
+
   update(delta) {
     this.systems.forEach((system) => {
       system.update(this.world, delta);
+      system.update(this.ui, delta);
     });
   }
 
