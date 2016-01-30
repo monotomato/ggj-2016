@@ -1,6 +1,7 @@
 import {log} from 'Log';
 import {Script} from 'Script';
 import {EventMan} from 'Managers/EventManager';
+import {populateTemplate} from 'Utils/StringUtil';
 
 class VillagerRankingSystemScript extends Script {
   constructor(parameters) {
@@ -11,6 +12,7 @@ class VillagerRankingSystemScript extends Script {
       'villager_ritualized'
     );
     this.rankChanges = [];
+    this.villagers = [];
   }
 
   init(parent, rootEntity) {

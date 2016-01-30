@@ -14,6 +14,7 @@ class Game {
     this.ui = new Entity(); //new Entity('entity_ui');
     this.stage.addChild(this.ui);
     this.world = new Entity();
+    this.world.addScript('cameraScript', {});
     this.stage.addChild(this.world);
 
     this.systems = [];

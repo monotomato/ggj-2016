@@ -3,13 +3,15 @@ import {AnimationScript} from './AnimationScript';
 import {DayNightCycleScript} from './DayNightCycleScript';
 import {VillagerRankingSystemScript} from './VillagerRankingSystemScript';
 import {VillagerIdentitySystemScript} from './VillagerIdentitySystemScript';
+import {CameraScript} from './CameraScript';
 
 const scripts = {
   movementInputScript: MovementInputScript,
   animationScript: AnimationScript,
   dayNightCycleScript: DayNightCycleScript,
   villagerRankingSystemScript: VillagerRankingSystemScript,
-  villagerIdentitySystemScript: VillagerIdentitySystemScript
+  villagerIdentitySystemScript: VillagerIdentitySystemScript,
+  cameraScript: CameraScript
 };
 
 export {scripts as Scripts};
