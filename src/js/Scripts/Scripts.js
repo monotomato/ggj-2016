@@ -6,6 +6,7 @@ import {VillagerIdentitySystemScript} from './VillagerIdentitySystemScript';
 import {CameraScript} from './CameraScript';
 import {CrisisScript} from './CrisisScript';
 import {ItemSystemScript} from './ItemSystemScript';
+import {DoorScript} from './DoorScript';
 
 const scripts = {
   movementInputScript: MovementInputScript,
@@ -15,7 +16,8 @@ const scripts = {
   villagerIdentitySystemScript: VillagerIdentitySystemScript,
   cameraScript: CameraScript,
   itemSystemScript: ItemSystemScript,
-  crisisScript: CrisisScript
+  crisisScript: CrisisScript,
+  doorScript: DoorScript
 };
 
 export {scripts as Scripts};

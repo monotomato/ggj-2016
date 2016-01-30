@@ -18,6 +18,9 @@ class MovementInputScript extends Script {
     if (Input.keyDown.right) {
       movement += this.movementSpeed;
     }
+    if (Input.keyPressed.up) {
+      EventMan.publish({eventType: 'player_interact', parameters: {}});
+    }
     parent.physics.body.vel.x = movement;
   }
 

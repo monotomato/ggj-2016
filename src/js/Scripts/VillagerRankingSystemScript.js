@@ -16,7 +16,7 @@ class VillagerRankingSystemScript extends Script {
   }
 
   init(parent, rootEntity) {
-    
+
   }
 
   update(parent, rootEntity, delta) {
@@ -36,7 +36,7 @@ class VillagerRankingSystemScript extends Script {
         return ranks[l.name] - ranks[r.name];
     });
     //Probably not needed, but I don't understand javascript so
-    parent.villagerIdentitySystemScript.villagers = this.villagers;
+    parent.villagers = this.villagers;
     EventMan.publish({eventType: 'rank_applied', parameters: {rankChanges: this.rankChanges}});
     this.rankChanges = [];
   }
@@ -60,7 +60,7 @@ class VillagerRankingSystemScript extends Script {
     } else if (evt.eventType === 'cycle_night') {
       this.applyRankChanges();
     } else if (evt.eventType === 'villagers_updated') {
-      this.villagers = parent.villagerIdentitySystemScript.villagers;
+      this.villagers = parent.villagers;
     }
   }
 }

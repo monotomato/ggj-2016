@@ -4,6 +4,7 @@ import {InputMan} from 'Managers/InputManager';
 import {Scripts} from 'Scripts/Scripts';
 import cfg from 'config.json';
 import {Physics} from 'Physics';
+import {EventMan} from 'Managers/EventManager';
 
 class Entity extends PIXI.Container {
   /* TODO: How (and when) initialize scripts? Need planning.
@@ -29,6 +30,7 @@ class Entity extends PIXI.Container {
     this.scripts.forEach((script) => {
       script.init(this, rootEntity);
     });
+    EventMan.registerListener(this);
   }
 
   // TODO: Check if event is relevant to the script.
@@ -194,6 +196,8 @@ class Entity extends PIXI.Container {
   static fromTiledObject(tiledObj){
     let props = tiledObj.properties;
     let config = resources[props.config].data;
+
+    Object.assign(config.component_data, tiledObj.properties);
 
     config.physics.options.x = tiledObj.x + tiledObj.width/2;
     config.physics.options.y = tiledObj.y + tiledObj.height/2;

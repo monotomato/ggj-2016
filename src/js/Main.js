@@ -69,13 +69,19 @@ let delta = 0;
 function loop(ctime) {
   delta += ctime - lastFrame;
 
-  while (delta > loopInterval) {
+  // Use count to limit number of accumulated frames
+  let count = 0;
+  while (delta > loopInterval && count < 3) {
+    count++;
     update(loopInterval);
     delta -= loopInterval;
     draw();
     managers.forEach((man) => {
       man.update();
     });
+  }
+  if (count == 3) {
+    delta = 0;
   }
   lastFrame = ctime;
 
