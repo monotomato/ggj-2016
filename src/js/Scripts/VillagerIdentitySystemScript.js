@@ -28,15 +28,16 @@ class VillagerIdentitySystemScript extends Script {
       if (villager.tags.indexOf('player') === -1) {
         let name;
         do {
-          let name = fnames[rand(fnames.length)] + snames[rand(snames.length)];
-        } while (reservedNames.indexOf(name) !== -1);
-        reservedNames.push(name);
-        let role = roles.splice(rand(roles.length), 1)[0];
+          let fname = fnames[rand(fnames.length)];
+          let sname = snames[rand(snames.length)];
+          name = fname + ' ' + sname;
+        } while (this.reservedNames.indexOf(name) !== -1);
+        this.reservedNames.push(name);
+        let role = this.roles.splice(rand(this.roles.length), 1)[0];
         villager.name = name;
         villager.role = role;
       }
     });
-    log.debug('Villagers inited: ' + this.villagers.length);
     EventMan.publish({eventType: 'villagers_updated', parameters: {updateType: 'identified'}});
   }
 

@@ -12,6 +12,7 @@ class MovementInputScript extends Script {
   }
 
   init(parent, rootEntity) {
+    
   }
 
   update(parent, rootEntity, delta) {

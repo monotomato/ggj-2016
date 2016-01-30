@@ -16,6 +16,7 @@ class VillagerRankingSystemScript extends Script {
   }
 
   init(parent, rootEntity) {
+    log.debug('init');
   }
 
   update(parent, rootEntity, delta) {

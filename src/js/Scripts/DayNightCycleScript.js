@@ -9,6 +9,7 @@ class DayNightCycleScript extends Script {
   }
 
   init(parent,rootEntity){
+
   }
 
   update(parent, rootEntity, delta) {
