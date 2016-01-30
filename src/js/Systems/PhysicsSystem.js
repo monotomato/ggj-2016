@@ -38,7 +38,7 @@ class PhysicsSystem extends System {
     this.world.addBehavior({
       vel: {
         x: 0,
-        y: 0.0002
+        y: 0.0022
       }
     });
     // this.world.add(gravity);
