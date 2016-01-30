@@ -10,6 +10,13 @@ class MovementInputScript extends Script {
       'input_test'
     );
   }
+
+  init(parent, rootEntity) {
+    log.debug('movem script init');
+    let ent = rootEntity.findEntitiesWithTag('test');
+    console.log(ent);
+  }
+
   update(parent, rootEntity, delta) {
     let movement = 0;
     if (Input.keyDown.left) {

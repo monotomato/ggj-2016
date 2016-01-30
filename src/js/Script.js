@@ -7,7 +7,7 @@ class Script {
   }
 
   // TODO: Script initialization.
-  init(rootEntity) {}
+  init(parent, rootEntity) {}
 
   update(parameters, parent, rootEntity, delta) {}
 

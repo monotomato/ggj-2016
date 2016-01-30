@@ -6,8 +6,12 @@
     "tags": [
       "player",
       "villager"
-    ],
-    "villageRank": 100
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+    }
   },
   "scripts":[
     {
