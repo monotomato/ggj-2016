@@ -133,7 +133,7 @@ class Physics {
               }
               body.vel.x /= 2.0;
             } else if (col.x !== 0.0) {
-              if (Math.sign(body.vel.x) !== Math.sign(col.x)) {
+              if (Math.sign(body.vel.x) === Math.sign(col.x)) {
                 body.vel.x = 0;
                 body.freeze.x = true;
               }
