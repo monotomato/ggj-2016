@@ -9,12 +9,11 @@ class AnimationScript extends Script {
     // this.eventTypes.push(
     //   'animation_test'
     // );
-    this.timeAtCurrentFrame = -1;
     this.currentFrame = 0;
   }
 
   init(parent, rootEntity) {
-    // log.debug('anim script init');
+    parent.timeAtCurrentFrame = -1;
   }
 
   update(parent, rootEntity, delta) {
@@ -23,14 +22,18 @@ class AnimationScript extends Script {
     if(anim){
       const frames = anim.anim;
 
-      if(this.timeAtCurrentFrame > frames[this.currentFrame].duration || this.timeAtCurrentFrame === -1){
+      if (frames.length <= this.currentFrame) {
+        this.currentFrame = frames.length - 1;
+      }
+
+      if(parent.timeAtCurrentFrame > frames[this.currentFrame].duration || parent.timeAtCurrentFrame === -1){
         // Change current frame
         const newFrame = (this.currentFrame + 1) % frames.length;
         this.currentFrame = newFrame;
         parent.setSprite(frames[this.currentFrame].frame);
-        this.timeAtCurrentFrame = 0;
+        parent.timeAtCurrentFrame = 0;
       } else {
-        this.timeAtCurrentFrame += delta;
+        parent.timeAtCurrentFrame += delta;
       }
     } else{
       log.warn('Animation script needs animation component to work');
