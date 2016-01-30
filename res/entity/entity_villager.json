@@ -15,5 +15,16 @@
     }
   },
   "scripts":[
+    {
+      "name" : "villagerAnimationScript",
+      "parameters":{
+        "parts":{
+          "head":"basic",
+          "body":"basic",
+          "hair":"basic",
+          "limbs":"basic"
+        }
+      }
+    }
   ]
 }

@@ -1,10 +1,10 @@
 import {resources} from 'Managers/ResourceManager';
 import {log} from 'Log';
 import {InputMan} from 'Managers/InputManager';
+import {EventMan} from 'Managers/EventManager';
 import {Scripts} from 'Scripts/Scripts';
 import cfg from 'config.json';
 import {Physics} from 'Physics';
-import {EventMan} from 'Managers/EventManager';
 
 class Entity extends PIXI.Container {
   /* TODO: How (and when) initialize scripts? Need planning.
@@ -75,6 +75,22 @@ class Entity extends PIXI.Container {
         let found;
         if(child.findEntityWithTag){
           found = child.findEntityWithTag(tag);
+        }
+        if(found){
+          return found;
+        }
+      }
+    }
+  }
+
+  findEntityWithName(name){
+    if(this.name === name){ return this; }
+    else {
+      for(let i = 0; i < this.children.length;i++){
+        let child = this.children[i];
+        let found;
+        if(child.findEntityWithName){
+          found = child.findEntityWithName(name);
         }
         if(found){
           return found;
@@ -198,6 +214,8 @@ class Entity extends PIXI.Container {
     let config = resources[props.config].data;
 
     Object.assign(config.component_data, tiledObj.properties);
+
+    config.component_data.name = tiledObj.name;
 
     config.physics.options.x = tiledObj.x + tiledObj.width/2;
     config.physics.options.y = tiledObj.y + tiledObj.height/2;

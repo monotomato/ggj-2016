@@ -23,7 +23,6 @@ class Game {
     let eventSystem = new EventSystem();
     this.systems.push(eventSystem);
 
-    log.debug("PHYSICS");
     let physicsSystem = new PhysicsSystem();
     this.systems.push(physicsSystem);
 
@@ -31,10 +30,10 @@ class Game {
     this.systems.push(scriptSystem);
 
 
-    log.debug("MMMMM");
-
-    log.debug('Debug mode');
-    if (cfg.debugMode) this.debugConstructor();
+    if (cfg.debugMode) {
+      log.debug('Debug mode is ON');
+      this.debugConstructor();
+    }
   }
 
   debugConstructor() {
@@ -59,7 +58,9 @@ class Game {
 
   loadMap(mapname) {
     console.log(resources);
-    let eMap = Entity.fromConfig(resources[mapname].data.properties.config);
+    // let a = resources[mapname].data.properties.config
+    // console.log(a);
+    let eMap = new Entity(); //Entity.fromConfig(a);
     log.debug(mapname);
     resources[mapname].data.layers.forEach(layer => {
       let eLayer = new Entity();
