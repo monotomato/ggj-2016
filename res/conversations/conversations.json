@@ -1,3 +1,29 @@
 {
-  
+  "replies": [
+    "That's really interesting.",
+    "You really are something.",
+    "Wow.",
+    "I feel enlightened.",
+    "Shut up.",
+    "Tell me more.",
+    "You've never said that before.",
+    "That's new.",
+    "Classic.",
+    "I wish I were dead.",
+    "Go away.",
+    "I'm really glad to hear that.",
+    "Nice.",
+    "...",
+    "Ok."
+  ],
+  "love": [
+    "I'd really like to have %love%.",
+    "Did you know that I really like %love%?",
+    "Wow, I really crave for %love%"
+  ],
+  "hate": [
+    "Man, I can't stand %hate%.",
+    "I wish there weren't any %hate% in this world.",
+    "I don't like %hate%"
+  ]
 }

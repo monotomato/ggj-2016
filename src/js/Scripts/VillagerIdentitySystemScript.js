@@ -16,6 +16,7 @@ class VillagerIdentitySystemScript extends Script {
   init(parent, rootEntity) {
     this.villagers = [];
     this.village = rootEntity.findEntityWithTag('village');
+    this.village.houses = this.village.houses || rootEntity.findEntitiesWithTag('location_house');
 
     let spawner = rootEntity.findEntityWithTag('spawn_villager');
 
@@ -25,6 +26,14 @@ class VillagerIdentitySystemScript extends Script {
 
     this.roles = [];
     this.reservedNames = [];
+
+    let freeHouses = [];
+
+    this.villages.houses.forEach(h => {
+      if (h.name.indexOf('town_hall') === -1) {
+        freeHouses.push(h);
+      }
+    });
 
     resources.identities.data.roles.forEach(e => this.roles.push(e));
 
@@ -42,6 +51,9 @@ class VillagerIdentitySystemScript extends Script {
         let role = this.roles.splice(rand(this.roles.length), 1)[0];
         villager.name = name;
         villager.role = role;
+      } else {
+        villager.name = 'sheep';
+        villager.role = 'sheep';
       }
     });
   }

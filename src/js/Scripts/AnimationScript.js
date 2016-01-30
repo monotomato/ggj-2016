@@ -6,9 +6,9 @@ import {EventMan} from 'Managers/EventManager';
 class AnimationScript extends Script {
   constructor(parameters) {
     super(parameters);
-    this.eventTypes.push(
-      'animation_test'
-    );
+    // this.eventTypes.push(
+    //   'animation_test'
+    // );
     this.timeAtCurrentFrame = -1;
     this.currentFrame = 0;
   }
@@ -38,7 +38,7 @@ class AnimationScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
-    log.debug('Anim script: ' + evt.parameters.message);
+
   }
 }
 

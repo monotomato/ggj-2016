@@ -21,23 +21,23 @@
     },
     {
       "name" : "villagerRankingSystemScript",
-      "parameters":{
-      }
+      "parameters":{}
     },
     {
       "name" : "villagerIdentitySystemScript",
-      "parameters":{
-      }
+      "parameters":{}
     },
     {
       "name" : "itemSystemScript",
-      "parameters":{
-      }
+      "parameters":{}
     },
     {
       "name" : "crisisScript",
-      "parameters":{
-      }
+      "parameters":{}
+    },
+    {
+      "name" : "houseControllerScript",
+      "parameters":{}
     }
   ]
 }

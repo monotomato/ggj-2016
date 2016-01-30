@@ -1,0 +1,220 @@
+{
+  "schelude": {
+    "0": {
+      "villager_1": "conversation_3",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "1": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "2": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "3": {
+      "villager_1": "home",
+      "villager_2": "conversation_2",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "conversation_2",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "4": {
+      "villager_1": "home",
+      "villager_2": "conversation_2",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "conversation_2",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "5": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "6": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "conversation_2",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "7": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "conversation_1",
+      "villager_7": "home"
+    },
+    "8": {
+      "villager_1": "home",
+      "villager_2": "conversation_3",
+      "villager_3": "home",
+      "villager_4": "conversation_3",
+      "villager_5": "home",
+      "villager_6": "conversation_1",
+      "villager_7": "home"
+    },
+    "9": {
+      "villager_1": "home",
+      "villager_2": "conversation_3",
+      "villager_3": "home",
+      "villager_4": "conversation_3",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "10": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "conversation_1",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "conversation_2"
+    },
+    "11": {
+      "villager_1": "conversation_1",
+      "villager_2": "home",
+      "villager_3": "conversation_2",
+      "villager_4": "conversation_2",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "12": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "conversation_1",
+      "villager_6": "home",
+      "villager_7": "conversation_3"
+    },
+    "13": {
+      "villager_1": "home",
+      "villager_2": "conversation_3",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "conversation_3",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "14": {
+      "villager_1": "conversation_1",
+      "villager_2": "conversation_1",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "15": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "conversation_2",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "16": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "17": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "conversation_2",
+      "villager_4": "conversation_2",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "18": {
+      "villager_1": "conversation_1",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "conversation_1"
+    },
+    "19": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "conversation_3",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "20": {
+      "villager_1": "home",
+      "villager_2": "conversation_2",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "conversation_2",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "21": {
+      "villager_1": "conversation_2",
+      "villager_2": "conversation_2",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "22": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "home",
+      "villager_7": "home"
+    },
+    "23": {
+      "villager_1": "home",
+      "villager_2": "home",
+      "villager_3": "home",
+      "villager_4": "home",
+      "villager_5": "home",
+      "villager_6": "conversation_3",
+      "villager_7": "home"
+    }
+  }
+}
