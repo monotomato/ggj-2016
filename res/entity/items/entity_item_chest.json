@@ -4,7 +4,8 @@
     "animation":{"anim":[{"frame":"item_chest", "duration":1000}],"speed":0},
     "tags": [
       "item",
-      "test"
+      "item_container",
+      "item_furniture"
     ]
   },
   "physics":{
@@ -16,6 +17,10 @@
     {
       "name" : "animationScript",
       "parameters":{}
+    },
+    {
+      "name": "tossableScript",
+      "parameters": {}
     }
   ]
 }

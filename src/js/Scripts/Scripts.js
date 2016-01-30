@@ -9,6 +9,7 @@ import {ItemSystemScript} from './ItemSystemScript';
 import {TossableScript} from './TossableScript';
 import {DoorScript} from './DoorScript';
 import {FadeInScript} from './FadeInScript';
+import {VillagerAnimationScript} from './VillagerAnimationScript';
 
 const scripts = {
   movementInputScript: MovementInputScript,
@@ -21,7 +22,8 @@ const scripts = {
   crisisScript: CrisisScript,
   tossableScript: TossableScript,
   doorScript: DoorScript,
-  fadeInScript: FadeInScript
+  fadeInScript: FadeInScript,
+  villagerAnimationScript: VillagerAnimationScript
 };
 
 export {scripts as Scripts};

@@ -2,7 +2,7 @@ import {log} from 'Log';
 import {Script} from 'Script';
 import {EventMan} from 'Managers/EventManager';
 import {resources} from 'Managers/ResourceManager';
-import {rand} from 'Utils/NumUtils';
+import {rand} from 'Utils/NumUtil';
 import {Entity} from 'Entity';
 
 class VillagerIdentitySystemScript extends Script {
@@ -14,8 +14,14 @@ class VillagerIdentitySystemScript extends Script {
   }
 
   init(parent, rootEntity) {
-    parent.villagers = rootEntity.findEntitiesWithTag('villager');
-    this.villagers = parent.villagers;
+    this.villagers = [];
+    this.village = rootEntity.findEntityWithTag('village');
+
+    let spawner = rootEntity.findEntityWithTag('spawn_villager');
+
+    // parent.villagers = rootEntity.findEntitiesWithTag('villager');
+    parent.villagers = this.villagers;
+    // log.debug(parent);
 
     this.roles = [];
     this.reservedNames = [];
