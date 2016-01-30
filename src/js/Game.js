@@ -48,18 +48,28 @@ class Game {
     fade.addBox(0x000000, cfg.renderer.size.x, cfg.renderer.size.y);
     fade.position.x = cfg.renderer.size.x / 2;
     fade.position.y = cfg.renderer.size.y / 2;
+    let clock = new Entity();
+    clock.addBox(0xFFFFFF, 50, 50);
+    let text = new PIXI.Text('Clockan is kymppi',{font : '24px Arial', fill : 0xff1010, align : 'center'});
+    text.x = -7;
+    text.y = -13;
+    clock.addChild(text);
+    clock.position.x = cfg.renderer.size.x - 30;
+    clock.position.y = cfg.renderer.size.y - 30;
+    clock.addScript('dayNightCycleScript');
     fade.addScript('fadeInScript');
     this.addEntityToUI(fade);
+    this.addEntityToUI(clock);
     this.stage.init(this.stage);
   }
 
   addEntityToWorld(entity) {
-    EventMan.registerListener(entity);
+    // EventMan.registerListener(entity);
     this.world.addChild(entity);
   }
 
   addEntityToUI(entity) {
-    EventMan.registerListener(entity);
+    // EventMan.registerListener(entity);
     this.ui.addChild(entity);
   }
 

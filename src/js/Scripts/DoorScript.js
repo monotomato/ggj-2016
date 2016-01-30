@@ -25,6 +25,7 @@ class DoorScript extends Script {
         this.player.physics.body.pos.x = this.target.physics.body.pos.x;
         this.player.physics.body.pos.y = this.target.physics.body.pos.y;
         this.player.entered = true;
+        EventMan.publish({eventType: 'time_advance', parameters: {}});
       }
     }
   }
