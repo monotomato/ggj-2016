@@ -17,6 +17,12 @@ class MovementInputScript extends Script {
     if (Input.keyDown.right) {
       movement += this.movementSpeed;
     }
+    if (Input.keyPressed.interact) {
+      EventMan.publish({
+        eventType: 'interact_player',
+        parameters: {}
+      });
+    }
     if (Input.keyPressed.up) {
       EventMan.publish({eventType: 'enter_player', parameters: {}});
     }

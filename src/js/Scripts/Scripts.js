@@ -6,6 +6,7 @@ import {VillagerIdentitySystemScript} from './VillagerIdentitySystemScript';
 import {CameraScript} from './CameraScript';
 import {CrisisScript} from './CrisisScript';
 import {ItemSystemScript} from './ItemSystemScript';
+import {TossableScript} from './TossableScript';
 import {DoorScript} from './DoorScript';
 
 const scripts = {
@@ -17,6 +18,7 @@ const scripts = {
   cameraScript: CameraScript,
   itemSystemScript: ItemSystemScript,
   crisisScript: CrisisScript,
+  tossableScript: TossableScript,
   doorScript: DoorScript
 };
 

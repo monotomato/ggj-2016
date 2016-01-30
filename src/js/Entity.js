@@ -1,10 +1,10 @@
 import {resources} from 'Managers/ResourceManager';
 import {log} from 'Log';
 import {InputMan} from 'Managers/InputManager';
+import {EventMan} from 'Managers/EventManager';
 import {Scripts} from 'Scripts/Scripts';
 import cfg from 'config.json';
 import {Physics} from 'Physics';
-import {EventMan} from 'Managers/EventManager';
 
 class Entity extends PIXI.Container {
   /* TODO: How (and when) initialize scripts? Need planning.
