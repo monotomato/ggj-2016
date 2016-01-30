@@ -29,7 +29,7 @@ class VillagerIdentitySystemScript extends Script {
 
     let freeHouses = [];
 
-    this.villages.houses.forEach(h => {
+    this.village.houses.forEach(h => {
       if (h.name.indexOf('town_hall') === -1) {
         freeHouses.push(h);
       }
