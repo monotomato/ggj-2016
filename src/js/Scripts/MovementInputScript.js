@@ -13,9 +13,13 @@ class MovementInputScript extends Script {
     parent.entered = false;
     if (Input.keyDown.left) {
       movement -= this.movementSpeed;
+      parent.sprite.scale.x = -1;
+      parent.facingRight = false;
     }
     if (Input.keyDown.right) {
       movement += this.movementSpeed;
+      parent.sprite.scale.x = +1;
+      parent.facingRight = true;
     }
     if (Input.keyPressed.interact) {
       EventMan.publish({
