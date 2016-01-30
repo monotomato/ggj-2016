@@ -1,0 +1,19 @@
+{
+  "component_configuration":{
+  },
+  "component_data":{
+    "collider_color":"0xFF00FF",
+    "tags": [
+      "spawn_villager"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "treatment":"trigger"
+    }
+  },
+  "scripts":[
+
+  ]
+}

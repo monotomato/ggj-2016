@@ -57,7 +57,10 @@ class Game {
   }
 
   loadMap(mapname) {
-    let eMap = new Entity();
+    console.log(resources);
+    // let a = resources[mapname].data.properties.config
+    // console.log(a);
+    let eMap = new Entity(); //Entity.fromConfig(a);
     log.debug(mapname);
     resources[mapname].data.layers.forEach(layer => {
       let eLayer = new Entity();
