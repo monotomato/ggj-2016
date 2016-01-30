@@ -233,7 +233,7 @@
                  "name":"spawn",
                  "properties":
                     {
-                     "config":"entity_location_item"
+                     "config":"entity_item_apple"
                     },
                  "rotation":0,
                  "type":"item_spawn",
@@ -241,34 +241,6 @@
                  "width":32,
                  "x":704,
                  "y":416
-                }, 
-                {
-                 "height":32,
-                 "name":"spawn",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"item_spawn",
-                 "visible":true,
-                 "width":32,
-                 "x":864,
-                 "y":416
-                }, 
-                {
-                 "height":32,
-                 "name":"spawn",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"item_spawn",
-                 "visible":true,
-                 "width":32,
-                 "x":704,
-                 "y":800
                 }],
          "opacity":1,
          "type":"objectgroup",

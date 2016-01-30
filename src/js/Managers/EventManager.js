@@ -33,6 +33,7 @@ class EventManager extends Manager{
   registerListener(listener) {
     let eventTypes = this.optimizeEventTypes(listener.eventTypes);
     eventTypes.forEach((eventType) => {
+      log.debug("Event type: " + eventType);
       let s = eventType.split('_');
       let root = this.listeners;
       for (let i = 0; i < s.length; i++) {

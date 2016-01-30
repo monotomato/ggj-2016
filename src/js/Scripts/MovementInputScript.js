@@ -20,7 +20,7 @@ class MovementInputScript extends Script {
     }
     if (Input.keyPressed.interact) {
       EventMan.publish({
-        eventType:' interact_player',
+        eventType: 'interact_player',
         parameters: {}
       });
     }
