@@ -60,7 +60,7 @@ gulp.task('sprite', function(){
     imgName : 'sprite.png',
     cssName : 'sprite.json',
     cssTemplate : sprite_texturepacker,
-    padding: 0
+    padding: 5
   };
 
   var spriteData = gulp.src( 'res/sprite/**/*.png' )

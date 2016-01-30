@@ -14,7 +14,7 @@ import cfg from 'config.json';
 
 // Pixi setup
 PIXI.utils._saidHello = true; // Keep console clean
-PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
+// PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 
 // Renderer
 const redOpt = cfg.renderer.options;
