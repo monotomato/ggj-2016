@@ -8,6 +8,7 @@ import {CrisisScript} from './CrisisScript';
 import {ItemSystemScript} from './ItemSystemScript';
 import {TossableScript} from './TossableScript';
 import {DoorScript} from './DoorScript';
+import {FadeInScript} from './FadeInScript';
 
 const scripts = {
   movementInputScript: MovementInputScript,
@@ -19,7 +20,8 @@ const scripts = {
   itemSystemScript: ItemSystemScript,
   crisisScript: CrisisScript,
   tossableScript: TossableScript,
-  doorScript: DoorScript
+  doorScript: DoorScript,
+  fadeInScript: FadeInScript
 };
 
 export {scripts as Scripts};
