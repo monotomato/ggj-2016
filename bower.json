@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "pixi.js": "~3.0.9",
-    "PhysicsJS": "physicsjs#~0.7.0",
-    "howler.js": "~2.0.0"
+    "howler.js": "~2.0.0",
+    "jquery": "~2.2.0"
   }
 }

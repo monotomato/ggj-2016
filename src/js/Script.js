@@ -9,6 +9,7 @@ class Script {
   init(parent, rootEntity) {}
 
   update(parameters, parent, rootEntity, delta) {}
+  lateUpdate(parameters, parent, rootEntity, delta) {}
 
   handleGameEvent(parent, evt) {}
 }

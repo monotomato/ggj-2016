@@ -1,70 +1,84 @@
 import {System} from 'System';
 import {log} from 'Log';
 import cfg from 'config.json';
+import {Physics} from 'Physics';
 
 class PhysicsSystem extends System {
   constructor(timeStep = 3, maxIPF = 16, integrator = 'verlet') {
     super();
-    this.time = 0.0;
-    this.world = Physics({
-      // set the timestep
-      timestep: timeStep,
-      // maximum number of iterations per step
-      maxIPF: maxIPF,
-      // set the integrator (may also be set with world.add())
-      integrator: integrator,
-      //Nothing sleeps
-      sleepDisabled: true
-    });
-    this.world.on('collisions:detected', data => {
-
-    });
+    this.world = new Physics();
+    // this.time = 0.0;
+    // this.world = Physics({
+    //   // set the timestep
+    //   timestep: timeStep,
+    //   // maximum number of iterations per step
+    //   maxIPF: maxIPF,
+    //   // set the integrator (may also be set with world.add())
+    //   integrator: integrator,
+    //   //Nothing sleeps
+    //   sleepDisabled: true
+    // });
     if (cfg.debugMode) this.debug();
   }
 
+  addEntity(entity) {
+    if (entity.physics && entity.physics.body) {
+      if (entity.physics.body.static) {
+        this.world.staticBodies.push(entity.physics.body);
+      } else {
+        this.world.dynamicBodies.push(entity.physics.body);
+      }
+    } else {
+      log.debug('Cannot add to physics: entity does not have a body!');
+    }
+  }
+
+
   debug() {
-    let gravity = Physics.behavior('constant-acceleration');
-    this.world.add(gravity);
-
-    let viewportBounds = Physics.aabb(0, 0, cfg.renderer.size.x, cfg.renderer.size.y);
-
-    // let edgeBounce = Physics.behavior('edge-collision-detection', {
-    //     aabb: viewportBounds,
-    //     restitution: 0.0,
-    //     cof: 0.0
-    // });
-
-    // this.world.add(edgeBounce);
-    this.world.add([
-      Physics.behavior('sweep-prune'),
-      //Physics.behavior('body-collision-detection'),
-      Physics.behavior('body-impulse-response')
-    ]);
+    this.world.addBehavior({
+      vel: {
+        x: 0,
+        y: 0.0002
+      }
+    });
+    // this.world.add(gravity);
+    //
+    // let viewportBounds = Physics.aabb(0, 0, cfg.renderer.size.x, cfg.renderer.size.y);
+    //
+    // // let edgeBounce = Physics.behavior('edge-collision-detection', {
+    // //     aabb: viewportBounds,
+    // //     restitution: 0.0,
+    // //     cof: 0.0
+    // // });
+    //
+    // // this.world.add(edgeBounce);
+    // this.world.add([
+    //   Physics.behavior('sweep-prune'),
+    //   Physics.behavior('body-collision-detection'),
+    //   Physics.behavior('body-impulse-response')
+    // ]);
   }
 
   applySystem(entity, rootEntity, delta) {
     if (entity.physics) {
-      // Add the entity if it isn't in the world yet
       if (!entity.physics.inWorld) {
-        this.world.add(entity.physics.body);
+        // log.debug('Adding to world');
+        this.world.addEntity(entity);
         entity.physics.inWorld = true;
         // log.debug(entity.physics.body.state);
       }
       // Update the position of the entity to that of the
       // body
-
-      // if (entity.physics.body.state.pos.x > 0) log.debug(entity.physics.body);
       entity.position = {
-        x: entity.physics.body.state.pos.x,
-        y: entity.physics.body.state.pos.y
+        x: entity.physics.body.pos.x,
+        y: entity.physics.body.pos.y
       };
     }
   }
 
   updateSystem(rootEntity, delta) {
-    this.time += delta;
-    this.world.step(this.time);
-    // console.log(this.world.collisionGroups);
+    this.world.step(delta);
+    // log.debug(this.world);
   }
 }
 

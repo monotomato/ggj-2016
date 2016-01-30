@@ -10,6 +10,7 @@ import cfg from 'config.json';
 
 class Game {
   constructor() {
+    log.debug('CONSTRUCTOR');
     this.stage = new Entity();
     this.ui = new Entity(); //new Entity('entity_ui');
     this.stage.addChild(this.ui);
@@ -18,15 +19,21 @@ class Game {
     this.stage.addChild(this.world);
 
     this.systems = [];
-    let scriptSystem = new ScriptSystem();
-    this.systems.push(scriptSystem);
 
     let eventSystem = new EventSystem();
     this.systems.push(eventSystem);
 
+    log.debug("PHYSICS");
     let physicsSystem = new PhysicsSystem();
     this.systems.push(physicsSystem);
+    
+    let scriptSystem = new ScriptSystem();
+    this.systems.push(scriptSystem);
 
+
+    log.debug("MMMMM");
+
+    log.debug('Debug mode');
     if (cfg.debugMode) this.debugConstructor();
   }
 
@@ -53,6 +60,7 @@ class Game {
   loadMap(mapname) {
     console.log(resources);
     let eMap = new Entity();
+    log.debug(mapname);
     resources[mapname].data.layers.forEach(layer => {
       let eLayer = new Entity();
       // console.log(layer);

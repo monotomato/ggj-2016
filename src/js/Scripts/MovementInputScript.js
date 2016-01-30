@@ -10,32 +10,15 @@ class MovementInputScript extends Script {
       'input_test'
     );
   }
-
-  init(parent, rootEntity) {
-    
-  }
-
   update(parent, rootEntity, delta) {
-    // let movement = 0;
-    // if (Input.keyDown.left) {
-    //   movement -= this.movementSpeed;
-    // }
-    // if (Input.keyDown.right) {
-    //   movement += this.movementSpeed;
-    // }
-    // parent.physics.body.state.vel.x = movement;
+    let movement = 0;
     if (Input.keyDown.left) {
-      parent.position.x += 5.0;
+      movement -= this.movementSpeed;
     }
     if (Input.keyDown.right) {
-      parent.position.x -= 5.0;
+      movement += this.movementSpeed;
     }
-    if (Input.keyDown.up) {
-      parent.position.y += 5.0;
-    }
-    if (Input.keyDown.down) {
-      parent.position.y -= 5.0;
-    }
+    parent.physics.body.vel.x = movement;
   }
 
   handleGameEvent(parent, evt) {

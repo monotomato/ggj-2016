@@ -11,7 +11,7 @@
   "physics":{
     "bodyType": "rectangle",
     "options": {
-      "treatment":"static"
+      "treatment":"trigger"
     }
   },
   "scripts":[
