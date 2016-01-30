@@ -18,6 +18,7 @@ class ItemSystemScript extends Script {
   init(parent,rootEntity) {
     this.village = rootEntity.findEntityWithTag('village');
     this.items = rootEntity.findEntitiesWithTag('item');
+    this.village.items = this.village.items || this.items;
     this.itemLocations = rootEntity.findEntitiesWithTag('location_item');
     this.relocateItems(rootEntity);
   }
