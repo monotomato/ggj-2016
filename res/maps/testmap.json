@@ -198,6 +198,45 @@
                  "width":32,
                  "x":1416,
                  "y":153
+                }, 
+                {
+                 "height":172,
+                 "name":"town_hall",
+                 "properties":
+                    {
+                     "config":"entity_location_house"
+                    },
+                 "type":"loc",
+                 "visible":true,
+                 "width":217,
+                 "x":1068,
+                 "y":676
+                }, 
+                {
+                 "height":174,
+                 "name":"house_1",
+                 "properties":
+                    {
+                     "config":"entity_location_house"
+                    },
+                 "type":"loc",
+                 "visible":true,
+                 "width":167,
+                 "x":1511,
+                 "y":426
+                }, 
+                {
+                 "height":259,
+                 "name":"house_2",
+                 "properties":
+                    {
+                     "config":"entity_location_house"
+                    },
+                 "type":"loc",
+                 "visible":true,
+                 "width":339,
+                 "x":1862,
+                 "y":111
                 }],
          "opacity":1,
          "type":"objectgroup",

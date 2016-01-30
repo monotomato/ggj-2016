@@ -1,0 +1,14 @@
+{
+  "component_configuration":{},
+  "component_data":{
+    "tags": [
+      "location_house"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": { }
+  },
+  "scripts":[
+  ]
+}
