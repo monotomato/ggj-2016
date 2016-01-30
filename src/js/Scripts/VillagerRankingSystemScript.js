@@ -8,17 +8,15 @@ class VillagerRankingSystemScript extends Script {
     super(parameters);
     this.eventTypes.push(
       'rank_change',
-      'day_end'
+      'cycle_night',
+      'villagers_updated'
     );
     this.rankChanges = [];
     this.villagers = [];
   }
 
   init(parent, rootEntity) {
-    this.villagers = rootEntity.findEntitiesWithTag('villager');
-    // let testString = 'Hello my name is %name !';
-    // let populatedStr = populateTemplate(testString, {name:'Matti'});
-    // log.debug(populatedStr);
+    
   }
 
   update(parent, rootEntity, delta) {
@@ -26,23 +24,24 @@ class VillagerRankingSystemScript extends Script {
   }
 
   applyRankChanges() {
+    let ranks = {};
+    for (let i = 0; this.villagers.length; i++) {
+      ranks[villagers[i].name] = i;
+    }
     for (let i = 0; i < this.rankChanges.length; i++) {
       let rankChange = this.rankChanges[i];
-      let villagerRank = findVillagerIndex(rankChange.villagerName);
-      let change = rankChange.rankChange;
-      if ((villagerRank === 0 && change === -1) || (villagerRank === this.villagers.size - 1 && change === 1)) {
-        continue;
-      }
-      let swap = this.villagers[villagerRank + change];
-      this.villagers[villagerRank + change] = this.villagers[villagerRank];
-      this.villagers[villagerRank] = swap;
+      ranks[rankChange.villagerName] += rankChange.rankChange;
     }
+    this.villagers.sort(l, r => {
+        return ranks[l.name] - ranks[r.name];
+    });
+    //Probably not needed, but I don't understand javascript so
+    parent.villagerIdentitySystemScript.villagers = this.villagers;
     EventMan.publish({eventType: 'rank_applied', parameters: {rankChanges: this.rankChanges}});
     this.rankChanges = [];
   }
 
   findVillager(name) {
-    //TODO fetch villagers by tag, in script init?
     return this.villagers[findVillagerIndex(name)];
   }
 
@@ -58,8 +57,10 @@ class VillagerRankingSystemScript extends Script {
   handleGameEvent(parent, evt) {
     if (evt.eventType === 'rank_change') {
       this.rankChanges.push({villagerName: evt.parameters.villagerName, rankChange: evt.parameters.rankChange});
-    } else if (evt.eventType === 'day_end') {
+    } else if (evt.eventType === 'cycle_night') {
       this.applyRankChanges();
+    } else if (evt.eventType === 'villagers_updated') {
+      this.villagers = parent.villagerIdentitySystemScript.villagers;
     }
   }
 }

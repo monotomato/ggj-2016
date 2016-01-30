@@ -12,7 +12,7 @@ class MovementInputScript extends Script {
   }
 
   init(parent, rootEntity) {
-    // log.debug('movem script init');
+    
   }
 
   update(parent, rootEntity, delta) {

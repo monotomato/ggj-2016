@@ -23,6 +23,21 @@
       "name" : "villagerRankingSystemScript",
       "parameters":{
       }
+    },
+    {
+      "name" : "villagerIdentitySystemScript",
+      "parameters":{
+      }
+    },
+    {
+      "name" : "itemSystemScript",
+      "parameters":{
+      }
+    },
+    {
+      "name" : "crisisScript",
+      "parameters":{
+      }
     }
   ]
 }

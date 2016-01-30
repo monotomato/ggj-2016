@@ -1,0 +1,23 @@
+{
+  "component_configuration":{},
+  "component_data":{
+    "animation":{"anim":[{"frame":"item_chest", "duration":1000}],"speed":0},
+    "tags": [
+      "item",
+      "item_food",
+      "item_fruit",
+      "item_natural"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+    }
+  },
+  "scripts":[
+    {
+      "name" : "animationScript",
+      "parameters":{}
+    }
+  ]
+}
