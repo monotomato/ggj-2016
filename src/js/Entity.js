@@ -83,6 +83,22 @@ class Entity extends PIXI.Container {
     }
   }
 
+  findEntityWithName(name){
+    if(this.name === name){ return this; }
+    else {
+      for(let i = 0; i < this.children.length;i++){
+        let child = this.children[i];
+        let found;
+        if(child.findEntityWithName){
+          found = child.findEntityWithName(name);
+        }
+        if(found){
+          return found;
+        }
+      }
+    }
+  }
+
   // TODO: Remove duplicate event types (keep only topmost)
   addScript(scriptName, parameters) {
     let script = new Scripts[scriptName](parameters);
@@ -187,6 +203,8 @@ class Entity extends PIXI.Container {
     let config = resources[props.config].data;
 
     Object.assign(config.component_data, tiledObj.properties);
+
+    config.component_data.name = tiledObj.name;
 
     config.physics.options.x = tiledObj.x + tiledObj.width/2;
     config.physics.options.y = tiledObj.y + tiledObj.height/2;

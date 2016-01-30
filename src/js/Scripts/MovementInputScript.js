@@ -6,12 +6,11 @@ import {EventMan} from 'Managers/EventManager';
 class MovementInputScript extends Script {
   constructor(parameters) {
     super(parameters);
-    this.eventTypes.push(
-      'input_test'
-    );
   }
+
   update(parent, rootEntity, delta) {
     let movement = 0;
+    parent.entered = false;
     if (Input.keyDown.left) {
       movement -= this.movementSpeed;
     }
@@ -19,7 +18,7 @@ class MovementInputScript extends Script {
       movement += this.movementSpeed;
     }
     if (Input.keyPressed.up) {
-      EventMan.publish({eventType: 'player_interact', parameters: {}});
+      EventMan.publish({eventType: 'enter_player', parameters: {}});
     }
     parent.physics.body.vel.x = movement;
   }
