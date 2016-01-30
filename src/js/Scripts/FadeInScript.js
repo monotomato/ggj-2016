@@ -25,6 +25,12 @@ class FadeInScript extends Script {
         parent.alpha = 0.0;
         this.fade_in = false;
       }
+    } else if (this.fade_out) {
+      parent.alpha += 0.01;
+      if (parent.alpha > 1.0) {
+        parent.alpha = 1.0;
+        this.fade_out = false;
+      }
     }
   }
 
