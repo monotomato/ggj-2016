@@ -10,7 +10,7 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "draworder":"topdown",
          "height":35,
@@ -18,7 +18,6 @@
          "objects":[
                 {
                  "height":32,
-                 "id":1,
                  "name":"Villager",
                  "properties":
                     {
@@ -30,10 +29,9 @@
                  "width":32,
                  "x":1576,
                  "y":96
-                },
+                }, 
                 {
                  "height":64,
-                 "id":3,
                  "name":"player",
                  "properties":
                     {
@@ -45,10 +43,9 @@
                  "width":64,
                  "x":576,
                  "y":288
-                },
+                }, 
                 {
                  "height":32,
-                 "id":4,
                  "name":"Villager",
                  "properties":
                     {
@@ -60,10 +57,9 @@
                  "width":32,
                  "x":1640,
                  "y":96
-                },
+                }, 
                 {
                  "height":32,
-                 "id":5,
                  "name":"Village",
                  "properties":
                     {
@@ -75,10 +71,9 @@
                  "width":32,
                  "x":1760,
                  "y":40
-                },
+                }, 
                 {
                  "height":48,
-                 "id":6,
                  "name":"",
                  "properties":
                     {
@@ -90,10 +85,9 @@
                  "width":2368,
                  "x":96,
                  "y":848
-                },
+                }, 
                 {
                  "height":40,
-                 "id":7,
                  "name":"",
                  "properties":
                     {
@@ -105,10 +99,9 @@
                  "width":456,
                  "x":1464,
                  "y":600
-                },
+                }, 
                 {
                  "height":40,
-                 "id":8,
                  "name":"",
                  "properties":
                     {
@@ -120,10 +113,9 @@
                  "width":592,
                  "x":1656,
                  "y":368
-                },
+                }, 
                 {
                  "height":40,
-                 "id":9,
                  "name":"",
                  "properties":
                     {
@@ -135,10 +127,9 @@
                  "width":480,
                  "x":416,
                  "y":464
-                },
+                }, 
                 {
                  "height":32,
-                 "id":10,
                  "name":"",
                  "properties":
                     {
@@ -150,10 +141,9 @@
                  "width":32,
                  "x":-64,
                  "y":-32
-                },
+                }, 
                 {
                  "height":32,
-                 "id":11,
                  "name":"",
                  "properties":
                     {
@@ -165,10 +155,9 @@
                  "width":32,
                  "x":0,
                  "y":32
-                },
+                }, 
                 {
                  "height":64,
-                 "id":14,
                  "name":"trigger_door_3",
                  "properties":
                     {
@@ -181,10 +170,9 @@
                  "width":40,
                  "x":1720,
                  "y":304
-                },
+                }, 
                 {
                  "height":64,
-                 "id":15,
                  "name":"trigger_door_4",
                  "properties":
                     {
@@ -204,7 +192,7 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "draworder":"topdown",
          "height":35,
@@ -212,7 +200,6 @@
          "objects":[
                 {
                  "height":64,
-                 "id":12,
                  "name":"trigger_door_1",
                  "properties":
                     {
@@ -225,10 +212,9 @@
                  "width":40,
                  "x":480,
                  "y":784
-                },
+                }, 
                 {
                  "height":64,
-                 "id":13,
                  "name":"trigger_door_2",
                  "properties":
                     {
@@ -241,6 +227,48 @@
                  "width":40,
                  "x":472,
                  "y":400
+                }, 
+                {
+                 "height":32,
+                 "name":"spawn",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"item_spawn",
+                 "visible":true,
+                 "width":32,
+                 "x":704,
+                 "y":416
+                }, 
+                {
+                 "height":32,
+                 "name":"spawn",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"item_spawn",
+                 "visible":true,
+                 "width":32,
+                 "x":864,
+                 "y":416
+                }, 
+                {
+                 "height":32,
+                 "name":"spawn",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"item_spawn",
+                 "visible":true,
+                 "width":32,
+                 "x":704,
+                 "y":800
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -248,7 +276,7 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "height":35,
          "image":"testlevelFG.png",
@@ -260,7 +288,6 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":16,
  "orientation":"orthogonal",
  "properties":
     {

@@ -1,6 +1,7 @@
 import {resources} from 'Managers/ResourceManager';
 import {log} from 'Log';
 import {InputMan} from 'Managers/InputManager';
+import {EventMan} from 'Managers/EventManager';
 import {Scripts} from 'Scripts/Scripts';
 import cfg from 'config.json';
 import {Physics} from 'Physics';
@@ -29,6 +30,7 @@ class Entity extends PIXI.Container {
     this.scripts.forEach((script) => {
       script.init(this, rootEntity);
     });
+    EventMan.registerListener(this);
   }
 
   // TODO: Check if event is relevant to the script.
