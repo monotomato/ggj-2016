@@ -12,6 +12,10 @@ class VillagerRankingSystemScript extends Script {
     this.rankChanges = [];
   }
 
+  init(parent, rootEntity) {
+    log.debug('"AAAAAAAA"');
+  }
+
   update(parent, rootEntity, delta) {
 
   }

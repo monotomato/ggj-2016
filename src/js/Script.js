@@ -6,7 +6,6 @@ class Script {
     this.eventTypes = [];
   }
 
-  // TODO: Script initialization.
   init(parent, rootEntity) {}
 
   update(parameters, parent, rootEntity, delta) {}
