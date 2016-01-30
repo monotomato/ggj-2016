@@ -9,7 +9,7 @@ class DayNightCycleScript extends Script {
   }
 
   init(parent,rootEntity){
-    log.debug('DayNightCycleScript init');
+    // log.debug('DayNightCycleScript init');
   }
 
   update(parent, rootEntity, delta) {

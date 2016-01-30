@@ -214,6 +214,96 @@
                  "width":64,
                  "x":160,
                  "y":96
+                }, 
+                {
+                 "height":32,
+                 "id":16,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":64,
+                 "y":544
+                }, 
+                {
+                 "height":32,
+                 "id":17,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":128,
+                 "y":544
+                }, 
+                {
+                 "height":32,
+                 "id":18,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":192,
+                 "y":544
+                }, 
+                {
+                 "height":32,
+                 "id":19,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":256,
+                 "y":544
+                }, 
+                {
+                 "height":32,
+                 "id":20,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":320,
+                 "y":544
+                }, 
+                {
+                 "height":32,
+                 "id":21,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":384,
+                 "y":544
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -222,7 +312,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":16,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "properties":
     {

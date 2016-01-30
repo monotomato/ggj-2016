@@ -1,6 +1,7 @@
 import {log} from 'Log';
 import {Script} from 'Script';
 import {EventMan} from 'Managers/EventManager';
+import {populateTemplate} from 'Utils/StringUtil';
 
 class VillagerRankingSystemScript extends Script {
   constructor(parameters) {
@@ -10,10 +11,14 @@ class VillagerRankingSystemScript extends Script {
       'day_end'
     );
     this.rankChanges = [];
+    this.villagers = [];
   }
 
   init(parent, rootEntity) {
-    // log.debug('"AAAAAAAA"');
+    this.villagers = rootEntity.findEntitiesWithTag('villager');
+    // let testString = 'Hello my name is %name !';
+    // let populatedStr = populateTemplate(testString, {name:'Matti'});
+    // log.debug(populatedStr);
   }
 
   update(parent, rootEntity, delta) {
