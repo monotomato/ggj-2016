@@ -139,6 +139,18 @@ class Entity extends PIXI.Container {
     this.sprite.texture = resources.sprite.textures[spriteName];
   }
 
+  addBox(color, width, height) {
+    let graphics = new PIXI.Graphics();
+    graphics.beginFill(color);
+    graphics.drawRect(0, 0, width, height);
+    graphics.pivot = {
+      x: width/2,
+      y: height/2
+    };
+
+    this.addChild(graphics);
+  }
+
   // https://github.com/wellcaffeinated/PhysicsJS/wiki/Fundamentals#the-factory-pattern
   addPhysics(bodyType, options = {}) {
     this.physics = {
