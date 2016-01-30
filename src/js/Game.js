@@ -7,6 +7,7 @@ import {Scripts} from 'Scripts/Scripts';
 import {EventMan} from 'Managers/EventManager';
 import {resources} from 'Managers/ResourceManager';
 import cfg from 'config.json';
+import {Factory} from 'Factory';
 
 class Game {
   constructor() {
@@ -49,6 +50,12 @@ class Game {
     fade.position.x = cfg.renderer.size.x / 2;
     fade.position.y = cfg.renderer.size.y / 2;
     fade.addScript('fadeInScript');
+
+    let bubble = Factory.createSpeechBubble(10, 3, 6, 'The short brown little fox thing jumped over the lazy dog.');
+    bubble.position.x = 480 + 25;
+    bubble.position.y = 320 - 60;
+    this.addEntityToUI(bubble);
+
     this.addEntityToUI(fade);
     this.stage.init(this.stage);
   }
