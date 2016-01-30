@@ -5,6 +5,7 @@ class Physics {
   constructor() {
     this.dynamicBodies = [];
     this.staticBodies = [];
+    this.triggers = [];
     this.behaviors = [];
   }
 
@@ -174,6 +175,8 @@ class Physics {
     body.pos.y = options.y | 0;
     if (options.treatment === 'static') {
       body.static = true;
+    } else if (options.treatment === 'trigger') {
+      body.trigger = true;
     }
     Object.assign(body, options);
     // log.debug(body);
