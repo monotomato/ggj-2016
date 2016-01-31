@@ -159,7 +159,12 @@ class Physics {
       if (entity.physics.body.static) {
         this.staticBodies.push(entity.physics.body);
       } else {
-        this.dynamicBodies.push(entity.physics.body);
+        if (entity.physics.body.trigger) {
+          this.triggers.push(entity.physics.body);
+        } else {
+          this.dynamicBodies.push(entity.physics.body);
+        }
+
       }
     } else {
       log.debug('Cannot add to physics: entity does not have a body!');
