@@ -160,23 +160,23 @@ class Entity extends PIXI.Container {
   }
 
   addDebugGraphics(){
-    let physics = this.physics;
-    if(physics){
-      let body = physics.body;
-      this.debugGraphics = new PIXI.Graphics();
-      let color = this.collider_color || '0xFFFFFF';
-
-      // log.debug(body);
-      this.debugGraphics.beginFill(color);
-      this.debugGraphics.lineStyle(2, '0x000000');
-      this.debugGraphics.alpha = 0.5;
-      this.debugGraphics.drawRect(0, 0, body.width, body.height);
-      this.debugGraphics.pivot = {
-        x: body.width/2,
-        y: body.height/2
-      };
-      this.addChild(this.debugGraphics);
-    }
+    // let physics = this.physics;
+    // if(physics){
+    //   let body = physics.body;
+    //   this.debugGraphics = new PIXI.Graphics();
+    //   let color = this.collider_color || '0xFFFFFF';
+    //
+    //   // log.debug(body);
+    //   this.debugGraphics.beginFill(color);
+    //   this.debugGraphics.lineStyle(2, '0x000000');
+    //   this.debugGraphics.alpha = 0.5;
+    //   this.debugGraphics.drawRect(0, 0, body.width, body.height);
+    //   this.debugGraphics.pivot = {
+    //     x: body.width/2,
+    //     y: body.height/2
+    //   };
+    //   this.addChild(this.debugGraphics);
+    // }
 
   }
   /*
