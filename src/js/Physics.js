@@ -131,7 +131,7 @@ class Physics {
                 body.vel.y = 0;
                 body.freeze.y = true;
               }
-              body.vel.x /= 2.0;
+              if (!body.frictionless) body.vel.x /= 2.0;
             } else if (col.x !== 0.0) {
               if (Math.sign(body.vel.x) === Math.sign(col.x)) {
                 body.vel.x = 0;
@@ -177,6 +177,7 @@ class Physics {
     };
     body.pos.x = options.x | 0;
     body.pos.y = options.y | 0;
+    body.frictionless = options.frictionless | false;
     if (options.treatment === 'static') {
       body.static = true;
     } else if (options.treatment === 'trigger') {
