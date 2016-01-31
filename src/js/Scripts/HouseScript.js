@@ -48,11 +48,12 @@ class HouseScript extends Script {
     } else if (item === this.parent.villager.hate) {
       EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.parent.villager.name, rankChange: 1.1}});
       EventMan.publish({eventType: 'notification',
-       parameters: {text: 'Rank of ' + this.parent.villager.name + ' decreased for seeing a hated item.'}});
+      parameters: {text: 'Rank of ' + this.parent.villager.name + ' decreased for seeing a hated item.'}});
       disappear = true;
     }
     if (disappear) {
       item.physics.body.pos.x = 15000;
+      item.relocated = true;
     }
   }
 }

@@ -72,6 +72,8 @@ class CrisisScript extends Script {
         this.crisisFailed();
       }
       this.nextCrisis();
+    } else if (this.timeLeft === 1) {
+      EventMan.publish({eventType: 'notification', parameters: {text: 'The ritual is approaching...'}});
     }
   }
 
@@ -102,6 +104,7 @@ class CrisisScript extends Script {
     });
     if (newReq.length < this.requiredItems.length) {
       item.physics.body.pos.x = 150000;
+      item.relocated = true;
       this.requiredItems = newReq;
     }
   }
