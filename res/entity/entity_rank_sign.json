@@ -13,9 +13,9 @@
   },
   "scripts":[
     {
-      "name" : "bulletinBoardScript",
+      "name" : "rankBoardScript",
       "parameters":{
-        
+
       }
     }
   ]
