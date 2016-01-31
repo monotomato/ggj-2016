@@ -12,5 +12,9 @@
     }
   },
   "scripts":[
+    {
+      "name" : "crisisScript",
+      "parameters":{}
+    }
   ]
 }

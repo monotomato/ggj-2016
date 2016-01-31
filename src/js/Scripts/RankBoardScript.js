@@ -10,7 +10,8 @@ class RankBoardScript extends Script {
   constructor(parameters) {
     super(parameters);
     this.eventTypes.push(
-      'rank_apply_end'
+      'rank_apply_end',
+      'villagers_updated'
     );
     this.converse = false;
     this.text = 'This is placeholder text. Change it with events!';
@@ -39,7 +40,7 @@ class RankBoardScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
-    if (evt.eventType === 'rank_apply_end') {
+    if (evt.eventType === 'rank_apply_end' || evt.eventType === 'villagers_updated') {
       this.text = '';
       this.village.villagers.forEach((villager) => {
         this.text += villager.name + ', ' + villager.role + '\n';
