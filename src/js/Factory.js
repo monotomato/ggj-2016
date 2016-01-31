@@ -61,7 +61,7 @@ class Factory {
           }
         }
         addSprite(t, {
-          scale: 0.25,
+          scale: 0.26,
           offset: {
             x: tileWidth * x,
             y: tileHeight * y
@@ -71,27 +71,30 @@ class Factory {
     }
 
     addSprite('sprite_piece_11', {
-      scale: 0.25,
+      scale: 0.26,
       offset: {
         x: tileWidth * arrowPos,
         y: tileHeight * height
       }
     });
     addSprite('sprite_piece_10', {
-      scale: 0.25,
+      scale: 0.26,
       offset: {
         x: tileWidth * arrowPos,
         y: tileHeight * (height - 1)
       }
     });
 
-    let textObj = new PIXI.Text(wordWrap(text, 30), {font : '18px Monaco', fill : 0x121212, align : 'left'});
+    let textObj = new PIXI.Text(wordWrap(text, 31), {font : '18px Monaco', fill : 0x121212, align : 'left'});
     box.addChild(textObj);
 
     box.position.x = -tileWidth * (arrowPos) - 4;
     box.position.y = -height * (tileHeight) - 16;
 
     let ent = new Entity();
+    ent.setText = (newText) => {
+      textObj.text = wordWrap(newText, 30);
+    };
     ent.addChild(box);
     return ent;
   }
