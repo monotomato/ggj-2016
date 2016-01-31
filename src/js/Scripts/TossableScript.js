@@ -20,7 +20,7 @@ class TossableScript extends Script {
     if (this.picked) {
       parent.physics.body.awake = false;
       parent.position.x = this.player.position.x;
-      parent.position.y = this.player.position.y - 30;
+      parent.position.y = this.player.position.y - 50;
     }
   }
 
