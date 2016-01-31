@@ -8,6 +8,7 @@
   "physics":{
     "bodyType": "rectangle",
     "options": {
+      "treatment": "trigger"
     }
   },
   "scripts":[

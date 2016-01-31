@@ -64,13 +64,13 @@ class DayNightCycleScript extends Script {
         }
       } else {
         let last = location[location.length - 1];
-        let spawn = '1';
+        let spawnId = '1';
         if (last == 'a') {
-          spawn = '2';
+          spawnId = '2';
           last = location[location.length - 2];
         }
         let convId = last;
-        spawn = this.rootEntity.findEntityWithName('location_conversation_' + convId + '_spawn_' + spawn);
+        spawn = this.rootEntity.findEntityWithName('location_conversation_' + convId + '_spawn_' + spawnId);
       }
       if (spawn) {
         villager.physics.body.pos.x = spawn.physics.body.pos.x;
