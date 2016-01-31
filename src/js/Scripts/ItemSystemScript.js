@@ -52,9 +52,6 @@ class ItemSystemScript extends Script {
           loc = this.itemLocations[rand(this.itemLocations.length)];
         } while (loc.inUse);
         loc.inUse = true;
-        let player = rootEntity.findEntityWithTag('player');
-        player.physics.body.pos.x = loc.physics.body.pos.x;
-        player.physics.body.pos.y = loc.physics.body.pos.y;
         item.physics.body.pos.x = loc.physics.body.pos.x;
         item.physics.body.pos.y = loc.physics.body.pos.y;
         item.physics.body.vel.x = 0;
