@@ -3,9 +3,7 @@
         {
          "height":35,
          "image":"world_bg.png",
-         "name":"bg",
-         "offsetx":8,
-         "offsety":0,
+         "name":"Image Layer 2",
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
@@ -18,7 +16,7 @@
          "image":"huutoInteriorBetter.png",
          "name":"house_1",
          "offsetx":160,
-         "offsety":1240,
+         "offsety":1248,
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
@@ -56,8 +54,8 @@
                  "type":"villager",
                  "visible":true,
                  "width":96,
-                 "x":800,
-                 "y":992
+                 "x":880,
+                 "y":-288
                 }, 
                 {
                  "height":32,
@@ -71,8 +69,8 @@
                  "type":"data",
                  "visible":true,
                  "width":32,
-                 "x":0,
-                 "y":0
+                 "x":1760,
+                 "y":40
                 }, 
                 {
                  "height":32,
@@ -85,386 +83,39 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":1664,
-                 "x":256,
+                 "width":1696,
+                 "x":224,
                  "y":704
                 }, 
                 {
-                 "height":40,
-                 "id":8,
-                 "name":"",
+                 "height":32,
+                 "id":13,
+                 "name":"Item",
                  "properties":
                     {
-                     "config":"entity_static_collider"
+                     "config":"entity_item_apple"
                     },
                  "rotation":0,
-                 "type":"collision",
+                 "type":"item",
                  "visible":true,
-                 "width":320,
-                 "x":1760,
-                 "y":552
+                 "width":32,
+                 "x":1184,
+                 "y":0
                 }, 
                 {
                  "height":32,
-                 "id":9,
-                 "name":"",
+                 "id":14,
+                 "name":"Item",
                  "properties":
                     {
-                     "config":"entity_static_collider"
+                     "config":"entity_item_chest"
                     },
                  "rotation":0,
-                 "type":"collision",
+                 "type":"item",
                  "visible":true,
                  "width":32,
-                 "x":-64,
-                 "y":-32
-                }, 
-                {
-                 "height":64,
-                 "id":12,
-                 "name":"trigger_passage_up",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_passage_down"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":80,
-                 "x":1824,
-                 "y":640
-                }, 
-                {
-                 "height":40,
-                 "id":46,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":968,
-                 "x":1888,
-                 "y":808
-                }, 
-                {
-                 "height":72,
-                 "id":47,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":32,
-                 "x":1888,
-                 "y":736
-                }, 
-                {
-                 "height":64,
-                 "id":48,
-                 "name":"trigger_door_house_out_2",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_in_2"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":688,
-                 "y":640
-                }, 
-                {
-                 "height":64,
-                 "id":49,
-                 "name":"trigger_door_house_out_3",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_in_3"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":1032,
-                 "y":632
-                }, 
-                {
-                 "height":64,
-                 "id":50,
-                 "name":"trigger_door_house_out_4",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_in_4"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":1328,
-                 "y":632
-                }, 
-                {
-                 "height":64,
-                 "id":51,
-                 "name":"trigger_door_house_out_5",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_in_5"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":1656,
-                 "y":632
-                }, 
-                {
-                 "height":64,
-                 "id":52,
-                 "name":"trigger_passage_down",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_passage_up"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":80,
-                 "x":1960,
-                 "y":744
-                }, 
-                {
-                 "height":64,
-                 "id":53,
-                 "name":"trigger_door_house_out_6",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_in_6"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":1912,
-                 "y":488
-                }, 
-                {
-                 "height":64,
-                 "id":54,
-                 "name":"trigger_door_balcony_out",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_balcony_in"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":80,
-                 "x":1752,
-                 "y":488
-                }, 
-                {
-                 "height":64,
-                 "id":55,
-                 "name":"trigger_door_house_out_7",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_in_7"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":2472,
-                 "y":744
-                }, 
-                {
-                 "height":64,
-                 "id":56,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":576,
-                 "y":640
-                }, 
-                {
-                 "height":176,
-                 "id":57,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":32,
-                 "x":2824,
-                 "y":632
-                }, 
-                {
-                 "height":176,
-                 "id":58,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":32,
-                 "x":224,
-                 "y":560
-                }, 
-                {
-                 "height":64,
-                 "id":59,
-                 "name":"trigger_door_house_in_1",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_out_1"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":472,
-                 "y":120
-                }, 
-                {
-                 "height":64,
-                 "id":60,
-                 "name":"trigger_door_house_in_2",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_out_2"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":688,
-                 "y":120
-                }, 
-                {
-                 "height":64,
-                 "id":61,
-                 "name":"trigger_door_house_in_3",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_out_3"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":1040,
-                 "y":120
-                }, 
-                {
-                 "height":64,
-                 "id":62,
-                 "name":"trigger_door_house_in_4",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_out_4"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":1352,
-                 "y":120
-                }, 
-                {
-                 "height":64,
-                 "id":63,
-                 "name":"trigger_door_house_in_5",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_out_5"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":1648,
-                 "y":120
-                }, 
-                {
-                 "height":64,
-                 "id":64,
-                 "name":"trigger_door_balcony_in",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_balcony_out"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":80,
-                 "x":1760,
-                 "y":120
-                }, 
-                {
-                 "height":64,
-                 "id":65,
-                 "name":"trigger_door_house_out_6",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_in_6"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":1912,
-                 "y":120
-                }, 
-                {
-                 "height":64,
-                 "id":66,
-                 "name":"trigger_door_house_in_7",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_out_7"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":72,
-                 "x":2456,
-                 "y":120
+                 "x":1120,
+                 "y":0
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -489,12 +140,12 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":496,
-                 "x":160,
+                 "width":512,
+                 "x":152,
                  "y":1504
                 }, 
                 {
-                 "height":312,
+                 "height":288,
                  "id":22,
                  "name":"",
                  "properties":
@@ -504,12 +155,12 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":48,
-                 "x":112,
+                 "width":64,
+                 "x":96,
                  "y":1240
                 }, 
                 {
-                 "height":312,
+                 "height":288,
                  "id":23,
                  "name":"",
                  "properties":
@@ -536,11 +187,27 @@
                  "type":"trigger",
                  "visible":true,
                  "width":72,
-                 "x":440,
-                 "y":640
+                 "x":320,
+                 "y":584
                 }, 
                 {
-                 "height":320,
+                 "height":80,
+                 "id":25,
+                 "name":"trigger_door_house_in_1",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_house_out_1"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":112,
+                 "x":224,
+                 "y":1424
+                }, 
+                {
+                 "height":288,
                  "id":27,
                  "name":"",
                  "properties":
@@ -550,8 +217,8 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":40,
-                 "x":1016,
+                 "width":64,
+                 "x":992,
                  "y":1224
                 }, 
                 {
@@ -565,12 +232,12 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":496,
-                 "x":1056,
+                 "width":512,
+                 "x":1048,
                  "y":1496
                 }, 
                 {
-                 "height":320,
+                 "height":288,
                  "id":29,
                  "name":"",
                  "properties":
@@ -585,7 +252,7 @@
                  "y":1224
                 }, 
                 {
-                 "height":64,
+                 "height":32,
                  "id":31,
                  "name":"LocationItem",
                  "properties":
@@ -595,9 +262,54 @@
                  "rotation":0,
                  "type":"loc",
                  "visible":true,
-                 "width":64,
+                 "width":32,
                  "x":1488,
-                 "y":1376
+                 "y":1400
+                }, 
+                {
+                 "height":80,
+                 "id":32,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_static_collider"
+                    },
+                 "rotation":0,
+                 "type":"collision",
+                 "visible":true,
+                 "width":96,
+                 "x":1504,
+                 "y":1440
+                }, 
+                {
+                 "height":80,
+                 "id":33,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_static_collider"
+                    },
+                 "rotation":0,
+                 "type":"collision",
+                 "visible":true,
+                 "width":96,
+                 "x":584,
+                 "y":1448
+                }, 
+                {
+                 "height":32,
+                 "id":34,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":32,
+                 "x":568,
+                 "y":1416
                 }, 
                 {
                  "height":192,
@@ -611,8 +323,8 @@
                  "type":"villager",
                  "visible":true,
                  "width":96,
-                 "x":672,
-                 "y":992
+                 "x":752,
+                 "y":-288
                 }, 
                 {
                  "height":192,
@@ -626,8 +338,8 @@
                  "type":"villager",
                  "visible":true,
                  "width":96,
-                 "x":928,
-                 "y":992
+                 "x":1008,
+                 "y":-288
                 }, 
                 {
                  "height":192,
@@ -641,8 +353,8 @@
                  "type":"villager",
                  "visible":true,
                  "width":96,
-                 "x":1056,
-                 "y":992
+                 "x":1136,
+                 "y":-288
                 }, 
                 {
                  "height":192,
@@ -656,8 +368,8 @@
                  "type":"villager",
                  "visible":true,
                  "width":96,
-                 "x":1184,
-                 "y":992
+                 "x":1320,
+                 "y":-288
                 }, 
                 {
                  "height":192,
@@ -671,8 +383,8 @@
                  "type":"villager",
                  "visible":true,
                  "width":96,
-                 "x":1320,
-                 "y":992
+                 "x":1456,
+                 "y":-288
                 }, 
                 {
                  "height":192,
@@ -686,147 +398,12 @@
                  "type":"villager",
                  "visible":true,
                  "width":96,
-                 "x":544,
-                 "y":992
+                 "x":592,
+                 "y":-288
                 }, 
                 {
-                 "height":224,
-                 "id":67,
-                 "name":"location_conversation_3",
-                 "properties":
-                    {
-                     "config":"entity_location_conversation"
-                    },
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":288,
-                 "x":2112,
-                 "y":600
-                }, 
-                {
-                 "height":208,
-                 "id":68,
-                 "name":"location_conversation_2",
-                 "properties":
-                    {
-                     "config":"entity_location_conversation"
-                    },
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":240,
-                 "x":1408,
-                 "y":496
-                }, 
-                {
-                 "height":224,
-                 "id":70,
-                 "name":"location_conversation_1",
-                 "properties":
-                    {
-                     "config":"entity_location_conversation"
-                    },
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":184,
-                 "x":256,
-                 "y":480
-                }, 
-                {
-                 "height":64,
-                 "id":72,
-                 "name":"location_conversation_2_spawn_1",
-                 "properties":
-                    {
-                     "config":"entity_spawner"
-                    },
-                 "rotation":0,
-                 "type":"spawn",
-                 "visible":true,
-                 "width":32,
-                 "x":1440,
-                 "y":576
-                }, 
-                {
-                 "height":64,
-                 "id":74,
-                 "name":"location_conversation_2_spawn_2",
-                 "properties":
-                    {
-                     "config":"entity_spawner"
-                    },
-                 "rotation":0,
-                 "type":"spawn",
-                 "visible":true,
-                 "width":32,
-                 "x":1568,
-                 "y":576
-                }, 
-                {
-                 "height":64,
-                 "id":75,
-                 "name":"location_conversation_1_spawn_2",
-                 "properties":
-                    {
-                     "config":"entity_spawner"
-                    },
-                 "rotation":0,
-                 "type":"spawn",
-                 "visible":true,
-                 "width":32,
-                 "x":384,
-                 "y":608
-                }, 
-                {
-                 "height":64,
-                 "id":76,
-                 "name":"location_conversation_1_spawn_1",
-                 "properties":
-                    {
-                     "config":"entity_spawner"
-                    },
-                 "rotation":0,
-                 "type":"spawn",
-                 "visible":true,
-                 "width":32,
-                 "x":288,
-                 "y":608
-                }, 
-                {
-                 "height":64,
-                 "id":77,
-                 "name":"location_conversation_3_spawn_2",
-                 "properties":
-                    {
-                     "config":"entity_spawner"
-                    },
-                 "rotation":0,
-                 "type":"spawn",
-                 "visible":true,
-                 "width":32,
-                 "x":2304,
-                 "y":704
-                }, 
-                {
-                 "height":64,
-                 "id":78,
-                 "name":"location_conversation_3_spawn_1",
-                 "properties":
-                    {
-                     "config":"entity_spawner"
-                    },
-                 "rotation":0,
-                 "type":"spawn",
-                 "visible":true,
-                 "width":32,
-                 "x":2176,
-                 "y":704
-                }, 
-                {
-                 "height":40,
-                 "id":79,
+                 "height":32,
+                 "id":45,
                  "name":"",
                  "properties":
                     {
@@ -835,13 +412,13 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":48,
-                 "x":1504,
-                 "y":1456
+                 "width":968,
+                 "x":1888,
+                 "y":800
                 }, 
                 {
-                 "height":40,
-                 "id":80,
+                 "height":64,
+                 "id":46,
                  "name":"",
                  "properties":
                     {
@@ -850,24 +427,9 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":48,
-                 "x":608,
-                 "y":1464
-                }, 
-                {
-                 "height":64,
-                 "id":81,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":584,
-                 "y":1384
+                 "width":32,
+                 "x":1888,
+                 "y":736
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -882,7 +444,7 @@
          "name":"player",
          "objects":[
                 {
-                 "height":90,
+                 "height":64,
                  "id":2,
                  "name":"player",
                  "properties":
@@ -892,9 +454,9 @@
                  "rotation":0,
                  "type":"player",
                  "visible":true,
-                 "width":90,
-                 "x":1184,
-                 "y":608
+                 "width":64,
+                 "x":520,
+                 "y":320
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -903,7 +465,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":82,
+ "nextobjectid":47,
  "orientation":"orthogonal",
  "properties":
     {
