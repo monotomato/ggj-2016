@@ -9,13 +9,13 @@ import {Collision} from 'Collision';
 class BulletinBoardScript extends Script {
   constructor(parameters) {
     super(parameters);
+    this.eventTypes.push('change_text');
     this.converse = false;
     this.text = 'This is placeholder text. Change it with events.';
-    this.bubble = Factory.createSpeechBubble(11, 3, 6, this.text);
+    this.bubble = Factory.createSpeechBubble(11, 6, 6, this.text);
   }
 
   init(parent, rootEntity) {
-    log.debug("init bb");
     this.player = rootEntity.findEntityWithTag('player');
     parent.addChild(this.bubble);
     this.bubble.visible = false;
@@ -31,8 +31,11 @@ class BulletinBoardScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
+
     if (evt.eventType === 'change_text') {
-      if (evt.parameters.target == this) {
+      console.log(evt.parameters.target);
+      console.log(parent.name);
+      if (evt.parameters.target.name == parent.name) {
         this.text = evt.parameters.text;
         this.bubble.setText(this.text);
       }

@@ -3,7 +3,7 @@
         {
          "height":35,
          "image":"world_bg.png",
-         "name":"Image Layer 2",
+         "name":"bg",
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
@@ -1701,7 +1701,7 @@
                  "type":"spawn",
                  "visible":true,
                  "width":64,
-                 "x":2264,
+                 "x":2760,
                  "y":680
                 }, 
                 {
@@ -1716,7 +1716,7 @@
                  "type":"area",
                  "visible":true,
                  "width":392,
-                 "x":2064,
+                 "x":2560,
                  "y":448
                 }, 
                 {
@@ -1731,8 +1731,38 @@
                  "type":"spawn",
                  "visible":true,
                  "width":64,
-                 "x":2160,
+                 "x":2656,
                  "y":680
+                }, 
+                {
+                 "height":160,
+                 "id":149,
+                 "name":"crisis_sign",
+                 "properties":
+                    {
+                     "config":"entity_sign"
+                    },
+                 "rotation":0,
+                 "type":"spawn",
+                 "visible":true,
+                 "width":176,
+                 "x":2048,
+                 "y":648
+                }, 
+                {
+                 "height":360,
+                 "id":153,
+                 "name":"location_crisis",
+                 "properties":
+                    {
+                     "config":"entity_location_crisis"
+                    },
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":392,
+                 "x":2048,
+                 "y":448
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1767,8 +1797,19 @@
          "width":80,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":35,
+         "image":"world_fg.png",
+         "name":"fg",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":80,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":149,
+ "nextobjectid":154,
  "orientation":"orthogonal",
  "properties":
     {

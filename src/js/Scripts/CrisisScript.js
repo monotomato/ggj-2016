@@ -12,25 +12,42 @@ class CrisisScript extends Script {
 
   init(parent, rootEntity) {
     this.village = rootEntity.findEntityWithTag('village');
-    this.descriptions = resources.crisises.data.descriptions;
+    this.sign = rootEntity.findEntityWithName('crisis_sign');
+    this.data = resources.crisises.data.crisises;
   }
 
   randomizeCrisis() {
     let itemTypes = [];
-    while (itemTypes.length < 3) {
+    log.debug(this.data);
+    let select = this.data[0]; //TODO
+    while (itemTypes.length < select.itemCount) {
       let type = this.village.itemTypes[rand(this.village.itemTypes.length)];
       if (itemTypes.indexOf(type) === -1) {
         itemTypes.push(type);
       }
     }
-    let crisis = {item1: itemTypes[0], item2: itemTypes[1], item3: itemTypes[2], villageName: this.village.name};
-    crisis.description = populateTemplate(this.descriptions[rand(this.descriptions.length)], crisis);
+    let crisis = {villageName: this.village.name};
+    for (let i = 0; i < itemTypes.length; i++) {
+      crisis['item' + (i + 1)] = itemTypes[i];
+    }
+
+    crisis.description = populateTemplate(select.desc, crisis);
+
     this.village.currentCrisis = crisis;
   }
 
   update(parent, rootEntity, delta) {
     if (!this.village.currentCrisis) {
       this.randomizeCrisis();
+      let cris = this.village.currentCrisis;
+
+      EventMan.publish({eventType: 'change_text',
+        parameters: {
+          target: this.sign,
+          text: cris.description
+        }
+      });
+
     }
   }
 
