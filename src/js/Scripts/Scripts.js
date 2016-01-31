@@ -16,6 +16,7 @@ import {InitiateConversationScript} from './InitiateConversationScript';
 import {BulletinBoardScript} from './BulletinBoardScript';
 import {HouseScript} from './HouseScript';
 import {RankBoardScript} from './RankBoardScript';
+import {DarkenScript} from './DarkenScript';
 
 const scripts = {
   movementInputScript: MovementInputScript,
@@ -35,7 +36,8 @@ const scripts = {
   initiateConversationScript: InitiateConversationScript,
   bulletinBoardScript: BulletinBoardScript,
   houseScript: HouseScript,
-  rankBoardScript: RankBoardScript
+  rankBoardScript: RankBoardScript,
+  darkenScript: DarkenScript
 };
 
 export {scripts as Scripts};

@@ -14,7 +14,7 @@ class RankBoardScript extends Script {
     );
     this.converse = false;
     this.text = 'This is placeholder text. Change it with events!';
-    this.bubble = Factory.createSpeechBubble(11, 7, 6, this.text, 'Rankings', false);
+    this.bubble = Factory.createSpeechBubble(13, 7, 6, this.text, 'Rankings', false);
   }
 
   init(parent, rootEntity) {

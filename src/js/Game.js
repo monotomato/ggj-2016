@@ -45,10 +45,19 @@ class Game {
 
   debugConstructor() {
     this.addEntityToWorld(this.loadMap('testmap'));
+
     let fade = new Entity();
     fade.addBox(0x000000, cfg.renderer.size.x, cfg.renderer.size.y);
     fade.position.x = cfg.renderer.size.x / 2;
     fade.position.y = cfg.renderer.size.y / 2;
+    fade.addScript('fadeInScript');
+
+    let darken = new Entity();
+    darken.position.x = cfg.renderer.size.x / 2;
+    darken.position.y = cfg.renderer.size.y / 2;
+    darken.setSprite('sprite_darken');
+    darken.addScript('darkenScript');
+
     let clock = new Entity();
     clock.addBox(0xFFFFFF, 50, 50);
     let text = new PIXI.Text('Clockan is kymppi',{font : '24px Arial', fill : 0xff1010, align : 'center'});
@@ -58,7 +67,6 @@ class Game {
     clock.position.x = cfg.renderer.size.x - 30;
     clock.position.y = cfg.renderer.size.y - 30;
     clock.addScript('dayNightCycleScript');
-    fade.addScript('fadeInScript');
 
     // let bubble = Factory.createSpeechBubble(10, 3, 6, 'The short brown little fox thing jumped over the lazy dog.');
     // bubble.position.x = 480 + 25;
@@ -70,6 +78,7 @@ class Game {
     this.addEntityToWorld(eventTimer);
 
     this.addEntityToUI(fade);
+    this.addEntityToUI(darken);
     this.addEntityToUI(clock);
     this.stage.init(this.stage);
   }

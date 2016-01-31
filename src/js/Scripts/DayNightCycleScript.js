@@ -39,6 +39,7 @@ class DayNightCycleScript extends Script {
   advanceTime() {
     let oldTime = this.time;
     this.time += 1;
+    EventMan.publish({eventType: 'time_change', parameters: {time: this.dayTime()}});
     this.updateNpcs();
     if (this.dayTime() === 0) {
       EventMan.publish({eventType: 'cycle_morning', parameters: {cycleNumber: this.dayNumber()}});
