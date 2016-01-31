@@ -1,12 +1,12 @@
 {
   "replies": [
-    "That's really interesting.",
-    "You really are something.",
-    "Wow.",
-    "I feel enlightened.",
+    "That is incredibly boring.",
+    "You really are something - something dull.",
+    "Wow. You're a waste of space.",
+    "I feel enlightened. Not.",
     "Shut up.",
-    "Tell me more.",
-    "You've never said that before.",
+    "Do go on! But wait, let me leave first.",
+    "You've never said that before. Don't say it again.",
     "That's new.",
     "Classic.",
     "I wish I were dead.",
@@ -14,27 +14,41 @@
     "I'm really glad to hear that.",
     "Nice.",
     "...",
-    "Ok."
+    "Ok.",
+    "Shocking!",
+    "I don't really care.",
+    "Good for you. Good. For. You.",
+    "I know that. I've known you for ages."
   ],
   "love": [
-    "I'd really like to have %love%.",
-    "Did you know that I really like %love%?",
-    "Wow, I really crave for %love%"
+    "I can't live without %love%!",
+    "I like %love% way more than I like you.",
+    "Wow, I really crave for %love%.",
+    "If there's one thing I want in life, it's %love%.",
+    "I'd almost give my firstborn for %love%. Almost.",
+    "Surely I'd be happier with %love%. That's how life works."
   ],
   "hate": [
     "Man, I can't stand %hate%.",
     "I wish there weren't any %hate% in this world.",
-    "I don't like %hate%"
+    "I don't like %hate%",
+    "Hear me say, %hate% have ruined my life.",
+    "The worst thing in the world has to be %hate%.",
+    "The only thing worse than %hate% would be eating %hate%."
   ],
   "disturbed": [
     "Go away.",
     "I like sheep.",
     "Leave me alone, sheep.",
-    "Hi.",
-    "...",
-    "Please.",
+    "Wow, that's one tiny sheep!",
+    "So that's what rustled for an hour.",
+    "Hi there.",
+    "...No.",
+    "Sheepa-deepa-deep",
+    "Please. No autographs today.",
     "Don't get any closer.",
     "You're so fluffy.",
-    "You look tasty."
+    "You look tasty.",
+    "A stalker, huh?"
   ]
 }
