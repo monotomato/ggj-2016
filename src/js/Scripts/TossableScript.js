@@ -38,8 +38,14 @@ class TossableScript extends Script {
         }
         parent.physics.body.vel.y = -0.5;
         this.picked = false;
+        this.player.hasItem = false;
       } else if (Collision.aabbTestFast(parent.physics.body, this.player.physics.body)) {
-        this.picked = true;
+        if (this.player.hasItem) {
+
+        } else {
+          this.picked = true;
+          this.player.hasItem = true;
+        }
       }
     }
     log.debug(evt.parameters.message);
