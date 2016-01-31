@@ -1,0 +1,22 @@
+{
+  "component_configuration":{},
+  "component_data":{
+    "tags": [
+      "sign"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "treatment":"trigger"
+    }
+  },
+  "scripts":[
+    {
+      "name" : "bulletinBoardScript",
+      "parameters":{
+        
+      }
+    }
+  ]
+}

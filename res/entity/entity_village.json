@@ -13,31 +13,20 @@
   },
   "scripts":[
     {
-      "name" : "dayNightCycleScript",
-      "parameters":{
-        "dayLength":180,
-        "nightLength":60
-      }
-    },
-    {
       "name" : "villagerRankingSystemScript",
-      "parameters":{
-      }
+      "parameters":{}
     },
     {
       "name" : "villagerIdentitySystemScript",
-      "parameters":{
-      }
+      "parameters":{}
     },
     {
       "name" : "itemSystemScript",
-      "parameters":{
-      }
+      "parameters":{}
     },
     {
-      "name" : "crisisScript",
-      "parameters":{
-      }
+      "name" : "houseControllerScript",
+      "parameters":{}
     }
   ]
 }

@@ -1,6 +1,7 @@
 import {resources} from 'Managers/ResourceManager';
 import {log} from 'Log';
 import {InputMan} from 'Managers/InputManager';
+import {EventMan} from 'Managers/EventManager';
 import {Scripts} from 'Scripts/Scripts';
 import cfg from 'config.json';
 import {Physics} from 'Physics';
@@ -29,6 +30,7 @@ class Entity extends PIXI.Container {
     this.scripts.forEach((script) => {
       script.init(this, rootEntity);
     });
+    EventMan.registerListener(this);
   }
 
   // TODO: Check if event is relevant to the script.
@@ -81,6 +83,22 @@ class Entity extends PIXI.Container {
     }
   }
 
+  findEntityWithName(name){
+    if(this.name === name){ return this; }
+    else {
+      for(let i = 0; i < this.children.length;i++){
+        let child = this.children[i];
+        let found;
+        if(child.findEntityWithName){
+          found = child.findEntityWithName(name);
+        }
+        if(found){
+          return found;
+        }
+      }
+    }
+  }
+
   // TODO: Remove duplicate event types (keep only topmost)
   addScript(scriptName, parameters) {
     let script = new Scripts[scriptName](parameters);
@@ -103,11 +121,34 @@ class Entity extends PIXI.Container {
         y: 0.5
       };
       this.addChild(this.sprite);
+      let opts = this.sprite_options || {
+        scale:1,
+        offset: {
+          x: 0,
+          y: 0
+        }
+      };
+      this.sprite.scale.x = opts.scale;
+      this.sprite.scale.y = opts.scale;
+      this.sprite.position = opts.offset;
+
       if(this.debugGraphics){
         this.swapChildren(this.debugGraphics, this.sprite);
       }
     }
     this.sprite.texture = resources.sprite.textures[spriteName];
+  }
+
+  addBox(color, width, height) {
+    let graphics = new PIXI.Graphics();
+    graphics.beginFill(color);
+    graphics.drawRect(0, 0, width, height);
+    graphics.pivot = {
+      x: width/2,
+      y: height/2
+    };
+
+    this.addChild(graphics);
   }
 
   // https://github.com/wellcaffeinated/PhysicsJS/wiki/Fundamentals#the-factory-pattern
@@ -119,23 +160,23 @@ class Entity extends PIXI.Container {
   }
 
   addDebugGraphics(){
-    let physics = this.physics;
-    if(physics){
-      let body = physics.body;
-      this.debugGraphics = new PIXI.Graphics();
-      let color = this.collider_color || '0xFFFFFF';
-
-      // log.debug(body);
-      this.debugGraphics.beginFill(color);
-      this.debugGraphics.lineStyle(2, '0x000000');
-      this.debugGraphics.alpha = 0.5;
-      this.debugGraphics.drawRect(0, 0, body.width, body.height);
-      this.debugGraphics.pivot = {
-        x: body.width/2,
-        y: body.height/2
-      };
-      this.addChild(this.debugGraphics);
-    }
+    // let physics = this.physics;
+    // if(physics){
+    //   let body = physics.body;
+    //   this.debugGraphics = new PIXI.Graphics();
+    //   let color = this.collider_color || '0xFFFFFF';
+    //
+    //   // log.debug(body);
+    //   this.debugGraphics.beginFill(color);
+    //   this.debugGraphics.lineStyle(2, '0x000000');
+    //   this.debugGraphics.alpha = 0.5;
+    //   this.debugGraphics.drawRect(0, 0, body.width, body.height);
+    //   this.debugGraphics.pivot = {
+    //     x: body.width/2,
+    //     y: body.height/2
+    //   };
+    //   this.addChild(this.debugGraphics);
+    // }
 
   }
   /*
@@ -183,6 +224,10 @@ class Entity extends PIXI.Container {
   static fromTiledObject(tiledObj){
     let props = tiledObj.properties;
     let config = resources[props.config].data;
+
+    Object.assign(config.component_data, tiledObj.properties);
+
+    config.component_data.name = tiledObj.name;
 
     config.physics.options.x = tiledObj.x + tiledObj.width/2;
     config.physics.options.y = tiledObj.y + tiledObj.height/2;

@@ -5,6 +5,7 @@ class Physics {
   constructor() {
     this.dynamicBodies = [];
     this.staticBodies = [];
+    this.triggers = [];
     this.behaviors = [];
   }
 
@@ -105,38 +106,45 @@ class Physics {
 
   step(delta) {
     this.dynamicBodies.forEach((body) => {
-      body.freeze = {
-        x: false,
-        y: false
-      };
-      let collided = this.checkCollisionFast(body, delta);
-      if (!collided) {
-        this.calcStep(body, delta);
-        let col = this.checkCollision(body, 0);
-        body.pos.y -= col.y;
-        body.pos.x -= col.x;
-      } else {
-        let remaining = delta;
-        let count = 0;
-        while (remaining >= 0 && count < 6) {
-          count++;
-          let d = this.binarySearchCollision(body, remaining, 0.1);
-          this.calcStep(body, d);
-          remaining -= delta;
+      if (body.awake) {
+        body.freeze = {
+          x: false,
+          y: false
+        };
+        let collided = this.checkCollisionFast(body, delta);
+        if (!collided) {
+          this.calcStep(body, delta);
           let col = this.checkCollision(body, 0);
-          if (col.y !== 0.0) {
-            if (Math.sign(body.vel.y) === Math.sign(col.y)) {
-              body.vel.y = 0;
-              body.freeze.y = true;
-            }
-          } else if (col.x !== 0.0) {
-            if (Math.sign(body.vel.x) !== Math.sign(col.x)) {
-              body.vel.x = 0;
-              body.freeze.x = true;
-            }
-          }
           body.pos.y -= col.y;
           body.pos.x -= col.x;
+        } else {
+          let remaining = delta;
+          let count = 0;
+          while (remaining >= 0 && count < 6) {
+            count++;
+            let d = this.binarySearchCollision(body, remaining, 0.1);
+            this.calcStep(body, d);
+            remaining -= delta;
+            let col = this.checkCollision(body, 0);
+            if (col.y !== 0.0) {
+              if (Math.sign(body.vel.y) === Math.sign(col.y)) {
+                body.vel.y = 0;
+                body.freeze.y = true;
+              }
+              if (body.frictionless) {
+                // log.debug("Frictionless!");
+              } else {
+                body.vel.x /= 2.0;
+              }
+            } else if (col.x !== 0.0) {
+              if (Math.sign(body.vel.x) === Math.sign(col.x)) {
+                body.vel.x = 0;
+                body.freeze.x = true;
+              }
+            }
+            body.pos.y -= col.y;
+            body.pos.x -= col.x;
+          }
         }
       }
     });
@@ -151,7 +159,12 @@ class Physics {
       if (entity.physics.body.static) {
         this.staticBodies.push(entity.physics.body);
       } else {
-        this.dynamicBodies.push(entity.physics.body);
+        if (entity.physics.body.trigger) {
+          this.triggers.push(entity.physics.body);
+        } else {
+          this.dynamicBodies.push(entity.physics.body);
+        }
+
       }
     } else {
       log.debug('Cannot add to physics: entity does not have a body!');
@@ -168,12 +181,16 @@ class Physics {
         x: 0,
         y: 0
       },
-      static: false
+      static: false,
+      awake: true
     };
     body.pos.x = options.x | 0;
     body.pos.y = options.y | 0;
+    body.frictionless = options.frictionless | false;
     if (options.treatment === 'static') {
       body.static = true;
+    } else if (options.treatment === 'trigger') {
+      body.trigger = true;
     }
     Object.assign(body, options);
     // log.debug(body);

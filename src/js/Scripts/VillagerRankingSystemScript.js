@@ -8,7 +8,7 @@ class VillagerRankingSystemScript extends Script {
     super(parameters);
     this.eventTypes.push(
       'rank_change',
-      'cycle_night',
+      'rank_apply',
       'villagers_updated'
     );
     this.rankChanges = [];
@@ -16,7 +16,7 @@ class VillagerRankingSystemScript extends Script {
   }
 
   init(parent, rootEntity) {
-    
+    this.village = rootEntity.findEntityWithTag('village');
   }
 
   update(parent, rootEntity, delta) {
@@ -25,19 +25,21 @@ class VillagerRankingSystemScript extends Script {
 
   applyRankChanges() {
     let ranks = {};
-    for (let i = 0; this.villagers.length; i++) {
-      ranks[villagers[i].name] = i;
+    for (let i = 0; i < this.village.villagers.length; i++) {
+      ranks[this.village.villagers[i].name] = i;
     }
     for (let i = 0; i < this.rankChanges.length; i++) {
       let rankChange = this.rankChanges[i];
       ranks[rankChange.villagerName] += rankChange.rankChange;
     }
-    this.villagers.sort(l, r => {
+    for (let i = 0; i < this.village.villagers.length; i++) {
+      let name = this.village.villagers[i].name;
+      log.debug(name + ' ' + ranks[name]);
+    }
+    this.villagers.sort((l, r) => {
         return ranks[l.name] - ranks[r.name];
     });
-    //Probably not needed, but I don't understand javascript so
-    parent.villagerIdentitySystemScript.villagers = this.villagers;
-    EventMan.publish({eventType: 'rank_applied', parameters: {rankChanges: this.rankChanges}});
+    EventMan.publish({eventType: 'rank_apply_end', parameters: {rankChanges: this.rankChanges}});
     this.rankChanges = [];
   }
 
@@ -57,10 +59,10 @@ class VillagerRankingSystemScript extends Script {
   handleGameEvent(parent, evt) {
     if (evt.eventType === 'rank_change') {
       this.rankChanges.push({villagerName: evt.parameters.villagerName, rankChange: evt.parameters.rankChange});
-    } else if (evt.eventType === 'cycle_night') {
+    } else if (evt.eventType === 'rank_apply_start') {
       this.applyRankChanges();
     } else if (evt.eventType === 'villagers_updated') {
-      this.villagers = parent.villagerIdentitySystemScript.villagers;
+      this.villagers = parent.villagers;
     }
   }
 }

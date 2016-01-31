@@ -1,9 +1,6 @@
 {
   "anim":[
-    {"frame":"debug_1", "duration":1000},
-    {"frame":"debug_2", "duration":500},
-    {"frame":"debug_3", "duration":250},
-    {"frame":"debug_4", "duration":125}
+    {"frame":"sprite_player_walk_1", "duration":1}
   ],
   "speed":1
 }

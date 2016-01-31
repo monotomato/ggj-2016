@@ -7,6 +7,8 @@ class AudioManager extends Manager {
   constructor() {
     super();
     this.eventTypes = ['audio'];
+    this.musicid = -1;
+    this.soundid = -1;
   }
 
   init() {
@@ -33,7 +35,19 @@ class AudioManager extends Manager {
   handleSingleEvent(evt) {
     let spriteName = evt.parameters.audio;
 
-    this.howl.play(spriteName);
+    if(evt.eventType == 'audio_sound_play'){
+      if(this.soundid >= 0 ){
+        this.howl.stop(this.soundid);
+      }
+      this.soundid = this.howl.play(spriteName);
+    }
+    else if(evt.eventType == 'audio_music_play'){
+      if(this.musicid >= 0 ){
+        this.howl.stop(this.musicid);
+      }
+      this.musicid = this.howl.play(spriteName);
+    }
+
   }
 
 }

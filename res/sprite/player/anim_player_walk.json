@@ -1,0 +1,9 @@
+{
+  "anim":[
+    {"frame":"sprite_player_walk_0", "duration":50},
+    {"frame":"sprite_player_walk_1", "duration":50},
+    {"frame":"sprite_player_walk_2", "duration":50},
+    {"frame":"sprite_player_walk_3", "duration":50}
+  ],
+  "speed":1
+}

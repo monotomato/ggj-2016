@@ -1,0 +1,7 @@
+{
+  "anim":[
+    {"frame":"debug_1", "duration":50},
+    {"frame":"debug_1", "duration":50}
+  ],
+  "speed":1
+}

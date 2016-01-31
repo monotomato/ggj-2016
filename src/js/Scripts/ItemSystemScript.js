@@ -1,9 +1,11 @@
 import {log} from 'Log';
 import {Script} from 'Script';
 import {EventMan} from 'Managers/EventManager';
-import {rand} from 'Utils/NumUtils';
+import {Game} from 'Game';
+import {rand} from 'Utils/NumUtil';
 import {resources} from 'Managers/ResourceManager';
 import {Entity} from 'Entity';
+import {populateTemplate} from 'Utils/StringUtil';
 
 class ItemSystemScript extends Script {
   constructor(parameters) {
@@ -15,38 +17,53 @@ class ItemSystemScript extends Script {
 
   init(parent,rootEntity) {
     this.village = rootEntity.findEntityWithTag('village');
-    Object.keys(resources).forEach(key => {
-      if (key.indexOf('entity_item') === 0) {
-        let ent = Entity.fromConfig(key);
-        this.village.addChild(ent);
-      }
-    });
     this.items = rootEntity.findEntitiesWithTag('item');
+    this.village.items = this.village.items || this.items;
     this.itemLocations = rootEntity.findEntitiesWithTag('location_item');
-    this.relocateItems();
+    this.rootEntity = rootEntity;
+    this.relocateItems(rootEntity);
   }
 
   update(parent, rootEntity, delta) {
   }
 
   handleGameEvent(parent, evt) {
+    if (evt.eventType === 'cycle_morning') {
+      this.relocateItems(this.rootEntity);
+    }
   }
 
-  relocateItems() {
+  relocateItems(rootEntity) {
     if (this.itemLocations.length < this.items.length) {
       log.error('There should be more locations than items on map!');
       return;
     }
+    let typeNames = resources.itemTypes.data;
     this.itemLocations.forEach(loc => {
       loc.inUse = false;
     });
+    this.village.itemTypes = [];
+    this.village.rawTypesByName = {};
     this.items.forEach(item => {
-      let loc;
-      do {
-        loc = this.itemLocations[rand(this.itemLocations.length)];
-      } while (loc.inUse);
-      loc.inUse = true;
-      //TODO set item to loc position
+      if (item.relocated) {
+        let loc;
+        item.relocated = false;
+        do {
+          loc = this.itemLocations[rand(this.itemLocations.length)];
+        } while (loc.inUse);
+        loc.inUse = true;
+        item.physics.body.pos.x = loc.physics.body.pos.x;
+        item.physics.body.pos.y = loc.physics.body.pos.y;
+        item.physics.body.vel.x = 0;
+        item.physics.body.vel.y = 0;
+      }
+      //Register all types of items
+      item.tags.forEach(tag => {
+        if (this.village.itemTypes.indexOf(tag) === -1 && typeNames[tag]) {
+          this.village.itemTypes.push(typeNames[tag]);
+          this.village.rawTypesByName[typeNames[tag]] = tag;
+        }
+      });
     });
   }
 }

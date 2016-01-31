@@ -14,14 +14,14 @@ import cfg from 'config.json';
 
 // Pixi setup
 PIXI.utils._saidHello = true; // Keep console clean
-PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
+// PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 
 // Renderer
 const redOpt = cfg.renderer.options;
 // redOpt.resolution = window.devicePixelRatio || 1;
 redOpt.resolution = 1;
 const renderer = PIXI.autoDetectRenderer(cfg.renderer.size.x, cfg.renderer.size.y, redOpt);
-renderer.backgroundColor = 0x5544AA;
+renderer.backgroundColor = 0x000000;
 // Managers
 /* TODO: Figure out way to prioritize manager init.
 Now resman init is called before anything else manually.
@@ -62,6 +62,8 @@ function initReady() {
   log.info('Initialization ready!');
   //console.clear(); // Clears the console.
   game = new Game();
+  EventMan.publish({eventType: 'audio_music_play', parameters: {audio:'audio_music_interior'}});
+  EventMan.publish({eventType: 'audio_sound_play', parameters: {audio:'audio_sheep'}});
   requestAnimationFrame(loop);
 }
 
@@ -69,13 +71,19 @@ let delta = 0;
 function loop(ctime) {
   delta += ctime - lastFrame;
 
-  while (delta > loopInterval) {
+  // Use count to limit number of accumulated frames
+  let count = 0;
+  while (delta > loopInterval && count < 3) {
+    count++;
     update(loopInterval);
     delta -= loopInterval;
     draw();
     managers.forEach((man) => {
       man.update();
     });
+  }
+  if (count == 3) {
+    delta = 0;
   }
   lastFrame = ctime;
 
