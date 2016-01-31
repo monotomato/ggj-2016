@@ -124,8 +124,8 @@ class Entity extends PIXI.Container {
       let opts = this.sprite_options || {
         scale:1,
         offset: {
-          x:0,
-          y:0
+          x: 0,
+          y: 0
         }
       };
       this.sprite.scale.x = opts.scale;

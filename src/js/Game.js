@@ -65,6 +65,10 @@ class Game {
     bubble.position.y = 320 - 60;
     this.addEntityToUI(bubble);
 
+    let eventTimer = new Entity();
+    eventTimer.addScript('eventTimerScript');
+    this.addEntityToWorld(eventTimer);
+
     this.addEntityToUI(fade);
     this.addEntityToUI(clock);
     this.stage.init(this.stage);

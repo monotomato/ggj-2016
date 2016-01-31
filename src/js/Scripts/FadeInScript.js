@@ -13,6 +13,7 @@ class FadeInScript extends Script {
     );
     this.fade_in = false;
     this.fade_out = false;
+    this.fade_rate = 1/60.0;
   }
 
   init(parent, rootEntity) {
@@ -20,13 +21,13 @@ class FadeInScript extends Script {
 
   update(parent, rootEntity, delta) {
     if (this.fade_in) {
-      parent.alpha -= 0.01;
+      parent.alpha -= this.fade_rate;
       if (parent.alpha < 0.0) {
         parent.alpha = 0.0;
         this.fade_in = false;
       }
     } else if (this.fade_out) {
-      parent.alpha += 0.01;
+      parent.alpha += this.fade_rate;
       if (parent.alpha > 1.0) {
         parent.alpha = 1.0;
         this.fade_out = false;
@@ -36,8 +37,20 @@ class FadeInScript extends Script {
 
   handleGameEvent(parent, evt) {
     if (evt.eventType === 'fade_in') {
+      let d = 1.0;
+      if (evt.parameters.duration) {
+        d = evt.parameters.duration;
+      }
+      this.fade_rate = (1.0 / cfg.fps) / d;
       this.fade_in = true;
     } else if (evt.eventType === 'fade_out') {
+      log.debug(evt.parameters);
+      let d = 1.0;
+      if (evt.parameters.duration) {
+        d = evt.parameters.duration;
+      }
+      log.debug(d);
+      this.fade_rate = (1.0 / cfg.fps) / d;
       this.fade_out = true;
     }
   }
