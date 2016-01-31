@@ -14,10 +14,13 @@ class Game {
     log.debug('CONSTRUCTOR');
     this.stage = new Entity();
     this.world = new Entity();
+    this.world.tags.push('push');
     this.world.addScript('cameraScript', {});
     this.stage.addChild(this.world);
 
+
     this.ui = new Entity(); //new Entity('entity_ui');
+
     this.stage.addChild(this.ui);
 
     this.systems = [];
@@ -68,6 +71,10 @@ class Game {
     clock.position.y = cfg.renderer.size.y - 30;
     clock.addScript('dayNightCycleScript');
 
+    let messageBox = new Entity();
+    messageBox.addScript('messageBoxScript');
+    messageBox.position.x = 60;
+    messageBox.position.y = 665;
     // let bubble = Factory.createSpeechBubble(10, 3, 6, 'The short brown little fox thing jumped over the lazy dog.');
     // bubble.position.x = 480 + 25;
     // bubble.position.y = 320 - 60;
@@ -80,6 +87,7 @@ class Game {
     this.addEntityToUI(fade);
     this.addEntityToUI(darken);
     this.addEntityToUI(clock);
+    this.addEntityToUI(messageBox);
     this.stage.init(this.stage);
   }
 

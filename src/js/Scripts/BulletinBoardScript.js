@@ -33,8 +33,6 @@ class BulletinBoardScript extends Script {
   handleGameEvent(parent, evt) {
 
     if (evt.eventType === 'change_text') {
-      console.log(evt.parameters.target);
-      console.log(parent.name);
       if (evt.parameters.target.name == parent.name) {
         this.text = evt.parameters.text;
         this.bubble.setText(this.text);

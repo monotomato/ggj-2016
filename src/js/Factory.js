@@ -18,7 +18,7 @@ class Factory {
   //   sprite.position = opts.offset;
   // }
 
-  static createSpeechBubble(width, height, arrowPos, text, title='', wrap=true) {
+  static createSpeechBubble(width, height, arrowPos, text, title='', wrap=true, arrow=true, wraplen=31) {
     let box = new Entity();
     let addSprite = (spriteName, opts) => {
       let sprite = new PIXI.Sprite();
@@ -69,31 +69,32 @@ class Factory {
         });
       }
     }
-
-    addSprite('sprite_piece_11', {
-      scale: 0.26,
-      offset: {
-        x: tileWidth * arrowPos,
-        y: tileHeight * height
-      }
-    });
-    addSprite('sprite_piece_10', {
-      scale: 0.26,
-      offset: {
-        x: tileWidth * arrowPos,
-        y: tileHeight * (height - 1)
-      }
-    });
-
+    if(arrow){
+      addSprite('sprite_piece_11', {
+        scale: 0.26,
+        offset: {
+          x: tileWidth * arrowPos,
+          y: tileHeight * height
+        }
+      });
+      addSprite('sprite_piece_10', {
+        scale: 0.26,
+        offset: {
+          x: tileWidth * arrowPos,
+          y: tileHeight * (height - 1)
+        }
+      });
+    }
     let textWrapped = text;
-    if (wrap) textWrapped = wordWrap(text, 31);
+    if (wrap) textWrapped = wordWrap(text, wraplen);
     let textObj = new PIXI.Text(textWrapped, {font : '18px Monaco', fill : 0x121212, align : 'left'});
     if (title !== '') {
-      textObj.position.y = 30.0;
+      textObj.position.y = 20.0;
     }
     box.addChild(textObj);
 
     let titleObj = new PIXI.Text(title, {font : 'bold 18px Monaco', fill : 0x000000, align : 'left'});
+    titleObj.position.y = -5;
     box.addChild(titleObj);
 
     box.position.x = -tileWidth * (arrowPos) - 4;
@@ -102,7 +103,7 @@ class Factory {
     let ent = new Entity();
     ent.setText = (newText) => {
       if (wrap) {
-        textObj.text = wordWrap(newText, 31);
+        textObj.text = wordWrap(newText, wraplen);
       } else {
         textObj.text = newText;
       }

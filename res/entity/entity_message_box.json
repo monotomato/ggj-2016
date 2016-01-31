@@ -1,0 +1,22 @@
+{
+  "component_configuration":{},
+  "component_data":{
+    "tags": [
+      "message_box"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "treatment":"trigger"
+    }
+  },
+  "scripts":[
+    {
+      "name" : "messageBoxScript",
+      "parameters":{
+
+      }
+    }
+  ]
+}

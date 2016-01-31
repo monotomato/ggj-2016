@@ -18,7 +18,6 @@ class VillagerAnimationScript extends Script {
     this.parts.head = allparts.head[rand(allparts.head.length)];
     this.parts.hair = allparts.hair[rand(allparts.hair.length)];
     this.parts.limbs = allparts.limbs[rand(allparts.limbs.length)];
-    console.log(allparts.body);
     // this.parts.
     this.timeAtCurrentFrame = -1;
     this.duration = 60;
