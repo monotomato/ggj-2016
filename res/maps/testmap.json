@@ -10,7 +10,7 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "height":35,
          "image":"huutoInteriorBetter.png",
@@ -23,40 +23,25 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "height":35,
          "image":"hornhouseInterior.png",
          "name":"house_2",
          "offsetx":1056,
-         "offsety":1224,
+         "offsety":1256,
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "draworder":"topdown",
          "height":35,
          "name":"obj_layer_0",
          "objects":[
-                {
-                 "height":192,
-                 "id":3,
-                 "name":"Villager",
-                 "properties":
-                    {
-                     "config":"entity_villager"
-                    },
-                 "rotation":0,
-                 "type":"villager",
-                 "visible":true,
-                 "width":96,
-                 "x":880,
-                 "y":-288
-                },
                 {
                  "height":32,
                  "id":4,
@@ -71,7 +56,7 @@
                  "width":32,
                  "x":1760,
                  "y":40
-                },
+                }, 
                 {
                  "height":32,
                  "id":5,
@@ -86,7 +71,7 @@
                  "width":1696,
                  "x":224,
                  "y":704
-                },
+                }, 
                 {
                  "height":32,
                  "id":13,
@@ -99,9 +84,9 @@
                  "type":"item",
                  "visible":true,
                  "width":32,
-                 "x":1184,
-                 "y":0
-                },
+                 "x":1976,
+                 "y":944
+                }, 
                 {
                  "height":32,
                  "id":14,
@@ -114,8 +99,8 @@
                  "type":"item",
                  "visible":true,
                  "width":32,
-                 "x":1120,
-                 "y":0
+                 "x":1760,
+                 "y":936
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -123,7 +108,7 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "draworder":"topdown",
          "height":35,
@@ -140,10 +125,10 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":512,
-                 "x":152,
-                 "y":1504
-                },
+                 "width":584,
+                 "x":112,
+                 "y":1528
+                }, 
                 {
                  "height":288,
                  "id":22,
@@ -155,10 +140,10 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":64,
-                 "x":96,
+                 "width":48,
+                 "x":112,
                  "y":1240
-                },
+                }, 
                 {
                  "height":288,
                  "id":23,
@@ -170,12 +155,12 @@
                  "rotation":0,
                  "type":"collision",
                  "visible":true,
-                 "width":64,
+                 "width":40,
                  "x":656,
                  "y":1240
-                },
+                }, 
                 {
-                 "height":64,
+                 "height":90,
                  "id":24,
                  "name":"trigger_door_house_out_1",
                  "properties":
@@ -186,118 +171,12 @@
                  "rotation":0,
                  "type":"trigger",
                  "visible":true,
-                 "width":72,
-                 "x":320,
-                 "y":584
-                },
+                 "width":90,
+                 "x":432,
+                 "y":616
+                }, 
                 {
-                 "height":80,
-                 "id":25,
-                 "name":"trigger_door_house_in_1",
-                 "properties":
-                    {
-                     "config":"entity_door_trigger",
-                     "target":"trigger_door_house_out_1"
-                    },
-                 "rotation":0,
-                 "type":"trigger",
-                 "visible":true,
-                 "width":112,
-                 "x":224,
-                 "y":1424
-                },
-                {
-                 "height":288,
-                 "id":27,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":64,
-                 "x":992,
-                 "y":1224
-                },
-                {
-                 "height":48,
-                 "id":28,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":512,
-                 "x":1048,
-                 "y":1496
-                },
-                {
-                 "height":288,
-                 "id":29,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":64,
-                 "x":1552,
-                 "y":1224
-                },
-                {
-                 "height":32,
-                 "id":31,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":32,
-                 "x":1488,
-                 "y":1400
-                },
-                {
-                 "height":80,
-                 "id":32,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":96,
-                 "x":1504,
-                 "y":1440
-                },
-                {
-                 "height":80,
-                 "id":33,
-                 "name":"",
-                 "properties":
-                    {
-                     "config":"entity_static_collider"
-                    },
-                 "rotation":0,
-                 "type":"collision",
-                 "visible":true,
-                 "width":96,
-                 "x":584,
-                 "y":1448
-                },
-                {
-                 "height":32,
+                 "height":64,
                  "id":34,
                  "name":"LocationItem",
                  "properties":
@@ -307,10 +186,10 @@
                  "rotation":0,
                  "type":"loc",
                  "visible":true,
-                 "width":32,
+                 "width":64,
                  "x":568,
-                 "y":1416
-                },
+                 "y":1392
+                }, 
                 {
                  "height":192,
                  "id":39,
@@ -323,84 +202,9 @@
                  "type":"villager",
                  "visible":true,
                  "width":96,
-                 "x":752,
-                 "y":-288
-                },
-                {
-                 "height":192,
-                 "id":40,
-                 "name":"Villager",
-                 "properties":
-                    {
-                     "config":"entity_villager"
-                    },
-                 "rotation":0,
-                 "type":"villager",
-                 "visible":true,
-                 "width":96,
-                 "x":1008,
-                 "y":-288
-                },
-                {
-                 "height":192,
-                 "id":41,
-                 "name":"Villager",
-                 "properties":
-                    {
-                     "config":"entity_villager"
-                    },
-                 "rotation":0,
-                 "type":"villager",
-                 "visible":true,
-                 "width":96,
-                 "x":1136,
-                 "y":-288
-                },
-                {
-                 "height":192,
-                 "id":42,
-                 "name":"Villager",
-                 "properties":
-                    {
-                     "config":"entity_villager"
-                    },
-                 "rotation":0,
-                 "type":"villager",
-                 "visible":true,
-                 "width":96,
-                 "x":1320,
-                 "y":-288
-                },
-                {
-                 "height":192,
-                 "id":43,
-                 "name":"Villager",
-                 "properties":
-                    {
-                     "config":"entity_villager"
-                    },
-                 "rotation":0,
-                 "type":"villager",
-                 "visible":true,
-                 "width":96,
-                 "x":1456,
-                 "y":-288
-                },
-                {
-                 "height":192,
-                 "id":44,
-                 "name":"Villager",
-                 "properties":
-                    {
-                     "config":"entity_villager"
-                    },
-                 "rotation":0,
-                 "type":"villager",
-                 "visible":true,
-                 "width":96,
-                 "x":592,
-                 "y":-288
-                },
+                 "x":840,
+                 "y":904
+                }, 
                 {
                  "height":32,
                  "id":45,
@@ -414,10 +218,10 @@
                  "visible":true,
                  "width":968,
                  "x":1888,
-                 "y":800
-                },
+                 "y":808
+                }, 
                 {
-                 "height":64,
+                 "height":72,
                  "id":46,
                  "name":"",
                  "properties":
@@ -430,6 +234,392 @@
                  "width":32,
                  "x":1888,
                  "y":736
+                }, 
+                {
+                 "height":90,
+                 "id":47,
+                 "name":"trigger_door_house_out_2",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_house_in_2"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":680,
+                 "y":616
+                }, 
+                {
+                 "height":90,
+                 "id":48,
+                 "name":"trigger_door_house_out_3",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_house_in_3"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":1024,
+                 "y":608
+                }, 
+                {
+                 "height":90,
+                 "id":49,
+                 "name":"trigger_door_house_out_4",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_house_in_4"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":1328,
+                 "y":608
+                }, 
+                {
+                 "height":90,
+                 "id":50,
+                 "name":"trigger_door_house_out_5",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_house_in_5"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":1640,
+                 "y":608
+                }, 
+                {
+                 "height":90,
+                 "id":51,
+                 "name":"trigger_door_house_out_6",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_house_in_6"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":1896,
+                 "y":456
+                }, 
+                {
+                 "height":90,
+                 "id":52,
+                 "name":"trigger_door_house_out_7",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_house_in_7"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":2464,
+                 "y":712
+                }, 
+                {
+                 "height":90,
+                 "id":53,
+                 "name":"trigger_door_passage_up",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_passage_down"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":1816,
+                 "y":616
+                }, 
+                {
+                 "height":90,
+                 "id":54,
+                 "name":"trigger_door_passage_down",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_passage_up"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":1952,
+                 "y":712
+                }, 
+                {
+                 "height":90,
+                 "id":55,
+                 "name":"trigger_door_balcony_out",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_balcony_in"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":1736,
+                 "y":456
+                }, 
+                {
+                 "height":32,
+                 "id":56,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_static_collider"
+                    },
+                 "rotation":0,
+                 "type":"collision",
+                 "visible":true,
+                 "width":344,
+                 "x":1736,
+                 "y":544
+                }, 
+                {
+                 "height":48,
+                 "id":57,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_static_collider"
+                    },
+                 "rotation":0,
+                 "type":"collision",
+                 "visible":true,
+                 "width":584,
+                 "x":1008,
+                 "y":1528
+                }, 
+                {
+                 "height":288,
+                 "id":58,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_static_collider"
+                    },
+                 "rotation":0,
+                 "type":"collision",
+                 "visible":true,
+                 "width":40,
+                 "x":1552,
+                 "y":1240
+                }, 
+                {
+                 "height":288,
+                 "id":59,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_static_collider"
+                    },
+                 "rotation":0,
+                 "type":"collision",
+                 "visible":true,
+                 "width":48,
+                 "x":1008,
+                 "y":1240
+                }, 
+                {
+                 "height":64,
+                 "id":60,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":1472,
+                 "y":1392
+                }, 
+                {
+                 "height":240,
+                 "id":61,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_static_collider"
+                    },
+                 "rotation":0,
+                 "type":"collision",
+                 "visible":true,
+                 "width":32,
+                 "x":2856,
+                 "y":600
+                }, 
+                {
+                 "height":240,
+                 "id":62,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_static_collider"
+                    },
+                 "rotation":0,
+                 "type":"collision",
+                 "visible":true,
+                 "width":32,
+                 "x":192,
+                 "y":496
+                }, 
+                {
+                 "height":464,
+                 "id":64,
+                 "name":"",
+                 "properties":
+                    {
+                     "config":"entity_location_house",
+                     "houseId":"1"
+                    },
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":736,
+                 "x":56,
+                 "y":1184
+                }, 
+                {
+                 "height":90,
+                 "id":66,
+                 "name":"trigger_door_house_in_1",
+                 "properties":
+                    {
+                     "config":"entity_door_trigger",
+                     "target":"trigger_door_house_out_1"
+                    },
+                 "rotation":0,
+                 "type":"trigger",
+                 "visible":true,
+                 "width":90,
+                 "x":232,
+                 "y":1400
+                }, 
+                {
+                 "height":128,
+                 "id":68,
+                 "name":"house_spawn_1",
+                 "properties":
+                    {
+                     "config":"entity_spawner"
+                    },
+                 "rotation":0,
+                 "type":"spawn",
+                 "visible":true,
+                 "width":80,
+                 "x":392,
+                 "y":1360
+                }, 
+                {
+                 "height":192,
+                 "id":69,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":1088,
+                 "y":824
+                }, 
+                {
+                 "height":192,
+                 "id":70,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":1344,
+                 "y":896
+                }, 
+                {
+                 "height":192,
+                 "id":71,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":856,
+                 "y":1200
+                }, 
+                {
+                 "height":192,
+                 "id":72,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":888,
+                 "y":1544
+                }, 
+                {
+                 "height":192,
+                 "id":73,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":1336,
+                 "y":1864
+                }, 
+                {
+                 "height":192,
+                 "id":74,
+                 "name":"Villager",
+                 "properties":
+                    {
+                     "config":"entity_villager"
+                    },
+                 "rotation":0,
+                 "type":"villager",
+                 "visible":true,
+                 "width":96,
+                 "x":1648,
+                 "y":1504
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -437,14 +627,14 @@
          "width":80,
          "x":0,
          "y":0
-        },
+        }, 
         {
          "draworder":"topdown",
          "height":35,
          "name":"player",
          "objects":[
                 {
-                 "height":64,
+                 "height":90,
                  "id":2,
                  "name":"player",
                  "properties":
@@ -454,9 +644,9 @@
                  "rotation":0,
                  "type":"player",
                  "visible":true,
-                 "width":64,
-                 "x":520,
-                 "y":320
+                 "width":90,
+                 "x":1184,
+                 "y":584
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -465,7 +655,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":47,
+ "nextobjectid":75,
  "orientation":"orthogonal",
  "properties":
     {
