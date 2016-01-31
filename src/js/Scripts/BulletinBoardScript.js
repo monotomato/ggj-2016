@@ -26,6 +26,7 @@ class BulletinBoardScript extends Script {
     if (playerCollide) {
       this.bubble.visible = true;
     } else {
+      // EventMan.publish({eventType: 'audio_sound_play', parameters: {audio:'audio_door_2'}});
       this.bubble.visible = false;
     }
   }

@@ -62,6 +62,7 @@ function initReady() {
   log.info('Initialization ready!');
   //console.clear(); // Clears the console.
   game = new Game();
+  EventMan.publish({eventType: 'audio_music_play', parameters: {audio:'audio_music_interior'}});
   requestAnimationFrame(loop);
 }
 

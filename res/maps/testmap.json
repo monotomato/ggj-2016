@@ -896,8 +896,8 @@
                  "type":"trigger",
                  "visible":true,
                  "width":90,
-                 "x":456,
-                 "y":2064
+                 "x":160,
+                 "y":2048
                 }, 
                 {
                  "height":90,

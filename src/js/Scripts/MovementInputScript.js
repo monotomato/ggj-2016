@@ -35,6 +35,7 @@ class MovementInputScript extends Script {
       }
       if (Input.keyPressed.up) {
         EventMan.publish({eventType: 'enter_player', parameters: {}});
+        
       }
       if (movement === 0) {
         parent.animation = parent.idle;

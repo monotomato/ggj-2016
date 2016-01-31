@@ -36,6 +36,7 @@ class MessageBoxScript extends Script {
 
   handleGameEvent(parent, evt) {
     if (evt.eventType === 'notification') {
+      EventMan.publish({eventType: 'audio_sound_play', parameters: {audio:'audio_door_2'}});
       console.log(evt);
       this.bubble.visible = true;
 
