@@ -18,7 +18,7 @@ class Factory {
   //   sprite.position = opts.offset;
   // }
 
-  static createSpeechBubble(width, height, arrowPos, text, wrap=true) {
+  static createSpeechBubble(width, height, arrowPos, text, title='', wrap=true) {
     let box = new Entity();
     let addSprite = (spriteName, opts) => {
       let sprite = new PIXI.Sprite();
@@ -88,7 +88,13 @@ class Factory {
     let textWrapped = text;
     if (wrap) textWrapped = wordWrap(text, 31);
     let textObj = new PIXI.Text(textWrapped, {font : '18px Monaco', fill : 0x121212, align : 'left'});
+    if (title !== '') {
+      textObj.position.y = 30.0;
+    }
     box.addChild(textObj);
+
+    let titleObj = new PIXI.Text(title, {font : 'bold 18px Monaco', fill : 0x000000, align : 'left'});
+    box.addChild(titleObj);
 
     box.position.x = -tileWidth * (arrowPos) - 4;
     box.position.y = -height * (tileHeight) - 16;

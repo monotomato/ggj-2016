@@ -9,9 +9,12 @@ import {Collision} from 'Collision';
 class RankBoardScript extends Script {
   constructor(parameters) {
     super(parameters);
+    this.eventTypes.push(
+      'rank_apply_end'
+    );
     this.converse = false;
     this.text = 'This is placeholder text. Change it with events!';
-    this.bubble = Factory.createSpeechBubble(11, 7, 6, this.text, false);
+    this.bubble = Factory.createSpeechBubble(11, 7, 6, this.text, 'Rankings', false);
   }
 
   init(parent, rootEntity) {
@@ -36,11 +39,13 @@ class RankBoardScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
-    if (evt.eventType === 'change_text') {
-      if (evt.parameters.target == this) {
-        this.text = evt.parameters.text;
-        this.bubble.setText(this.text);
-      }
+    if (evt.eventType === 'rank_apply_end') {
+      this.text = '';
+      this.village.villagers.forEach((villager) => {
+        this.text += villager.name + ', ' + villager.role + '\n';
+      });
+      parent.addChild(this.bubble);
+      this.bubble.setText(this.text);
     }
   }
 }
