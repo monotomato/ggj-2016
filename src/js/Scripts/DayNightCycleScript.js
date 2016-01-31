@@ -20,7 +20,7 @@ class DayNightCycleScript extends Script {
   }
 
   update(parent, rootEntity, delta) {
-    parent.getChildAt(1).text = this.dayTime();
+    parent.getChildAt(1).text = this.dayTime() + ":00";
     if (!this.firstUpdate) {
       this.firstUpdate = true;
       this.time = 11;
