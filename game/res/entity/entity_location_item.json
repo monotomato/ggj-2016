@@ -1,0 +1,16 @@
+{
+  "component_configuration":{},
+  "component_data":{
+    "tags": [
+      "location_item"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "treatment": "trigger"
+    }
+  },
+  "scripts":[
+  ]
+}

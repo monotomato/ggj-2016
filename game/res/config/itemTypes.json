@@ -1,0 +1,9 @@
+{
+  "item_food": "a food item",
+  "item_container": "a box or similar",
+  "item_tool": "a useful tool",
+  "item_treasure": "a shiny thing",
+  "item_weapon": "a pointy thing",
+  "item_clothing": "a wearable thing",
+  "item_education": "a wise thing"
+}

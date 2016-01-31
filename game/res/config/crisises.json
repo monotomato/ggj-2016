@@ -1,0 +1,34 @@
+{
+  "crisises": [
+    {
+      "desc": "The healer is on a business trip, and the supermayor of %villageName% hurt his knee. Find %item1% to heal it.",
+      "duration": 2,
+      "itemCount": 1
+    },
+    {
+      "desc": "The supermayour has a new hobby. Get him %item1% and %item2% and try not to think what he does with them.",
+      "duration": 2,
+      "itemCount": 2
+    },
+    {
+      "desc": "The fields produced no crop this season, and starvation threatens %villageName%. The villagers can be fed with %item1%, but you need %item2% for the sick, and %item3% to satisfy the needs of the rich.",
+      "duration": 2,
+      "itemCount": 3
+    },
+    {
+      "desc": "A rich uberbaron is coming to visit %villageName%, and the supermayour feels like earning a few extra bucks. Find %item1%, %item2%, %item3% and %item4% to sell.",
+      "duration": 2,
+      "itemCount": 4
+    },
+    {
+      "desc": "The sheep god demands sacrifices! He/She wants %item1%, %item2% and also maybe probably %item3%, and quickly!",
+      "duration": 2,
+      "itemCount": 3
+    },
+    {
+      "desc": "A flood is about to rise, and the only way to prevent is is to fortify the walls with %item1%, divert water with %item2% and keep %item3% ready for the worst case.",
+      "duration": 2,
+      "itemCount": 3
+    }
+  ]
+}

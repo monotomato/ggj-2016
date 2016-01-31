@@ -1,0 +1,20 @@
+{
+  "fnames": [
+    "Toni","Juuso","Tume","Emmi","Laura","Arnold","Pete","Antonio","Rose","Alice",
+    "Brom","Ayleth","Walter","Brunhild","Robin","Loreena","Asher","Cedric","Gavin",
+    "Mary","Sibyl","Ellyn","Edward","Cecily","Anne", "Richard","Bridget","Thomas",
+    "Simon","John","Joan","Thea","Eleanor","Arthur","Charles","Oliver","Ariana",
+    "Philip","Catherine","Agnes"
+  ],
+  "snames": [
+    "Pesola","Toikka","Reunanen","Kranz","Schwarzenegger"
+  ],
+  "roles": [
+    "Smith","Fisherman","Hunter","Exotic dancer","Healer","Farmer",
+    "Knight","Baker","Butcher","Soap maker","Bard","Falconer","Hermit",
+    "Poet","Page","Minister","Hatter","Sailor","Servant","Storyteller",
+    "Bandit","Banker","Doctor","Butcher","Tinker","Tanner","Playwright",
+    "Carpenter","Jeweler","Merchant","Torturer","Executioner","Gravedigger",
+    "Merenary","Beggar"
+  ]
+}

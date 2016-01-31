@@ -1,0 +1,44 @@
+{
+  "urls": [
+    "sounds.ogg",
+    "sounds.mp3"
+  ],
+  "sprite": {
+    "audio_door_1": [
+      0,
+      400.40816326530614
+    ],
+    "audio_door_2": [
+      1100,
+      354.1043083900226
+    ],
+    "audio_hit_noise": [
+      2200,
+      250
+    ],
+    "audio_machine_beep": [
+      3300.0000000000005,
+      500
+    ],
+    "audio_melody_cool": [
+      4400,
+      2000
+    ],
+    "audio_melody_weird": [
+      6500,
+      2500
+    ],
+    "audio_music_interior": [
+      9600,
+      173008.97959183675
+    ],
+    "audio_music_out": [
+      183700,
+      309211.4285714286
+    ],
+    "audio_sheep": [
+      493800,
+      1320.8843537415191
+    ]
+  }
+}

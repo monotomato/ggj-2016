@@ -1,0 +1,27 @@
+{
+  "component_configuration":{
+    "animation": "anim_player_idle"
+  },
+  "component_data":{
+    "animation":{"anim":[{"frame":"item_chest", "duration":1000}],"speed":0},
+    "sprite_options":{
+      "scale":10,
+      "offset":{
+        "x":0,
+        "y":-10
+      }
+    },
+    "tags": [
+      "item",
+      "item_food",
+      "item_fruit",
+      "item_natural"
+    ]
+  },
+  "scripts":[
+    {
+      "name" : "animationScript",
+      "parameters":{}
+    }
+  ]
+}

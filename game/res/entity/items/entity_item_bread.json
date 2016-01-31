@@ -1,0 +1,26 @@
+{
+  "component_configuration":{},
+  "component_data":{
+    "animation":{"anim":[{"frame":"sprite_item_bread", "duration":1000}],"speed":0},
+    "tags": [
+      "item",
+      "item_food"
+    ],
+    "relocated": true
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+    }
+  },
+  "scripts":[
+    {
+      "name" : "animationScript",
+      "parameters":{}
+    },
+    {
+      "name": "tossableScript",
+      "parameters": {}
+    }
+  ]
+}

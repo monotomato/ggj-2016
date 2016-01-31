@@ -1,0 +1,33 @@
+{
+  "component_configuration":{
+  },
+  "component_data":{
+    "collider_color":"0x0000FF",
+    "tags": [
+      "villager",
+      "npc"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+    }
+  },
+  "scripts":[
+    {
+      "name" : "villagerAnimationScript",
+      "parameters":{
+        "parts":{
+          "head":"basic",
+          "body":"basic",
+          "hair":"basic",
+          "limbs":"basic"
+        }
+      }
+    },
+    {
+      "name" : "initiateConversationScript",
+      "parameters":{}
+    }
+  ]
+}

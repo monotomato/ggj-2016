@@ -1,0 +1,42 @@
+{
+  "component_configuration":{
+    "idle": "anim_player_idle",
+    "walk": "anim_player_walk"
+  },
+  "component_data":{
+    "name": "sheep",
+    "role": "sheep",
+    "sprite_options":{
+      "scale":1,
+      "offset":{
+        "x":0,
+        "y":-22
+      }
+    },
+    "collider_color":"0xFF00FF",
+    "tags": [
+      "player",
+      "villager"
+    ]
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+      "frictionless":true
+    }
+  },
+  "scripts":[
+    {
+      "name" : "movementInputScript",
+      "parameters":{
+        "movementSpeed":0.3
+      }
+    },
+    {
+      "name" : "animationScript",
+      "parameters":{
+        "animTestParam": 100
+      }
+    }
+  ]
+}

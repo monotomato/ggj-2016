@@ -1,0 +1,34 @@
+{
+  "component_configuration":{},
+  "component_data":{
+    "animation":{"anim":[{"frame":"sprite_item_pen", "duration":1000}],"speed":0},
+    "tags": [
+      "item",
+      "item_tool",
+      "item_education"
+    ],
+    "sprite_options":{
+      "scale":0.5,
+      "offset":{
+        "x":0,
+        "y":0
+      }
+    },
+    "relocated": true
+  },
+  "physics":{
+    "bodyType": "rectangle",
+    "options": {
+    }
+  },
+  "scripts":[
+    {
+      "name" : "animationScript",
+      "parameters":{}
+    },
+    {
+      "name": "tossableScript",
+      "parameters": {}
+    }
+  ]
+}
