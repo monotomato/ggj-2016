@@ -32,13 +32,13 @@
       "villager_2": "conversation_2",
       "villager_3": "home",
       "villager_4": "home",
-      "villager_5": "conversation_2",
+      "villager_5": "conversation_2a",
       "villager_6": "home",
       "villager_7": "home"
     },
     "4": {
       "villager_1": "home",
-      "villager_2": "conversation_2",
+      "villager_2": "conversation_2a",
       "villager_3": "home",
       "villager_4": "home",
       "villager_5": "conversation_2",
@@ -74,7 +74,7 @@
     },
     "8": {
       "villager_1": "home",
-      "villager_2": "conversation_3",
+      "villager_2": "conversation_3a",
       "villager_3": "home",
       "villager_4": "conversation_3",
       "villager_5": "home",
@@ -85,7 +85,7 @@
       "villager_1": "home",
       "villager_2": "conversation_3",
       "villager_3": "home",
-      "villager_4": "conversation_3",
+      "villager_4": "conversation_3a",
       "villager_5": "home",
       "villager_6": "home",
       "villager_7": "home"
@@ -103,7 +103,7 @@
       "villager_1": "conversation_1",
       "villager_2": "home",
       "villager_3": "conversation_2",
-      "villager_4": "conversation_2",
+      "villager_4": "conversation_2a",
       "villager_5": "home",
       "villager_6": "home",
       "villager_7": "home"
@@ -113,13 +113,13 @@
       "villager_2": "home",
       "villager_3": "home",
       "villager_4": "home",
-      "villager_5": "conversation_1",
+      "villager_5": "conversation_1a",
       "villager_6": "home",
       "villager_7": "conversation_3"
     },
     "13": {
       "villager_1": "home",
-      "villager_2": "conversation_3",
+      "villager_2": "conversation_3a",
       "villager_3": "home",
       "villager_4": "home",
       "villager_5": "conversation_3",
@@ -128,7 +128,7 @@
     },
     "14": {
       "villager_1": "conversation_1",
-      "villager_2": "conversation_1",
+      "villager_2": "conversation_1a",
       "villager_3": "home",
       "villager_4": "home",
       "villager_5": "home",
@@ -138,7 +138,7 @@
     "15": {
       "villager_1": "home",
       "villager_2": "home",
-      "villager_3": "conversation_2",
+      "villager_3": "conversation_2a",
       "villager_4": "home",
       "villager_5": "home",
       "villager_6": "home",
@@ -157,7 +157,7 @@
       "villager_1": "home",
       "villager_2": "home",
       "villager_3": "conversation_2",
-      "villager_4": "conversation_2",
+      "villager_4": "conversation_2a",
       "villager_5": "home",
       "villager_6": "home",
       "villager_7": "home"
@@ -169,7 +169,7 @@
       "villager_4": "home",
       "villager_5": "home",
       "villager_6": "home",
-      "villager_7": "conversation_1"
+      "villager_7": "conversation_1a"
     },
     "19": {
       "villager_1": "home",
@@ -185,12 +185,12 @@
       "villager_2": "conversation_2",
       "villager_3": "home",
       "villager_4": "home",
-      "villager_5": "conversation_2",
+      "villager_5": "conversation_2a",
       "villager_6": "home",
       "villager_7": "home"
     },
     "21": {
-      "villager_1": "conversation_2",
+      "villager_1": "conversation_2a",
       "villager_2": "conversation_2",
       "villager_3": "home",
       "villager_4": "home",
@@ -213,7 +213,7 @@
       "villager_3": "home",
       "villager_4": "home",
       "villager_5": "home",
-      "villager_6": "conversation_3",
+      "villager_6": "conversation_3a",
       "villager_7": "home"
     }
   }

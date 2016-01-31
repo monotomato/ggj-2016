@@ -63,9 +63,14 @@ class DayNightCycleScript extends Script {
           spawn = this.rootEntity.findEntityWithName('house_spawn_' + houseId);
         }
       } else {
-        let convId = location[location.length - 1];
-        //TODO set to random free spawn in converstation
-        spawn = this.rootEntity.findEntityWithName('location_conversation_' + convId + '_spawn_1');
+        let last = location[location.length - 1];
+        let spawn = '1';
+        if (last == 'a') {
+          spawn = '2';
+          last = location[location.length - 2];
+        }
+        let convId = last;
+        spawn = this.rootEntity.findEntityWithName('location_conversation_' + convId + '_spawn_' + spawn);
       }
       if (spawn) {
         villager.physics.body.pos.x = spawn.physics.body.pos.x;
