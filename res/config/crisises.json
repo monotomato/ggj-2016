@@ -12,12 +12,12 @@
     },
     {
       "desc": "The fields produced no crop this season, and starvation threatens %villageName%. The villagers can be fed with %item1%, but you need %item2% for the sick, and %item3% to satisfy the needs of the rich.",
-      "duration": 3,
+      "duration": 2,
       "itemCount": 3
     },
     {
       "desc": "A rich uberbaron is coming to visit %villageName%, and the supermayour feels like earning a few extra bucks. Find %item1%, %item2%, %item3% and %item4% to sell.",
-      "duration": 3,
+      "duration": 2,
       "itemCount": 4
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "desc": "A flood is about to rise, and the only way to prevent is is to fortify the walls with %item1%, divert water with %item2% and keep %item3% ready for the worst case.",
-      "duration": 1,
+      "duration": 2,
       "itemCount": 3
     }
   ]

@@ -6,7 +6,8 @@
       "item",
       "item_tool",
       "item_weapon"
-    ]
+    ],
+    "relocated": true
   },
   "physics":{
     "bodyType": "rectangle",

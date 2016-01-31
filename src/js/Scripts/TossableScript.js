@@ -51,7 +51,6 @@ class TossableScript extends Script {
         }
       }
     }
-    log.debug(evt.parameters.message);
   }
 }
 

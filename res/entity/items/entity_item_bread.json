@@ -5,7 +5,8 @@
     "tags": [
       "item",
       "item_food"
-    ]
+    ],
+    "relocated": true
   },
   "physics":{
     "bodyType": "rectangle",
