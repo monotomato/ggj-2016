@@ -20,7 +20,7 @@ class HouseScript extends Script {
   }
 
   checkIfStealing(item) {
-    if (this.parent.villager.location === 'home') {
+    if (this.parent.villager.location === 'home' && !this.parent.villager.dead) {
       EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.village.player.name, rankChange: 1.1}});
       EventMan.publish({eventType: 'notification', parameters: {text: 'Your rank decreased because you got caught stealing.'}});
     }

@@ -90,6 +90,7 @@ class VillagerIdentitySystemScript extends Script {
         if (this.villagers[i].name === evt.parameters.villagerName) {
           rem = i;
           this.villagers[i].dead = true;
+          this.villagers[i].physics.body.x = 15000;
           break;
         }
       }
