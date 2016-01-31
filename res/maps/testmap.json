@@ -316,7 +316,7 @@
                 {
                  "height":32,
                  "id":20,
-                 "name":"LocationItem",
+                 "name":"location_conversation_1_spawn_1",
                  "properties":
                     {
                      "config":"entity_location_item"

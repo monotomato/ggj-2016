@@ -13,14 +13,14 @@ class DayNightCycleScript extends Script {
   }
 
   init(parent,rootEntity){
-    EventMan.publish({eventType: 'cycle_morning', parameters: {cycleNumber: this.dayNumber()}});
-    this.village = rootEntity.findEntityWithName('village');
+    // EventMan.publish({eventType: 'cycle_morning', parameters: {cycleNumber: this.dayNumber()}});
+    this.village = rootEntity.findEntityWithTag('village');
     this.schelude = resources.npcSchelude.data.schelude;
     this.rootEntity = rootEntity;
   }
 
   update(parent, rootEntity, delta) {
-    parent.getChildAt(1).text = this.time;
+    parent.getChildAt(1).text = this.dayTime();
   }
 
   dayNumber() {
@@ -35,6 +35,7 @@ class DayNightCycleScript extends Script {
     if (evt.eventType === 'time_advance') {
       let oldTime = this.time;
       this.time += 1;
+      this.updateNpcs();
       if (this.dayTime() === 0) {
         EventMan.publish({eventType: 'cycle_morning', parameters: {cycleNumber: this.dayNumber()}});
       }
@@ -43,18 +44,25 @@ class DayNightCycleScript extends Script {
 
   updateNpcs() {
     let schel = this.schelude[this.dayTime()];
-    this.village.villagers.forEach(villager => {
+    this.village.npcs.forEach(villager => {
       let location = schel[villager.id];
       let spawn;
       if (location == 'home') {
-        let houseId = villager.house.houseId;
-        spawn = this.rootEntity.findEntityWithName('house_spawn_' + houseId);
+        let house = villager.house;
+        if (house) {
+          let houseId = villager.house.houseId;
+          spawn = this.rootEntity.findEntityWithName('house_spawn_' + houseId);
+        }
       } else {
-
+        log.debug(villager.id);
+        let convId = location[location.length - 1];
+        //TODO set to random free spawn in converstation
+        spawn = this.rootEntity.findEntityWithName('location_conversation_' + convId + '_spawn_1');
       }
+      log.debug(spawn);
       if (spawn) {
-        villager.physics.body.x = spawn.physics.body.x;
-        villager.physics.body.y = spawn.physics.body.y;
+        villager.physics.body.pos.x = spawn.physics.body.pos.x;
+        villager.physics.body.pos.y = spawn.physics.body.pos.y;
       }
     });
   }
