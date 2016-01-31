@@ -16,10 +16,10 @@ class InitiateConversationScript extends Script {
       'cycle_morning'
     );
     this.text = 'Blaablaablaablaa.';
-    this.bubble = Factory.createSpeechBubble(11, 3, 6, this.text);
   }
 
   init(parent, rootEntity) {
+    this.bubble = Factory.createSpeechBubble(11, 3, 6, this.text, parent.name);
     this.parent = parent;
     this.player = rootEntity.findEntityWithTag('player');
     this.conversations = resources.conversations.data;
