@@ -67,6 +67,22 @@ class DoorScript extends Script {
             time: 0.5
           }
         });
+        EventMan.publish({
+          eventType: 'disable_player',
+          parameters: {
+            evt: {}
+          }
+        });
+        EventMan.publish({
+          eventType: 'timed',
+          parameters: {
+            evt: {
+              eventType: 'enable_player',
+              parameters: {}
+            },
+            time: 1.0
+          }
+        });
         // EventMan.publish({eventType: 'time_advance', parameters: {}});
         EventMan.publish({eventType: 'fade_out', parameters: {
           duration: 0.5
