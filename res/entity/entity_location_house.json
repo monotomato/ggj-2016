@@ -12,5 +12,9 @@
     }
   },
   "scripts":[
+    {
+      "name" : "houseScript",
+      "parameters":{}
+    }
   ]
 }

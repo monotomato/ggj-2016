@@ -14,6 +14,8 @@ import {HouseControllerScript} from './HouseControllerScript';
 import {EventTimerScript} from './EventTimerScript';
 import {InitiateConversationScript} from './InitiateConversationScript';
 import {BulletinBoardScript} from './BulletinBoardScript';
+import {HouseScript} from './HouseScript';
+import {RankBoardScript} from './RankBoardScript';
 
 const scripts = {
   movementInputScript: MovementInputScript,
@@ -31,7 +33,9 @@ const scripts = {
   fadeInScript: FadeInScript,
   eventTimerScript: EventTimerScript,
   initiateConversationScript: InitiateConversationScript,
-  bulletinBoardScript: BulletinBoardScript
+  bulletinBoardScript: BulletinBoardScript,
+  houseScript: HouseScript,
+  rankBoardScript: RankBoardScript
 };
 
 export {scripts as Scripts};
