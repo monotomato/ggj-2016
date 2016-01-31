@@ -13,7 +13,8 @@ class InitiateConversationScript extends Script {
     super(parameters);
     this.converse = false;
     this.eventTypes.push(
-      'cycle_morning'
+      'cycle_morning',
+      'time_advance'
     );
     this.text = 'Blaablaablaablaa.';
   }
@@ -57,7 +58,7 @@ class InitiateConversationScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
-    if (evt.eventType === 'cycle_morning') {
+    if (evt.eventType === 'time_advance') {
       this.randomize();
     }
   }

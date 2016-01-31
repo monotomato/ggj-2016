@@ -27,6 +27,9 @@ class ItemSystemScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
+    if (evt.eventType === 'cycle_morning') {
+      this.relocateItems();
+    }
   }
 
   relocateItems(rootEntity) {
@@ -39,6 +42,7 @@ class ItemSystemScript extends Script {
       loc.inUse = false;
     });
     this.village.itemTypes = [];
+    this.village.rawTypesByName = {};
     this.items.forEach(item => {
       let loc;
       do {
@@ -51,6 +55,7 @@ class ItemSystemScript extends Script {
       item.tags.forEach(tag => {
         if (this.village.itemTypes.indexOf(tag) === -1 && typeNames[tag]) {
           this.village.itemTypes.push(typeNames[tag]);
+          this.village.rawTypesByName[typeNames[tag]] = tag;
         }
       });
     });
