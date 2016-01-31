@@ -47,6 +47,7 @@ class TossableScript extends Script {
         } else {
           this.picked = true;
           this.player.hasItem = true;
+          EventMan.publish({eventType: 'item_picked', parameters: {item: this.parent}});
         }
       }
     }

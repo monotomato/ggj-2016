@@ -46,7 +46,7 @@ class CrisisScript extends Script {
     this.village.currentCrisis = crisis;
 
     log.debug(this.sign);
-    
+
     EventMan.publish({eventType: 'change_text',
       parameters: {
         target: this.sign,
@@ -76,12 +76,15 @@ class CrisisScript extends Script {
   }
 
   crisisFailed() {
+    let name = this.village.villagers[this.village.villagers.length - 1].name;
     EventMan.publish({eventType: 'villager_ritualized',
-     parameters: {villagerName: this.village.villagers[this.village.villagers.length - 1].name}});
+    parameters: {villagerName: name}});
+    EventMan.publish({eventType: 'notification', parameters: {text: name + ' got sacrificed in a ritual'}});
   }
 
   crisisAverted() {
     EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.village.player.name, rankChange: -1.1}});
+    EventMan.publish({eventType: 'notification', parameters: {text: 'Crisis averted, no rituals were performed.'}});
   }
 
   update(parent, rootEntity, delta) {
