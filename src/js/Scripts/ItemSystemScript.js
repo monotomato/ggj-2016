@@ -20,6 +20,7 @@ class ItemSystemScript extends Script {
     this.items = rootEntity.findEntitiesWithTag('item');
     this.village.items = this.village.items || this.items;
     this.itemLocations = rootEntity.findEntitiesWithTag('location_item');
+    this.rootEntity = rootEntity;
     this.relocateItems(rootEntity);
   }
 
@@ -28,7 +29,7 @@ class ItemSystemScript extends Script {
 
   handleGameEvent(parent, evt) {
     if (evt.eventType === 'cycle_morning') {
-      this.relocateItems();
+      this.relocateItems(this.rootEntity);
     }
   }
 
@@ -44,13 +45,18 @@ class ItemSystemScript extends Script {
     this.village.itemTypes = [];
     this.village.rawTypesByName = {};
     this.items.forEach(item => {
-      let loc;
-      do {
-        loc = this.itemLocations[rand(this.itemLocations.length)];
-      } while (loc.inUse);
-      loc.inUse = true;
-      item.physics.body.pos.x = loc.physics.body.pos.x;
-      item.physics.body.pos.y = loc.physics.body.pos.y;
+      if (item.relocated) {
+        let loc;
+        item.relocated = false;
+        do {
+          loc = this.itemLocations[rand(this.itemLocations.length)];
+        } while (loc.inUse);
+        loc.inUse = true;
+        item.physics.body.pos.x = loc.physics.body.pos.x;
+        item.physics.body.pos.y = loc.physics.body.pos.y;
+        item.physics.body.vel.x = 0;
+        item.physics.body.vel.y = 0;
+      }
       //Register all types of items
       item.tags.forEach(tag => {
         if (this.village.itemTypes.indexOf(tag) === -1 && typeNames[tag]) {

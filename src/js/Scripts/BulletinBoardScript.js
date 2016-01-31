@@ -13,6 +13,7 @@ class BulletinBoardScript extends Script {
     this.converse = false;
     this.text = 'This is placeholder text. Change it with events.';
     this.bubble = Factory.createSpeechBubble(11, 6, 6, this.text);
+    this.bubble.position.y -= 40;
   }
 
   init(parent, rootEntity) {
