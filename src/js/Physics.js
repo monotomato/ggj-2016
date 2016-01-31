@@ -131,7 +131,11 @@ class Physics {
                 body.vel.y = 0;
                 body.freeze.y = true;
               }
-              if (!body.frictionless) body.vel.x /= 2.0;
+              if (body.frictionless) {
+                // log.debug("Frictionless!");
+              } else {
+                body.vel.x /= 2.0;
+              }
             } else if (col.x !== 0.0) {
               if (Math.sign(body.vel.x) === Math.sign(col.x)) {
                 body.vel.x = 0;
