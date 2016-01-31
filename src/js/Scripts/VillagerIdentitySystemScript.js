@@ -40,6 +40,7 @@ class VillagerIdentitySystemScript extends Script {
 
     let fnames = resources.identities.data.fnames;
     let snames = resources.identities.data.snames;
+    let idCounter = 0;
     this.villagers.forEach(villager => {
       if (villager.tags.indexOf('player') === -1) {
         let name;
@@ -59,6 +60,7 @@ class VillagerIdentitySystemScript extends Script {
         villager.role = role;
         villager.love = love;
         villager.hate = hate;
+        villager.id = 'villager_' + idCounter++;
       } else {
         villager.name = 'sheep';
         villager.role = 'sheep';

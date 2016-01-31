@@ -60,10 +60,10 @@ class Game {
     clock.addScript('dayNightCycleScript');
     fade.addScript('fadeInScript');
 
-    let bubble = Factory.createSpeechBubble(10, 3, 6, 'The short brown little fox thing jumped over the lazy dog.');
-    bubble.position.x = 480 + 25;
-    bubble.position.y = 320 - 60;
-    this.addEntityToUI(bubble);
+    // let bubble = Factory.createSpeechBubble(10, 3, 6, 'The short brown little fox thing jumped over the lazy dog.');
+    // bubble.position.x = 480 + 25;
+    // bubble.position.y = 320 - 60;
+    // this.addEntityToUI(bubble);
 
     this.addEntityToUI(fade);
     this.addEntityToUI(clock);
