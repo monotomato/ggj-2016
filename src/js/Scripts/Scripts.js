@@ -18,6 +18,7 @@ import {HouseScript} from './HouseScript';
 import {RankBoardScript} from './RankBoardScript';
 import {DarkenScript} from './DarkenScript';
 import {MessageBoxScript} from './MessageBoxScript';
+import {IntroScript} from './IntroScript';
 
 const scripts = {
   movementInputScript: MovementInputScript,
@@ -39,7 +40,8 @@ const scripts = {
   houseScript: HouseScript,
   rankBoardScript: RankBoardScript,
   darkenScript: DarkenScript,
-  messageBoxScript: MessageBoxScript
+  messageBoxScript: MessageBoxScript,
+  introScript: IntroScript
 };
 
 export {scripts as Scripts};

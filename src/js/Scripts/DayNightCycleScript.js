@@ -23,7 +23,7 @@ class DayNightCycleScript extends Script {
     parent.getChildAt(1).text = this.dayTime();
     if (!this.firstUpdate) {
       this.firstUpdate = true;
-      this.time = 4;
+      this.time = 11;
       this.advanceTime();
     }
   }
@@ -43,7 +43,6 @@ class DayNightCycleScript extends Script {
     this.updateNpcs();
     if (this.dayTime() === 0) {
       EventMan.publish({eventType: 'cycle_morning', parameters: {cycleNumber: this.dayNumber()}});
-      EventMan.publish({eventType: 'notification', parameters: {text:'Morning arises! New ranks applied.'}});
     }
   }
 

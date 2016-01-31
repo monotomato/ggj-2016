@@ -13,14 +13,14 @@ class MessageBoxScript extends Script {
     this.text = 'Welcome to the village';
     this.bubble = Factory.createSpeechBubble(15, 2, 1, this.text, 'Latest news', false, false, 10);
     this.timer = 0;
+    this.bubble.visible = false;
   }
 
   init(parent, rootEntity) {
     this.world = rootEntity.findEntityWithTag('world');
     parent.addChild(this.bubble);
-    this.bubble.visible = true;
     console.log(parent.position);
-    EventMan.publish({eventType: 'notification', parameters: {text:'Welcome to the Ovisburg!'}});
+    // EventMan.publish({eventType: 'notification', parameters: {text:'Welcome to the Ovisburg!'}});
   }
 
   update(parent, rootEntity, delta) {
@@ -41,6 +41,7 @@ class MessageBoxScript extends Script {
       this.bubble.visible = true;
 
       this.text = evt.parameters.text;
+      this.timer = 0;
       this.bubble.setText(this.text);
     }
   }

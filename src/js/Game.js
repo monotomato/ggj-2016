@@ -39,11 +39,6 @@ class Game {
       log.debug('Debug mode is ON');
       this.debugConstructor();
     }
-
-    EventMan.publish({
-      eventType: 'fade_in',
-      parameters: {}
-    });
   }
 
   debugConstructor() {
@@ -75,6 +70,11 @@ class Game {
     messageBox.addScript('messageBoxScript');
     messageBox.position.x = 60;
     messageBox.position.y = 665;
+
+    let intro = new Entity();
+    intro.addScript('introScript');
+    intro.position.x = cfg.renderer.size.x / 2;
+    intro.position.y = cfg.renderer.size.y / 2 + 30;
     // let bubble = Factory.createSpeechBubble(10, 3, 6, 'The short brown little fox thing jumped over the lazy dog.');
     // bubble.position.x = 480 + 25;
     // bubble.position.y = 320 - 60;
@@ -88,7 +88,10 @@ class Game {
     this.addEntityToUI(darken);
     this.addEntityToUI(clock);
     this.addEntityToUI(messageBox);
+    this.addEntityToUI(intro);
     this.stage.init(this.stage);
+
+    EventMan.publish({eventType: 'intro', parameters: {}});
   }
 
   addEntityToWorld(entity) {
