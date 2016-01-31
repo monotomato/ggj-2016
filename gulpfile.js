@@ -42,7 +42,8 @@ var resPath = ['./res/**/*.*', '!**/sprite/**/*.png', '!**/sounds/**/*.*',];
 
 var jsPaths = ['./src/','./src/js'];
 
-gulp.task('res', ['sprite', 'res-copy', 'res-list', 'audiosprite']);
+gulp.task('res', ['res-copy', 'res-list']);
+gulp.task('res-full', ['res-copy', 'res-list', 'sprite', 'audiosprite']);
 
 gulp.task('res-list', function(){
   gulp.src(resPath)
@@ -72,7 +73,7 @@ gulp.task('sprite', function(){
 });
 
 gulp.task('audiosprite', function() {
-  gulp.src('res/sounds/*.wav')
+  gulp.src('res/sounds/*.*')
     .pipe(audiosprite({
       format: 'howler',
       output: 'sounds',

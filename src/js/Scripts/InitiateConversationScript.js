@@ -36,6 +36,7 @@ class InitiateConversationScript extends Script {
       this.converse = false;
     }
     if (this.converse) {
+      // EventMan.publish({eventType: 'audio_sound_play', parameters: {audio:'audio_door_2'}});
       this.bubble.visible = true;
     } else {
       this.bubble.visible = false;

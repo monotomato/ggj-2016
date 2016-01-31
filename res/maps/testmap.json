@@ -670,7 +670,7 @@
                  "y":1392
                 }, 
                 {
-                 "height":56,
+                 "height":440,
                  "id":61,
                  "name":"",
                  "properties":
@@ -682,10 +682,10 @@
                  "visible":true,
                  "width":32,
                  "x":2856,
-                 "y":784
+                 "y":400
                 }, 
                 {
-                 "height":64,
+                 "height":384,
                  "id":62,
                  "name":"",
                  "properties":
@@ -697,7 +697,7 @@
                  "visible":true,
                  "width":32,
                  "x":192,
-                 "y":672
+                 "y":352
                 }, 
                 {
                  "height":464,
@@ -896,8 +896,8 @@
                  "type":"trigger",
                  "visible":true,
                  "width":90,
-                 "x":456,
-                 "y":2064
+                 "x":160,
+                 "y":2048
                 }, 
                 {
                  "height":90,
