@@ -16,7 +16,7 @@ class VillagerRankingSystemScript extends Script {
   }
 
   init(parent, rootEntity) {
-
+    this.village = rootEntity.findEntityWithTag('village');
   }
 
   update(parent, rootEntity, delta) {
@@ -25,8 +25,8 @@ class VillagerRankingSystemScript extends Script {
 
   applyRankChanges() {
     let ranks = {};
-    for (let i = 0; this.villagers.length; i++) {
-      ranks[villagers[i].name] = i;
+    for (let i = 0; this.village.villagers.length; i++) {
+      ranks[this.village.villagers[i].name] = i;
     }
     for (let i = 0; i < this.rankChanges.length; i++) {
       let rankChange = this.rankChanges[i];
@@ -35,8 +35,6 @@ class VillagerRankingSystemScript extends Script {
     this.villagers.sort((l, r) => {
         return ranks[l.name] - ranks[r.name];
     });
-    //Probably not needed, but I don't understand javascript so
-    parent.villagers = this.villagers;
     EventMan.publish({eventType: 'rank_apply_end', parameters: {rankChanges: this.rankChanges}});
     this.rankChanges = [];
   }

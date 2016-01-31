@@ -4,10 +4,8 @@
     "walk": "anim_player_walk"
   },
   "component_data":{
-    "animation_states":{
-      "walk":"anim_player_walk",
-      "idle":"anim_player_idle"
-    },
+    "name": "sheep",
+    "role": "sheep",
     "sprite_options":{
       "scale":1,
       "offset":{
