@@ -89,6 +89,7 @@ class VillagerIdentitySystemScript extends Script {
       for (let i = 0; i < this.villagers.length; i++) {
         if (this.villagers[i].name === evt.parameters.villagerName) {
           rem = i;
+          this.villagers[i].dead = true;
           break;
         }
       }

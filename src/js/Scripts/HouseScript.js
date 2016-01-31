@@ -40,20 +40,21 @@ class HouseScript extends Script {
 
   checkItemAgainstVillagerNeeds(item) {
     let disappear;
-    log.debug(this.parent.villager.love.name + ' ' + this.parent.villager.hate.name);
-    if (item === this.parent.villager.love) {
-      EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.village.player.name, rankChange: -1.1}});
-      EventMan.publish({eventType: 'notification', parameters: {text: 'Your rank increased for a good deed!'}});
-      disappear = true;
-    } else if (item === this.parent.villager.hate) {
-      EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.parent.villager.name, rankChange: 1.1}});
-      EventMan.publish({eventType: 'notification',
-      parameters: {text: 'Rank of ' + this.parent.villager.name + ' decreased for seeing a hated item.'}});
-      disappear = true;
-    }
-    if (disappear) {
-      item.physics.body.pos.x = 15000;
-      item.relocated = true;
+    if (!this.parent.villager.dead) {
+      if (item === this.parent.villager.love) {
+        EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.village.player.name, rankChange: -1.1}});
+        EventMan.publish({eventType: 'notification', parameters: {text: 'Your rank increased for a good deed!'}});
+        disappear = true;
+      } else if (item === this.parent.villager.hate) {
+        EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.parent.villager.name, rankChange: 1.1}});
+        EventMan.publish({eventType: 'notification',
+        parameters: {text: 'Rank of ' + this.parent.villager.name + ' decreased for seeing a hated item.'}});
+        disappear = true;
+      }
+      if (disappear) {
+        item.physics.body.pos.x = 15000;
+        item.relocated = true;
+      }
     }
   }
 }
