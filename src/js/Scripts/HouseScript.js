@@ -13,6 +13,7 @@ class HouseScript extends Script {
 
   init(parent, rootEntity) {
     this.parent = parent;
+    this.village = rootEntity.findEntityWithTag('village');
   }
 
   update(parent, rootEntity, delta) {
@@ -27,7 +28,18 @@ class HouseScript extends Script {
   }
 
   checkItemAgainstVillagerNeeds(item) {
-    //log.debug(this.villager.love.name)
+    let disappear;
+    log.debug(this.parent.villager.love.name + ' ' + this.parent.villager.hate.name);
+    if (item === this.parent.villager.love) {
+      EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.village.player.name, rankChange: -1.1}});
+      disappear = true;
+    } else if (item === this.parent.villager.hate) {
+      EventMan.publish({eventType: 'rank_change', parameters: {villagerName: this.parent.villager.name, rankChange: 1.1}});
+      disappear = true;
+    }
+    if (disappear) {
+      item.physics.body.pos.x = 15000;
+    }
   }
 }
 

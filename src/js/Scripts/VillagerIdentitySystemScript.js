@@ -19,6 +19,7 @@ class VillagerIdentitySystemScript extends Script {
     this.village.houses = this.village.houses || rootEntity.findEntitiesWithTag('location_house');
     this.village.items = this.village.items || rootEntity.findEntitiesWithTag('item');
     this.village.npcs = rootEntity.findEntitiesWithTag('npc');
+    this.village.player = rootEntity.findEntityWithTag('player');
 
     let spawner = rootEntity.findEntityWithTag('spawn_villager');
 
