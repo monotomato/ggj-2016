@@ -25,7 +25,7 @@ class VillagerRankingSystemScript extends Script {
 
   applyRankChanges() {
     let ranks = {};
-    for (let i = 0; this.village.villagers.length; i++) {
+    for (let i = 0; i < this.village.villagers.length; i++) {
       ranks[this.village.villagers[i].name] = i;
     }
     for (let i = 0; i < this.rankChanges.length; i++) {
