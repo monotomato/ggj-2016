@@ -13,6 +13,7 @@ class TossableScript extends Script {
   }
 
   init(parent, rootEntity) {
+    this.parent = parent;
     this.player = rootEntity.findEntitiesWithTag('player')[0];
   }
 
@@ -39,6 +40,7 @@ class TossableScript extends Script {
         parent.physics.body.vel.y = -0.5;
         this.picked = false;
         this.player.hasItem = false;
+        EventMan.publish({eventType: 'item_thrown', parameters: {item: this.parent}});
       } else if (Collision.aabbTestFast(parent.physics.body, this.player.physics.body)) {
         if (this.player.hasItem) {
 

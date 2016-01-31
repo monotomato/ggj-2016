@@ -73,6 +73,7 @@ class DayNightCycleScript extends Script {
         spawn = this.rootEntity.findEntityWithName('location_conversation_' + convId + '_spawn_' + spawnId);
       }
       if (spawn) {
+        villager.location = location;
         villager.physics.body.pos.x = spawn.physics.body.pos.x;
         villager.physics.body.pos.y = spawn.physics.body.pos.y;
       }
