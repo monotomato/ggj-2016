@@ -20,7 +20,7 @@ class VillagerAnimationScript extends Script {
     this.parts.limbs = allparts.limbs[rand(allparts.limbs.length)];
     // this.parts.
     this.timeAtCurrentFrame = -1;
-    this.duration = 60;
+    this.duration = 2000;
     this.currentFrame = 0;
   }
 

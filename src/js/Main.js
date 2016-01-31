@@ -63,6 +63,7 @@ function initReady() {
   //console.clear(); // Clears the console.
   game = new Game();
   EventMan.publish({eventType: 'audio_music_play', parameters: {audio:'audio_music_interior'}});
+  EventMan.publish({eventType: 'audio_sound_play', parameters: {audio:'audio_sheep'}});
   requestAnimationFrame(loop);
 }
 

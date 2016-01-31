@@ -103,6 +103,32 @@
          "y":0
         }, 
         {
+         "height":35,
+         "image":"sign.png",
+         "name":"sign",
+         "offsetx":2024,
+         "offsety":544,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":80,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":35,
+         "image":"sign.png",
+         "name":"sign2",
+         "offsetx":1112,
+         "offsety":432,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":80,
+         "x":0,
+         "y":0
+        }, 
+        {
          "draworder":"topdown",
          "height":35,
          "name":"obj_layer_0",
@@ -1627,7 +1653,7 @@
          "name":"items",
          "objects":[
                 {
-                 "height":32,
+                 "height":64,
                  "id":118,
                  "name":"item_ruby",
                  "properties":
@@ -1637,12 +1663,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2400,
-                 "y":1088
+                 "width":64,
+                 "x":2304,
+                 "y":1056
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":112,
                  "name":"item_bread",
                  "properties":
@@ -1652,12 +1678,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2208,
-                 "y":1088
+                 "width":64,
+                 "x":2112,
+                 "y":960
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":117,
                  "name":"item_pen",
                  "properties":
@@ -1667,12 +1693,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2368,
-                 "y":1088
+                 "width":64,
+                 "x":2304,
+                 "y":960
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":120,
                  "name":"item_sock",
                  "properties":
@@ -1682,12 +1708,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2464,
-                 "y":1088
+                 "width":64,
+                 "x":2368,
+                 "y":1056
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":115,
                  "name":"item_apple",
                  "properties":
@@ -1697,12 +1723,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2112,
-                 "y":1088
+                 "width":64,
+                 "x":2048,
+                 "y":1056
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":113,
                  "name":"item_book",
                  "properties":
@@ -1712,12 +1738,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2176,
-                 "y":1088
+                 "width":64,
+                 "x":2048,
+                 "y":960
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":111,
                  "name":"item_chest",
                  "properties":
@@ -1727,12 +1753,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2272,
-                 "y":1088
+                 "width":64,
+                 "x":2176,
+                 "y":1056
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":110,
                  "name":"item_crown",
                  "properties":
@@ -1742,12 +1768,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2304,
-                 "y":1088
+                 "width":64,
+                 "x":2240,
+                 "y":1056
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":116,
                  "name":"item_fish",
                  "properties":
@@ -1757,12 +1783,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2336,
-                 "y":1088
+                 "width":64,
+                 "x":2240,
+                 "y":960
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":114,
                  "name":"item_axe",
                  "properties":
@@ -1772,12 +1798,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2144,
-                 "y":1088
+                 "width":64,
+                 "x":2112,
+                 "y":1056
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":119,
                  "name":"item_scythe",
                  "properties":
@@ -1787,12 +1813,12 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2432,
-                 "y":1088
+                 "width":64,
+                 "x":2368,
+                 "y":960
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":14,
                  "name":"item_bucket",
                  "properties":
@@ -1802,9 +1828,9 @@
                  "rotation":0,
                  "type":"item",
                  "visible":true,
-                 "width":32,
-                 "x":2240,
-                 "y":1088
+                 "width":64,
+                 "x":2176,
+                 "y":960
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1853,36 +1879,10 @@
         }, 
         {
          "height":35,
-         "image":"sign.png",
-         "name":"sign",
-         "offsetx":2024,
-         "offsety":544,
-         "opacity":1,
-         "type":"imagelayer",
-         "visible":true,
-         "width":80,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "height":35,
-         "image":"sign.png",
-         "name":"sign2",
-         "offsetx":1112,
-         "offsety":432,
-         "opacity":1,
-         "type":"imagelayer",
-         "visible":true,
-         "width":80,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "height":35,
          "image":"bush2.png",
          "name":"Copy of sign2",
          "offsetx":680,
-         "offsety":296,
+         "offsety":312,
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
@@ -1894,8 +1894,8 @@
          "height":35,
          "image":"bush2.png",
          "name":"Copy of Copy of sign2",
-         "offsetx":2168,
-         "offsety":408,
+         "offsetx":2144,
+         "offsety":416,
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
