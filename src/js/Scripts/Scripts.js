@@ -13,6 +13,7 @@ import {VillagerAnimationScript} from './VillagerAnimationScript';
 import {HouseControllerScript} from './HouseControllerScript';
 import {EventTimerScript} from './EventTimerScript';
 import {InitiateConversationScript} from './InitiateConversationScript';
+import {HouseScript} from './HouseScript';
 
 const scripts = {
   movementInputScript: MovementInputScript,
@@ -29,7 +30,8 @@ const scripts = {
   houseControllerScript: HouseControllerScript,
   fadeInScript: FadeInScript,
   eventTimerScript: EventTimerScript,
-  initiateConversationScript: InitiateConversationScript
+  initiateConversationScript: InitiateConversationScript,
+  houseScript: HouseScript
 };
 
 export {scripts as Scripts};
