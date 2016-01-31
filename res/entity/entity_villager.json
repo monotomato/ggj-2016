@@ -24,6 +24,10 @@
           "limbs":"basic"
         }
       }
+    },
+    {
+      "name" : "initiateConversationScript",
+      "parameters":{}
     }
   ]
 }
