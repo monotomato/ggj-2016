@@ -25,10 +25,6 @@
       "parameters":{}
     },
     {
-      "name" : "crisisScript",
-      "parameters":{}
-    },
-    {
       "name" : "houseControllerScript",
       "parameters":{}
     }
