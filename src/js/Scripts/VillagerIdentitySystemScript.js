@@ -69,6 +69,7 @@ class VillagerIdentitySystemScript extends Script {
         villager.hate = hate;
         villager.id = 'villager_' + idCounter++;
       } else {
+        this.village.player = villager;
         villager.name = 'sheep';
         villager.role = 'sheep';
       }
