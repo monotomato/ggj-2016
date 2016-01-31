@@ -21,6 +21,11 @@ class DayNightCycleScript extends Script {
 
   update(parent, rootEntity, delta) {
     parent.getChildAt(1).text = this.dayTime();
+    if (!this.firstUpdate) {
+      this.firstUpdate = true;
+      this.time = 7;
+      this.advanceTime();
+    }
   }
 
   dayNumber() {
@@ -31,14 +36,18 @@ class DayNightCycleScript extends Script {
     return this.time % 24;
   }
 
+  advanceTime() {
+    let oldTime = this.time;
+    this.time += 1;
+    this.updateNpcs();
+    if (this.dayTime() === 0) {
+      EventMan.publish({eventType: 'cycle_morning', parameters: {cycleNumber: this.dayNumber()}});
+    }
+  }
+
   handleGameEvent(parent, evt) {
     if (evt.eventType === 'time_advance') {
-      let oldTime = this.time;
-      this.time += 1;
-      this.updateNpcs();
-      if (this.dayTime() === 0) {
-        EventMan.publish({eventType: 'cycle_morning', parameters: {cycleNumber: this.dayNumber()}});
-      }
+      this.advanceTime();
     }
   }
 
