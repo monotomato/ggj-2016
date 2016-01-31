@@ -23,7 +23,7 @@ class DayNightCycleScript extends Script {
     parent.getChildAt(1).text = this.dayTime();
     if (!this.firstUpdate) {
       this.firstUpdate = true;
-      this.time = 4;
+      this.time = 11;
       this.advanceTime();
     }
   }
