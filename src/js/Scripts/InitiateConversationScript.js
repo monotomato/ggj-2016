@@ -9,7 +9,7 @@ class InitiateConversationScript extends Script {
   constructor(parameters) {
     super(parameters);
     this.converse = false;
-    this.text = 'Lorem ipsum, yada yada. Game jam, peanutbutter.';
+    this.text = 'This is placeholder text. Change it with events.';
     this.bubble = Factory.createSpeechBubble(11, 3, 6, this.text);
   }
 
