@@ -58,6 +58,10 @@ class VillagerIdentitySystemScript extends Script {
         do {
           love = this.village.items[rand(this.village.items.length)];
         } while (love === hate);
+        let hid = rand(freeHouses.length);
+        villager.house = freeHouses[hid];
+        freeHouses.splice(hid, 1);
+
         villager.name = name;
         villager.role = role;
         villager.love = love;
