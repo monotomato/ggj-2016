@@ -30,7 +30,7 @@
     {
       "name" : "movementInputScript",
       "parameters":{
-        "movementSpeed":0.5
+        "movementSpeed":0.3
       }
     },
     {
