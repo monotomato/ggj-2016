@@ -40,6 +40,7 @@ class MessageBoxScript extends Script {
       this.bubble.visible = true;
 
       this.text = evt.parameters.text;
+      this.timer = 0;
       this.bubble.setText(this.text);
     }
   }

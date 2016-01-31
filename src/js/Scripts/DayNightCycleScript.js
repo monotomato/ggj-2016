@@ -43,7 +43,6 @@ class DayNightCycleScript extends Script {
     this.updateNpcs();
     if (this.dayTime() === 0) {
       EventMan.publish({eventType: 'cycle_morning', parameters: {cycleNumber: this.dayNumber()}});
-      EventMan.publish({eventType: 'notification', parameters: {text:'Morning arises! New ranks applied.'}});
     }
   }
 
