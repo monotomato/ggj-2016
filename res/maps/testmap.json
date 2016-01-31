@@ -727,9 +727,9 @@
                  "rotation":0,
                  "type":"trigger",
                  "visible":true,
-                 "width":90,
-                 "x":480,
-                 "y":1416
+                 "width":152,
+                 "x":304,
+                 "y":1424
                 }, 
                 {
                  "height":128,
@@ -881,7 +881,7 @@
                  "visible":true,
                  "width":90,
                  "x":1368,
-                 "y":1400
+                 "y":1424
                 }, 
                 {
                  "height":90,
@@ -911,7 +911,7 @@
                  "rotation":0,
                  "type":"trigger",
                  "visible":true,
-                 "width":90,
+                 "width":120,
                  "x":1240,
                  "y":2024
                 }, 
@@ -944,8 +944,8 @@
                  "type":"trigger",
                  "visible":true,
                  "width":90,
-                 "x":3080,
-                 "y":2008
+                 "x":3320,
+                 "y":2024
                 }, 
                 {
                  "height":90,
@@ -959,9 +959,9 @@
                  "rotation":0,
                  "type":"trigger",
                  "visible":true,
-                 "width":90,
-                 "x":2976,
-                 "y":1328
+                 "width":152,
+                 "x":3008,
+                 "y":1352
                 }, 
                 {
                  "height":90,
@@ -1084,8 +1084,8 @@
                  "type":"spawn",
                  "visible":true,
                  "width":80,
-                 "x":3344,
-                 "y":1968
+                 "x":3096,
+                 "y":1992
                 }, 
                 {
                  "height":464,
@@ -1266,8 +1266,8 @@
                  "type":"loc",
                  "visible":true,
                  "width":64,
-                 "x":3264,
-                 "y":1992
+                 "x":3432,
+                 "y":2024
                 }, 
                 {
                  "height":64,
@@ -1281,8 +1281,8 @@
                  "type":"loc",
                  "visible":true,
                  "width":64,
-                 "x":3240,
-                 "y":1320
+                 "x":3360,
+                 "y":1352
                 }, 
                 {
                  "height":64,
@@ -1296,128 +1296,8 @@
                  "type":"loc",
                  "visible":true,
                  "width":64,
-                 "x":288,
-                 "y":616
-                }, 
-                {
-                 "height":64,
-                 "id":107,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":976,
-                 "y":224
-                }, 
-                {
-                 "height":64,
-                 "id":108,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":800,
-                 "y":200
-                }, 
-                {
-                 "height":64,
-                 "id":109,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":536,
-                 "y":224
-                }, 
-                {
-                 "height":64,
-                 "id":121,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":1200,
-                 "y":256
-                }, 
-                {
-                 "height":64,
-                 "id":122,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":1416,
-                 "y":240
-                }, 
-                {
-                 "height":64,
-                 "id":123,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":1704,
-                 "y":248
-                }, 
-                {
-                 "height":64,
-                 "id":124,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":2072,
-                 "y":248
-                }, 
-                {
-                 "height":64,
-                 "id":125,
-                 "name":"LocationItem",
-                 "properties":
-                    {
-                     "config":"entity_location_item"
-                    },
-                 "rotation":0,
-                 "type":"loc",
-                 "visible":true,
-                 "width":64,
-                 "x":2336,
-                 "y":264
+                 "x":240,
+                 "y":632
                 }, 
                 {
                  "height":360,
@@ -1583,6 +1463,156 @@
                  "width":392,
                  "x":2048,
                  "y":448
+                }, 
+                {
+                 "height":64,
+                 "id":154,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":824,
+                 "y":632
+                }, 
+                {
+                 "height":64,
+                 "id":155,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":2296,
+                 "y":736
+                }, 
+                {
+                 "height":64,
+                 "id":156,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":2592,
+                 "y":744
+                }, 
+                {
+                 "height":64,
+                 "id":157,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":3240,
+                 "y":1352
+                }, 
+                {
+                 "height":64,
+                 "id":158,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":3016,
+                 "y":2032
+                }, 
+                {
+                 "height":64,
+                 "id":159,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":2432,
+                 "y":2016
+                }, 
+                {
+                 "height":64,
+                 "id":160,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":1192,
+                 "y":2008
+                }, 
+                {
+                 "height":64,
+                 "id":161,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":144,
+                 "y":2016
+                }, 
+                {
+                 "height":64,
+                 "id":162,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":568,
+                 "y":1392
+                }, 
+                {
+                 "height":64,
+                 "id":163,
+                 "name":"LocationItem",
+                 "properties":
+                    {
+                     "config":"entity_location_item"
+                    },
+                 "rotation":0,
+                 "type":"loc",
+                 "visible":true,
+                 "width":64,
+                 "x":1080,
+                 "y":1424
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1864,8 +1894,8 @@
          "height":35,
          "image":"bush2.png",
          "name":"Copy of Copy of sign2",
-         "offsetx":2152,
-         "offsety":416,
+         "offsetx":2168,
+         "offsety":408,
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
@@ -1873,7 +1903,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":154,
+ "nextobjectid":169,
  "orientation":"orthogonal",
  "properties":
     {
