@@ -23,7 +23,6 @@ class EventTimerScript extends Script {
       // log.debug(evtOb.timer);
       // log.debug(evt.parameters.time);
       if (evtOb.timer > evt.parameters.time) {
-        log.debug("Uh-huh");
         EventMan.publish(evt.parameters.evt);
       }
     });
@@ -33,7 +32,6 @@ class EventTimerScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
-    log.debug("Handlin'");
     if (evt.eventType === 'timed') {
       this.events.push({event: evt, timer: 0.0});
     }

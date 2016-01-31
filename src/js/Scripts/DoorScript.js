@@ -7,7 +7,8 @@ class DoorScript extends Script {
   constructor(parameters) {
     super(parameters);
     this.eventTypes.push(
-      'enter_player'
+      'enter_player',
+      'teleport_player'
     );
   }
 
@@ -20,10 +21,17 @@ class DoorScript extends Script {
   }
 
   handleGameEvent(parent, evt) {
-    if (evt.eventType === 'enter_player') {
-      if (Collision.aabbTestFast(this.player.physics.body, parent.physics.body) && !this.player.entered) {
+    if (evt.eventType === 'teleport_player') {
+      let p = evt.parameters;
+      if (p.sender == this) {
         this.player.physics.body.pos.x = this.target.physics.body.pos.x;
         this.player.physics.body.pos.y = this.target.physics.body.pos.y;
+      }
+    }
+    if (evt.eventType === 'enter_player') {
+      if (Collision.aabbTestFast(this.player.physics.body, parent.physics.body) && !this.player.entered) {
+        // this.player.physics.body.pos.x = this.target.physics.body.pos.x;
+        // this.player.physics.body.pos.y = this.target.physics.body.pos.y;
         this.player.entered = true;
         EventMan.publish({
           eventType: 'timed',
@@ -42,6 +50,18 @@ class DoorScript extends Script {
               eventType: 'fade_in',
               parameters: {
                 duration: 0.5
+              }
+            },
+            time: 0.5
+          }
+        });
+        EventMan.publish({
+          eventType: 'timed',
+          parameters: {
+            evt: {
+              eventType: 'teleport_player',
+              parameters: {
+                sender: this
               }
             },
             time: 0.5
