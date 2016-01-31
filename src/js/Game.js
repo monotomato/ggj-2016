@@ -57,9 +57,10 @@ class Game {
     darken.addScript('darkenScript');
 
     let clock = new Entity();
-    clock.addBox(0xFFFFFF, 50, 50);
-    let text = new PIXI.Text('Clockan is kymppi',{font : '24px Arial', fill : 0xff1010, align : 'center'});
-    text.x = -7;
+    // clock.addBox(0xFFFFFF, 50, 50);
+    clock.setSprite('kello');
+    let text = new PIXI.Text('Clockan is kymppi',{font : '24px Arial', fill : 0x222222, align : 'center'});
+    text.x = -40;
     text.y = -13;
     clock.addChild(text);
     clock.position.x = cfg.renderer.size.x - 30;
