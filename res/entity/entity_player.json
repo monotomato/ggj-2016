@@ -1,6 +1,7 @@
 {
   "component_configuration":{
-    "animation": "anim_player_idle"
+    "idle": "anim_player_idle",
+    "walk": "anim_player_walk"
   },
   "component_data":{
     "animation_states":{
